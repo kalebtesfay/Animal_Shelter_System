@@ -1,2 +1,3 @@
 # Animal_Shelter_System
-Animal shelter matching application and algorithm 
+# Welcome!
+Animal shelter matching application and algorithm
