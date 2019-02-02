@@ -10,12 +10,30 @@ public:
     int getId;
     string getName();
     string getType();
+    string getSex();
+    int getAge();
+    string getHeight();
+    string getColour();
+    string getBreed();
+    bool getNeutered();
+    string getCondition();
+
 
 
 private:
     int id;
     string name;
     string type;
+    string sex;
+    int age;
+    string height;
+    string colour;
+    string breed;
+    bool neutered;
+    string condition;
+
+
+
 
 
 };
