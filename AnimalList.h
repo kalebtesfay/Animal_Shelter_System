@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#include "animal.h"
+#include "Animal.h"
 
 template<class T>
 class AnimalList
