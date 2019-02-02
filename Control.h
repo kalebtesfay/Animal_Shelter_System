@@ -10,7 +10,7 @@ class Control
     Control();
     void launch();
   private:
-
+    View view;
 };
 
 #endif
