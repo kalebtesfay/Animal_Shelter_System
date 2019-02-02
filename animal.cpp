@@ -1,11 +1,20 @@
 #include "animal.h"
 #include <string>
 
-Animal::Animal(int id, string name, string type)
+Animal::Animal(int id, string name, string type, string sex
+               int age, string height, string colour, string breed,
+               bool neutered, string condition)
 {
     this->id = id;
     this->name = name;
     this->type = type;
+    this->sex = sex;
+    this->age = age;
+    this->height = height;
+    this->colour = colour;
+    this->breed = breed;
+    this->neutered = neutered;
+    this->condition = condition;
 
 }
 Animal::~Animal()
@@ -23,4 +32,28 @@ string Animal::getName(){
 
 string Animal::getType(){
     return type;
+}
+
+string Animal::getSex(){
+    return sex;
+}
+
+int Animal::getAge(){
+    return age;
+}
+
+string Animal::getHeight(){
+    return height;
+}
+
+string Animal::getBreed(){
+    return breed;
+}
+
+bool Animal::getNeutered(){
+    return neutered;
+}
+
+string Animal::getCondition(){
+    return condition;
 }
