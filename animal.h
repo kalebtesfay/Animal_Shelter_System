@@ -1,17 +1,19 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-
+#include <string>
 
 class Animal
 {
 public:
-    Animal();
+    Animal(int, string, string);
     ~Animal();
-    getName();
-    getType();
+    int getId;
+    string getName();
+    string getType();
 
 
 private:
+    int id;
     string name;
     string type;
 
