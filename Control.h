@@ -11,6 +11,7 @@ class Control
     void launch();
   private:
     View view;
+    //Animal animal;
 };
 
 #endif
