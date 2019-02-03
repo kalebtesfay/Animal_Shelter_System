@@ -5,9 +5,9 @@
 class Animal
 {
 public:
-    Animal(int, string, string);
+    Animal(int, string, string, string, int, string, string, string, bool, string);
     ~Animal();
-    int getId;
+    int getId();
     string getName();
     string getType();
     string getSex();
