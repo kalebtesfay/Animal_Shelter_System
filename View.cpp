@@ -44,3 +44,5 @@ void View::staffMenu(int& choice){
 void View::clientMenu(int& choice){
   cout <<"Cuming soon in Patch 10.8!"<< endl;
 }
+
+void View::printShelter(Shelter& s){s.print();}

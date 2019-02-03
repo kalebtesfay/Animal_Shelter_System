@@ -1,6 +1,8 @@
 using namespace std;
+
 #include "Animal.h"
 #include <string>
+
 
 Animal::Animal(int id, string name, string type, string sex,
                int age, string height, string colour, string breed,
@@ -18,10 +20,7 @@ Animal::Animal(int id, string name, string type, string sex,
     this->condition = condition;
 
 }
-Animal::~Animal()
-{
-
-}
+Animal::~Animal(){}
 
 int Animal::getId(){
     return id;

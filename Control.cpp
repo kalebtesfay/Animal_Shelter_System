@@ -7,6 +7,7 @@ using namespace std;
 Control::Control(){}
 
 void Control::launch(){
+  //Shelter *animal;
 
   int menuSelection = -1;
   int staffSelection = -1;
@@ -22,7 +23,7 @@ void Control::launch(){
       cout<<"Welcome staff!"<< endl;
       view.staffMenu(staffSelection);
       if(staffSelection == 1){
-        cout<<"Call to print function in database"<<endl;
+        view.printShelter(shelter);
       }
       else if (staffSelection == 2){
         cout<<"Call to add function."<<endl;

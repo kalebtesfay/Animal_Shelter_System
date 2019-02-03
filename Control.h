@@ -3,6 +3,8 @@
 using namespace std;
 
 #include "View.h"
+#include "Shelter.h"
+
 
 class Control
 {
@@ -11,7 +13,7 @@ class Control
     void launch();
   private:
     View view;
-    //Animal animal;
+    Shelter shelter;
 };
 
 #endif
