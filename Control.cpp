@@ -7,14 +7,14 @@ using namespace std;
 Control::Control(){}
 
 void Control::launch(){
-  // Animal *newAnimal;
+  Animal *newAnimal;
 
   int menuSelection = -1;
   int staffSelection = -1;
 
-  // int id, age;
-  // bool neutered;
-  // string name, type, sex, height, colour, breed, condition;
+  int id, age;
+  bool neutered;
+  string name, type, sex, height, colour, breed, temp_n, condition;
 
   cout<<"_____System Start_____"<<endl;
 
@@ -33,8 +33,17 @@ void Control::launch(){
 
       else if (staffSelection == 2){
         cout<<"Call to add function."<<endl;
-        //newAnimal = new Animal(int, string, string, string, int, string, string, string, bool, string);
-        //shelter.add(newAnimal);
+        view.readInfo(id, name, type, sex, age, height, colour, breed, temp_n, condition);
+        if(temp_n == "yes"){
+          neutered = true;
+          newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+          shelter.add(newAnimal);
+        }
+        else if(temp_n == "no"){
+          neutered = false;
+          newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+          shelter.add(newAnimal);
+        }
       }
     }
 
