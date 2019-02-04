@@ -45,4 +45,14 @@ void View::clientMenu(int& choice){
   cout <<"Cuming soon in Patch 10.8!"<< endl;
 }
 
+void View::readInfo(int& id, string& name, string& type, string& sex, int& age, string& height, string& colour, string& breed, bool& neutered, string& condition){
+  // cout<< "Id: ";
+  // cin  >> id;
+  // cout << "Animal Name: ";
+  // cin.ignore();
+  // getline(cin,name);
+  // cout << "Type: ";
+  // getline(cin,type);
+}
+
 void View::printShelter(Shelter& s){s.print();}
