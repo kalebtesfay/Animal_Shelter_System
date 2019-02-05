@@ -46,6 +46,10 @@ string Animal::getHeight(){
     return height;
 }
 
+string Animal::getColour(){
+  return colour;
+}
+
 string Animal::getBreed(){
     return breed;
 }
