@@ -64,7 +64,7 @@ void AnimalList<T>::add(T a){
   prevNode = NULL;
 
   while(currNode != NULL){
-    if(currNode->data->getId() > tmpNode->data->getId()){
+    if(currNode->data->getId() < tmpNode->data->getId()){
       break;
     }
     prevNode = currNode;

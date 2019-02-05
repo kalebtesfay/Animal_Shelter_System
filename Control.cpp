@@ -51,6 +51,9 @@ void Control::launch(){
       cout<<"Welcome client!"<<endl;
     }
   }
+  cout<<" "<<endl;
+  cout<<"DATABASE"<<endl;
+  view.printShelter(shelter);
 
   cout<<"_____End_____"<<endl;
 }
