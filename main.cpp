@@ -5,7 +5,7 @@ using namespace std;
 
 #include "Control.h"
 
-int main()
+int main(int argc, char* argv[])
 {
   //Main will only be responsible for declaring control object and
   //calling the launch member function that starts the whole program.
