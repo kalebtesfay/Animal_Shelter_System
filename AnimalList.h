@@ -64,9 +64,9 @@ void AnimalList<T>::add(T a){
   prevNode = NULL;
 
   while(currNode != NULL){
-    if(currNode->data->getId() < tmpNode->data->getId()){
-      break;
-    }
+    // if(currNode->data->getId() < tmpNode->data->getId()){
+    //   break;
+    // }
     prevNode = currNode;
     currNode = currNode->next;
   }
@@ -86,9 +86,9 @@ void AnimalList<T>::print(){
     currNode = head;
 
     while(currNode != NULL){
-        cout<<currNode->data<<endl;
-        nextNode = currNode->next;
-        currNode = nextNode;
+      nextNode = currNode->next;
+      cout<<currNode->data<<endl;
+      currNode = nextNode;
     }
 
 }

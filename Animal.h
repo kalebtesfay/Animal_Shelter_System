@@ -6,7 +6,7 @@
 class Animal
 {
 public:
-    Animal(int, string, string, string, int, string, string, string, bool, string);
+    Animal(int, string, string, string, int, string, string, string, string, string);
     ~Animal();
     int getId();
     string getName();
@@ -16,7 +16,7 @@ public:
     string getHeight();
     string getColour();
     string getBreed();
-    bool getNeutered();
+    string getNeutered();
     string getCondition();
 
 
@@ -30,7 +30,7 @@ private:
     string height;
     string colour;
     string breed;
-    bool neutered;
+    string neutered;
     string condition;
 
 

@@ -6,7 +6,7 @@ using namespace std;
 
 Animal::Animal(int id, string name, string type, string sex,
                int age, string height, string colour, string breed,
-               bool neutered, string condition)
+               string neutered, string condition)
 {
     this->id = id;
     this->name = name;
@@ -54,7 +54,7 @@ string Animal::getBreed(){
     return breed;
 }
 
-bool Animal::getNeutered(){
+string Animal::getNeutered(){
     return neutered;
 }
 
