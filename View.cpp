@@ -44,7 +44,7 @@ void View::staffMenu(int& choice){
 
 
 void View::clientMenu(int& choice){
-  cout <<"Cuming soon in Patch 10.8!"<< endl;
+  cout <<"Coming soon in Patch 10.8!"<< endl;
 }
 
 void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
