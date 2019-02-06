@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#include "animal.h"
+#include "Animal.h"
 
 template<class T>
 class AnimalList
@@ -52,6 +52,30 @@ AnimalList<T>::~AnimalList(){
 
 template<class T>
 void AnimalList<T>::add(T a){
+  Node<T>*currNode;
+  Node<T>*prevNode;
+
+  Node<T>* tmpNode = new Node<T>;
+
+  tmpNode->data = a;
+  tmpNode->next = NULL;
+
+  currNode = head;
+  prevNode = 0;
+
+  while(currNode != NULL){
+    if(currNode->data->getId() > tmpNode->data->getId()){
+      break;
+    }
+    prevNode = currNode;
+    currNode = currNode->next;
+  }
+  if(prevNode == NULL ){
+    head = tmpNode;
+  }else{
+    prevNode->next = tmpNode;
+  }
+  tmpNode->next = currNode;
 
 }
 
@@ -62,9 +86,9 @@ void AnimalList<T>::print(){
     currNode = head;
 
     while(currNode != NULL){
-        cout<<currNode->data<<endl;
-        nextNode = currNode->next;
-        currNode = nextNode;
+      nextNode = currNode->next;
+      currNode->data->print();
+      currNode = nextNode;
     }
 
 }

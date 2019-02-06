@@ -2,12 +2,13 @@
 #define ANIMAL_H
 #include <string>
 
+
 class Animal
 {
 public:
-    Animal(int, string, string);
+    Animal(int, string, string, string, int, string, string, string, string, string);
     ~Animal();
-    int getId;
+    int getId();
     string getName();
     string getType();
     string getSex();
@@ -15,8 +16,9 @@ public:
     string getHeight();
     string getColour();
     string getBreed();
-    bool getNeutered();
+    string getNeutered();
     string getCondition();
+    void print();
 
 
 
@@ -29,7 +31,7 @@ private:
     string height;
     string colour;
     string breed;
-    bool neutered;
+    string neutered;
     string condition;
 
 

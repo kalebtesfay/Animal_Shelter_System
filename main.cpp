@@ -1,11 +1,15 @@
-#include "mainwindow.h"
-#include <QApplication>
+using namespace std;
 
-int main(int argc, char *argv[])
+#include <iostream>
+#include <string>
+
+#include "Control.h"
+
+int main(int argc, char* argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-
-    return a.exec();
+  //Main will only be responsible for declaring control object and
+  //calling the launch member function that starts the whole program.
+  Control control;
+  control.launch();
+  return 0;
 }
