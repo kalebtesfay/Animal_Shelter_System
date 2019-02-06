@@ -11,7 +11,6 @@ View::View(){}
 
 
 void View::mainMenu(int& choice){
-  //string str;
   choice  = -1;
   int options = 2;
 
@@ -24,22 +23,10 @@ void View::mainMenu(int& choice){
     cout << "Enter your Selection: " <<endl;
     cin >> choice;
   }
-  //getline(cin,str);
 
-  //while (str != "1" && str != "2") {
-    //cout << "Who's signing in? '(1) staff' '(2) client': ";
-    // cout << "Who is Logining in?";
-    // getline(cin,str);
-    // if(str == "0"){
-    //    break;
-    // }
-  //}
-  //stringstream ss(str);
-  //ss >> choice;
 }
 
 void View::staffMenu(int& choice){
-  //string str;
   choice  = -1;
   int options = 2;
 
@@ -47,25 +34,12 @@ void View::staffMenu(int& choice){
   cout << "(1) Would you like to View" <<endl;
   cout << "(2) Add An Animal?" << endl;
   cout << "(0) Back Option" << endl;
-  //getline(cin,str);
 
   while(choice < 0 || choice > options){
     cout << "Enter your Selection: " << endl;
     cin >> choice;
   }
 
-  // while (str != "1" && str != "2") {
-  //   // if(str == "0"){
-  //   //   break;
-  //   // }
-  //   cout<<"Type of Staff Choices: ";
-  //   getline(cin,str);
-  //   // cout << "(1) Would you like to View" <<endl;
-  //   // cout << "(2) Add An Animal?" << endl;
-  //   // getline(cin,str);
-  // }
-  // stringstream ss(str);
-  // ss >> choice;
 }
 
 
@@ -96,7 +70,6 @@ void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
   getline(cin,breed);
   cout << "Neutered: ";
   getline(cin,neutered);
-  //cin >> neutered;
   cout << "Condition: ";
   getline(cin,condition);
 }
