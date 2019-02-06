@@ -78,10 +78,6 @@ void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
                     string& condition){
   cout<< "Id: ";
   cin  >> id;
-
-  cout<< "Age: ";
-  cin  >> age;
-
   cout << "Animal Name: ";
   cin.ignore();
   getline(cin,name);
@@ -89,7 +85,10 @@ void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
   getline(cin,type);
   cout << "Sex: ";
   getline(cin,sex);
+  cout<< "Age: ";
+  cin  >> age;
   cout << "Height: ";
+  cin.ignore();
   getline(cin,height);
   cout << "Colour: ";
   getline(cin,colour);

@@ -18,6 +18,7 @@ public:
     string getBreed();
     string getNeutered();
     string getCondition();
+    void print();
 
 
 
