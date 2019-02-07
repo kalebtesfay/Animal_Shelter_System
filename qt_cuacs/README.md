@@ -1,5 +1,5 @@
 # Animal_Shelter_System
-# Welcome! D1_Alpha
+# Welcome! D1
 Animal shelter matching application and algorithm
 
 compile :
