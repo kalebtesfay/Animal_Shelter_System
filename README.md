@@ -1,3 +1,3 @@
 # Animal_Shelter_System
-# Welcome! D1 4our People
+# Welcome! D1_Alpha
 Animal shelter matching application and algorithm
