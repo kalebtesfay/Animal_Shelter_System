@@ -47,7 +47,6 @@ void Control::launch(){
     }
     cout<<" "<<endl;
     cout<<"DATABASE"<<endl;
-    view.printShelter(shelter);
 
     if(db.open()){
         qDebug() << "DB CONNECTED";
@@ -102,4 +101,6 @@ void Control::launch(){
 //        int id = query.value(0).toInt();
 //        qDebug() << id;
 //    }
+
+    view.printShelter(shelter);
 }
