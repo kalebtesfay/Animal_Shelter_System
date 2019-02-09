@@ -34,7 +34,7 @@ void Control::launch(){
       }
 
     }else if(choice == 2){
-      cout<<"Welcome client!"<<endl;
+      cout<<"Welcome Client!"<<endl;
 
     }
 
