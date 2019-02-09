@@ -1,5 +1,14 @@
 #include <iostream>
 #include <sstream>
+#include <iostream>
+#include <string>
+#include <QCoreApplication>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlDriver>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QDebug>
 using namespace std;
 
 #include "Control.h"
@@ -7,39 +16,88 @@ using namespace std;
 Control::Control(){}
 
 void Control::launch(){
-  Animal *newAnimal;
+    Animal *newAnimal;
+    int choice, choiceTwo;
+    int id, age;
+    string name, type, sex, height, colour, breed, neutered, condition;
 
-  int choice, choiceTwo;
-  int id, age;
-  string name, type, sex, height, colour, breed, neutered, condition;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs/database/database");
 
-  while(1){
-    choice = -1;
-    view.mainMenu(choice);
-    if(choice == 0){
-      break;
+    if(db.open()){
+        qDebug() << "DB CONNECTED";
+    }else{
+        qDebug() << "DB NOT CONNECTED" << db.lastError();
     }
-    else if(choice == 1){
-      choiceTwo = -1;
-      cout<<"Welcome Staff!"<< endl;
-      view.staffMenu(choiceTwo);
-      if(choiceTwo == 1){
-        view.printShelter(shelter);
+    QSqlQuery query("CREATE TABLE ANIMAL(id INTEGER PRIMARY KEY, name TEXT NOT NULL,type TEXT NOT NULL, sex TEXT NOT NULL, age INT, height TEXT NOT NULL, colour TEXT NOT NULL, breed TEXT NOT NULL, neutered TEXT NOT NULL, condition TEXT NOT NULL)");
+    QSqlQuery insertToAnimal;
+    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
+                     "values(1, 'Rex', 'Dog', 'Male', 2, '50cm', 'Black', 'Pitbull', 'No', 'Healthy')");
+    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
+                     "values(2, 'Daisy', 'Dog', 'Female', 1, '30cm', 'Orange', 'Boxer', 'Yes', 'Healthy')");
+    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
+                     "values(3, 'Coco', 'Cat', 'Female', 6, '20cm', 'Brown', 'Persian', 'Yes', 'Not Healthy')");
+    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
+                     "values(4, 'Jack', 'Cat', 'Male', 5, '10cm', 'White', 'Ragdoll', 'Yes', 'Healthy')");
+    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
+                     "values(5, 'Gus', 'Hamster', 'Male', 1, '6cm', 'Brown', 'Chinese', 'Yes', 'Healthy')");
 
-      }else if(choiceTwo == 2){
-        view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
-        newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
-        shelter.add(newAnimal);
+    QSqlQuery query2("CREATE TABLE STAFF(id INTEGER PRIMARY KEY, name TEXT NOT NULL)");
+    QSqlQuery insertToStaff;
+    insertToStaff.exec("insert into STAFF(id, name)"
+                     "values(1, 'Kaleb Tesfay')");
+    insertToStaff.exec("insert into STAFF(id, name)"
+                     "values(2, 'Adam Farah')");
+    insertToStaff.exec("insert into STAFF(id, name)"
+                     "values(3, 'Japi Sandhu')");
+    insertToStaff.exec("insert into STAFF(id, name)"
+                     "values(4, 'Lauryn Esparza')");
+    insertToStaff.exec("insert into STAFF(id, name)"
+                     "values(5, 'Jaiden Kelly')");
 
-      }
-
-    }else if(choice == 2){
-      cout<<"Welcome Client!"<<endl;
-
+    QSqlQuery query3("CREATE TABLE CLIENT(id INTEGER PRIMARY KEY, name TEXT NOT NULL, address TEXT NOT NULL)");
+    QSqlQuery insertToClient;
+    insertToClient.exec("insert into CLIENT(id, name, address)"
+                      "values(1, 'Wilfred James', '3670 Glory Road')");
+    insertToClient.exec("insert into CLIENT(id, name, address)"
+                      "values(2, 'Mona Lane', '2257 Berry Street')");
+    insertToClient.exec("insert into CLIENT(id, name, address)"
+                      "values(3, 'Steve Blake', '3441 Cemetery Street')");
+    insertToClient.exec("insert into CLIENT(id, name, address)"
+                      "values(4, 'Josh Rich', '2795 Green Hill Road')");
+    insertToClient.exec("insert into CLIENT(id, name, address)"
+                      "values(5, 'Marlee Sparks', '4162 Adams Drive')");
+    while(1){
+        choice = -1;
+        view.mainMenu(choice);
+        if(choice == 0){
+            break;
+        }
+        else if(choice == 1){
+            choiceTwo = -1;
+            cout<<"Welcome Staff!"<< endl;
+            view.staffMenu(choiceTwo);
+            if(choiceTwo == 1){
+                view.printShelter(shelter);
+            }else if(choiceTwo == 2){
+                view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
+                newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+                shelter.add(newAnimal);
+            }
+        }else if(choice == 2){
+            cout<<"Welcome Client!"<<endl;
+        }
     }
+    cout<<" "<<endl;
+    cout<<"DATABASE"<<endl;
+    view.printShelter(shelter);
 
-  }
-  cout<<" "<<endl;
-  cout<<"DATABASE"<<endl;
-  view.printShelter(shelter);
+    QSqlQuery q;
+    q.exec("SELECT * FROM ANIMAL where id > 0");
+
+    while(q.next()){
+        //QString name = query.value(0).toString();
+        int id = query.value(0).toInt();
+        qDebug() << id;
+    }
 }
