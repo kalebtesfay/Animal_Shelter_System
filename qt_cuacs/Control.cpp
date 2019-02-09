@@ -92,12 +92,12 @@ void Control::launch(){
     cout<<"DATABASE"<<endl;
     view.printShelter(shelter);
 
-    QSqlQuery q;
-    q.exec("SELECT * FROM ANIMAL where id > 0");
+//    QSqlQuery q;
+//    q.exec("SELECT * FROM ANIMAL where id > 0");
 
-    while(q.next()){
-        //QString name = query.value(0).toString();
-        int id = query.value(0).toInt();
-        qDebug() << id;
-    }
+//    while(q.next()){
+//        //QString name = query.value(0).toString();
+//        int id = query.value(0).toInt();
+//        qDebug() << id;
+//    }
 }
