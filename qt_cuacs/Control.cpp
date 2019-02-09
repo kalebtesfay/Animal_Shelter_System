@@ -1,6 +1,6 @@
 #include <iostream>
+#include <iomanip>
 #include <sstream>
-#include <iostream>
 #include <string>
 #include <QCoreApplication>
 #include <QtSql>
@@ -21,9 +21,6 @@ void Control::launch(){
     int id, age;
     string name, type, sex, height, colour, breed, neutered, condition;
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs/database/database");
-
     while(1){
         choice = -1;
         view.mainMenu(choice);
@@ -35,6 +32,7 @@ void Control::launch(){
             cout<<"Welcome Staff!"<< endl;
             view.staffMenu(choiceTwo);
             if(choiceTwo == 1){
+                dbLaunch();
                 view.printShelter(shelter);
             }else if(choiceTwo == 2){
                 view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
@@ -47,6 +45,13 @@ void Control::launch(){
     }
     cout<<" "<<endl;
     cout<<"DATABASE"<<endl;
+    dbLaunch();
+    view.printShelter(shelter);
+}
+
+void Control::dbLaunch(){
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs/database/database");
 
     if(db.open()){
         qDebug() << "DB CONNECTED";
@@ -93,14 +98,32 @@ void Control::launch(){
     insertToClient.exec("insert into CLIENT(id, name, address)"
                       "values(5, 'Marlee Sparks', '4162 Adams Drive')");
 
-//    QSqlQuery q;
-//    q.exec("SELECT * FROM ANIMAL where id > 0");
+    QSqlQuery q;
+    q.exec("SELECT * FROM ANIMAL");
 
-//    while(q.next()){
-//        //QString name = query.value(0).toString();
-//        int id = query.value(0).toInt();
-//        qDebug() << id;
-//    }
+    while(q.next()){
+        int id = q.value(0).toInt();
+        QString name = q.value(1).toString();
+        QString type = q.value(2).toString();
+        QString sex = q.value(3).toString();
+        int age = q.value(4).toInt();
+        QString height = q.value(5).toString();
+        QString colour = q.value(6).toString();
+        QString breed = q.value(7).toString();
+        QString neutered = q.value(8).toString();
+        QString condition= q.value(9).toString();
 
-    view.printShelter(shelter);
+        qDebug().noquote() << "id:        " << id;
+        qDebug().noquote() << "name:      " << name;
+        qDebug().noquote() << "type:      " << type;
+        qDebug().noquote() << "sex:       " << sex;
+        qDebug().noquote() << "age:       " << age;
+        qDebug().noquote() << "height:    " << height;
+        qDebug().noquote() << "colour:    " << colour;
+        qDebug().noquote() << "breed:     " << breed;
+        qDebug().noquote() << "neutered:  " << neutered;
+        qDebug().noquote() << "condition: " << condition;
+        qDebug().noquote() << "";
+    }
+
 }

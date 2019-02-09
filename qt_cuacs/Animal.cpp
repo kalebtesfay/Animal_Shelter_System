@@ -25,17 +25,17 @@ Animal::Animal(int id, string name, string type, string sex,
 Animal::~Animal(){}
 
 void Animal::print(){
-  cout<<"id:"<<setfill(' ')<<setw(25)<<id<<endl;
-  cout<<"name:"<<setfill(' ')<<setw(23)<<name<<endl;
-  cout<<"type:"<<setfill(' ')<<setw(23)<<type<<endl;
-  cout<<"sex:"<<setfill(' ')<<setw(24)<<sex<<endl;
-  cout<<"age:"<<setfill(' ')<<setw(24)<<age<<endl;
-  cout<<"height:"<<setfill(' ')<<setw(21)<<height<<endl;
-  cout<<"colour:"<<setfill(' ')<<setw(21)<<colour<<endl;
-  cout<<"breed:"<<setfill(' ')<<setw(22)<<breed<<endl;
-  cout<<"neutered:"<<setfill(' ')<<setw(19)<<neutered<<endl;
-  cout<<"condition:"<<setfill(' ')<<setw(18)<<condition<<endl;
-  cout<<""<<endl;
+    cout << "id:         " << id        << endl;
+    cout << "name:       " << name      << endl;
+    cout << "type:       " << type      << endl;
+    cout << "sex:        " << sex       << endl;
+    cout << "age:        " << age       << endl;
+    cout << "height:     " << height    << endl;
+    cout << "colour:     " << colour    << endl;
+    cout << "breed:      " << breed     << endl;
+    cout << "neutered:   " << neutered  << endl;
+    cout << "condition:  " << condition << endl;
+    cout <<""<<endl;
 
 }
 int Animal::getId(){

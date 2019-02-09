@@ -11,7 +11,6 @@ View::View(){}
 
 
 void View::mainMenu(int& choice){
-  //string str;
   choice  = -1;
   int options = 2;
 
@@ -28,7 +27,6 @@ void View::mainMenu(int& choice){
 }
 
 void View::staffMenu(int& choice){
-  //string str;
   choice  = -1;
   int options = 2;
 
@@ -44,7 +42,6 @@ void View::staffMenu(int& choice){
 
 }
 
-
 void View::clientMenu(int& choice){
   cout <<"Coming soon in Patch 10.8!"<< endl;
 }
@@ -52,8 +49,13 @@ void View::clientMenu(int& choice){
 void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
                     string& height, string& colour, string& breed, string& neutered,
                     string& condition){
-  cout<< "Id: ";
+  cout<< "Id(6 or Higher): ";
   cin  >> id;
+  while(id < 6){
+      cout << "Incorrect Input!" << endl;
+      cout << "Id (6 or Higher): ";
+      cin >> id;
+  }
   cout << "Animal Name: ";
   cin.ignore();
   getline(cin,name);
@@ -72,7 +74,6 @@ void View::readInfo(int& id, string& name, string& type, string& sex, int& age,
   getline(cin,breed);
   cout << "Neutered: ";
   getline(cin,neutered);
-  //cin >> neutered;
   cout << "Condition: ";
   getline(cin,condition);
 }
