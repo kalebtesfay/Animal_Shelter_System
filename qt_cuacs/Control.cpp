@@ -24,11 +24,37 @@ void Control::launch(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs/database/database");
 
+    while(1){
+        choice = -1;
+        view.mainMenu(choice);
+        if(choice == 0){
+            break;
+        }
+        else if(choice == 1){
+            choiceTwo = -1;
+            cout<<"Welcome Staff!"<< endl;
+            view.staffMenu(choiceTwo);
+            if(choiceTwo == 1){
+                view.printShelter(shelter);
+            }else if(choiceTwo == 2){
+                view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
+                newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+                shelter.add(newAnimal);
+            }
+        }else if(choice == 2){
+            cout<<"Welcome Client!"<<endl;
+        }
+    }
+    cout<<" "<<endl;
+    cout<<"DATABASE"<<endl;
+    view.printShelter(shelter);
+
     if(db.open()){
         qDebug() << "DB CONNECTED";
     }else{
         qDebug() << "DB NOT CONNECTED" << db.lastError();
     }
+
     QSqlQuery query("CREATE TABLE ANIMAL(id INTEGER PRIMARY KEY, name TEXT NOT NULL,type TEXT NOT NULL, sex TEXT NOT NULL, age INT, height TEXT NOT NULL, colour TEXT NOT NULL, breed TEXT NOT NULL, neutered TEXT NOT NULL, condition TEXT NOT NULL)");
     QSqlQuery insertToAnimal;
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
@@ -67,30 +93,6 @@ void Control::launch(){
                       "values(4, 'Josh Rich', '2795 Green Hill Road')");
     insertToClient.exec("insert into CLIENT(id, name, address)"
                       "values(5, 'Marlee Sparks', '4162 Adams Drive')");
-    while(1){
-        choice = -1;
-        view.mainMenu(choice);
-        if(choice == 0){
-            break;
-        }
-        else if(choice == 1){
-            choiceTwo = -1;
-            cout<<"Welcome Staff!"<< endl;
-            view.staffMenu(choiceTwo);
-            if(choiceTwo == 1){
-                view.printShelter(shelter);
-            }else if(choiceTwo == 2){
-                view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
-                newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
-                shelter.add(newAnimal);
-            }
-        }else if(choice == 2){
-            cout<<"Welcome Client!"<<endl;
-        }
-    }
-    cout<<" "<<endl;
-    cout<<"DATABASE"<<endl;
-    view.printShelter(shelter);
 
 //    QSqlQuery q;
 //    q.exec("SELECT * FROM ANIMAL where id > 0");
