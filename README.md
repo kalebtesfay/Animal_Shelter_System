@@ -2,8 +2,8 @@
 # Welcome! D1 by 4our People
 Animal shelter matching application and algorithm
 
-compile :
-  make
+UI:
+  Located in /qt_cuacs_UI
 
-execution:
-  ./as
+Compiler:
+  Located in /qt_cuacs
