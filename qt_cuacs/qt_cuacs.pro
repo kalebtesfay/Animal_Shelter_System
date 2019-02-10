@@ -1,8 +1,14 @@
 QT -= gui
 QT += sql
+QT += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
+
+TARGET = q1_cuacs
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -19,7 +25,10 @@ SOURCES += main.cpp \
     Animal.cpp \
     Control.cpp \
     Shelter.cpp \
-    View.cpp
+    View.cpp \
+    mainwindow.cpp
+
+
 
 DISTFILES += \
     database.sql \
@@ -35,4 +44,8 @@ HEADERS += \
     AnimalList.h \
     Control.h \
     Shelter.h \
-    View.h
+    View.h \
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui
