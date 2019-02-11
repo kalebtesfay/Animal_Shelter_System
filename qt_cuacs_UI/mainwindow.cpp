@@ -26,9 +26,10 @@ void MainWindow::on_pushButton_clicked()
 //    ui->pushButton->setText("View Animals");
 //    ui->pushButton_2->setText("Add Animal");
     //ui->label->setText("View Animals");
-    delete ui->label;
-    delete ui->pushButton;
-    delete ui->pushButton_2;
+//    delete ui->label;
+//    delete ui->pushButton;
+//    delete ui->pushButton_2;
+    ui->stackedWidget->setCurrentIndex(3);
     login c;
     QSqlQueryModel *model = new QSqlQueryModel();
     c.dbOpen();
@@ -53,25 +54,22 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    ui->label->setText("Welcome Staff!");
-    ui->label->setStyleSheet("color: rgb(128,0,0)");
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->label_2->setText("Welcome Staff!");
+    ui->label_2->setStyleSheet("color: rgb(128,0,0)");
 //    delete ui->lineEdit_3;
 //    delete ui->pushButton_3;
 //    delete ui->pushButton_4;
-    ui->lineEdit_3->setVisible(false);
-    ui->pushButton_3->setVisible(false);
-    ui->pushButton_4->setVisible(false);
+//    ui->lineEdit_3->setVisible(false);
+//    ui->pushButton_3->setVisible(false);
+//    ui->pushButton_4->setVisible(false);
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
     ui->label->setText("Welcome Client!");
     ui->label->setStyleSheet("color: rgb(128,0,0)");
-
-    ui->pushButton_3->setVisible(false);
-    ui->pushButton_4->setVisible(false);
-    ui->lineEdit_3->setVisible(false);
-
+    ui->stackedWidget->setCurrentIndex(1);
 //    ui->pushButton_3->hide();
 //    ui->pushButton_4->hide();
 //    ui->lineEdit_3->hide();
@@ -81,11 +79,17 @@ void MainWindow::on_pushButton_4_clicked()
 void MainWindow::on_pushButton_5_clicked()
 {
     //BAck
-    on_pushButton_3_clicked();
+    ui->stackedWidget->setCurrentIndex(2);
+
 }
 
 void MainWindow::on_pushButton_6_clicked()
 {
     //next
-    on_pushButton_clicked();
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+   ui->stackedWidget->setCurrentIndex(0);
 }
