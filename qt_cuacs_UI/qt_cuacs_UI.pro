@@ -30,7 +30,8 @@ SOURCES += \
         Animal.cpp \
         Control.cpp \
         Shelter.cpp \
-        View.cpp
+        View.cpp \
+    login.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
         AnimalList.h \
         Control.h \
         Shelter.h \
-        View.h
+        View.h \
+    login.h
 
 FORMS += \
         mainwindow.ui
