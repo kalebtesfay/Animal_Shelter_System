@@ -1,14 +1,14 @@
 #include <iostream>
 #include <iomanip>
-#include <string>
+#include <QString>
 using namespace std;
 
 #include "Animal.h"
 
 
-Animal::Animal(int id, string name, string type, string sex,
-               int age, string height, string colour, string breed,
-               string neutered, string condition)
+Animal::Animal(QString id, QString name, QString type, QString sex,
+               QString age, QString height, QString colour, QString breed,
+               QString neutered, QString condition)
 {
     this->id = id;
     this->name = name;
@@ -25,55 +25,55 @@ Animal::Animal(int id, string name, string type, string sex,
 Animal::~Animal(){}
 
 void Animal::print(){
-    cout << "id:         " << id        << endl;
-    cout << "name:       " << name      << endl;
-    cout << "type:       " << type      << endl;
-    cout << "sex:        " << sex       << endl;
-    cout << "age:        " << age       << endl;
-    cout << "height:     " << height    << endl;
-    cout << "colour:     " << colour    << endl;
-    cout << "breed:      " << breed     << endl;
-    cout << "neutered:   " << neutered  << endl;
-    cout << "condition:  " << condition << endl;
-    cout <<""<<endl;
+    qDebug().noquote() << "id:         " << id;
+    qDebug().noquote() << "name:       " << name;
+    qDebug().noquote() << "type:       " << type;
+    qDebug().noquote() << "sex:        " << sex;
+    qDebug().noquote() << "age:        " << age;
+    qDebug().noquote() << "height:     " << height;
+    qDebug().noquote() << "colour:     " << colour;
+    qDebug().noquote() << "breed:      " << breed;
+    qDebug().noquote() << "neutered:   " << neutered;
+    qDebug().noquote() << "condition:  " << condition;
+    //cout <<""<<endl;
 
 }
-int Animal::getId(){
+QString Animal::getId(){
     return id;
 }
 
-string Animal::getName(){
+QString Animal::getName(){
     return name;
 }
 
-string Animal::getType(){
+QString Animal::getType(){
     return type;
 }
 
-string Animal::getSex(){
+QString Animal::getSex(){
     return sex;
 }
 
-int Animal::getAge(){
+QString Animal::getAge(){
     return age;
 }
 
-string Animal::getHeight(){
+QString Animal::getHeight(){
     return height;
 }
 
-string Animal::getColour(){
+QString Animal::getColour(){
   return colour;
 }
 
-string Animal::getBreed(){
+QString Animal::getBreed(){
     return breed;
 }
 
-string Animal::getNeutered(){
+QString Animal::getNeutered(){
     return neutered;
 }
 
-string Animal::getCondition(){
+QString Animal::getCondition(){
     return condition;
 }

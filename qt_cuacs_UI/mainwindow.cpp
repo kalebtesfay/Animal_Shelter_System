@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "login.h"
 #include <QMessageBox>
 #include <QSqlQueryModel>
 
@@ -118,12 +117,17 @@ void MainWindow::on_pushButton_8_clicked()
         qDebug()<<"FAILED TO OPEN DATABASE";
         return;
     }
+    Animal *newAnimal;
+    //view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
+    newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+    shelter.add(newAnimal);
+
     l.dbOpen();
     QSqlQuery q;
     q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition) values('"+id+"','"+name+"','"+
               type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"')");
     if(q.exec()){
-        QMessageBox::critical(this, tr("Save"), tr("Saved"));
+        QMessageBox::critical(this, tr("Save"), tr("Inserted!"));
         l.dbClose();
     }else{
         QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
@@ -137,7 +141,23 @@ void MainWindow::on_pushButton_8_clicked()
     model->setQuery(*que);
     ui->tableView_2->setModel(model);
     l.dbClose();
-    qDebug() << (model->rowCount());
+    qDebug() << "There is:" << (model->rowCount()) << "Animals in the database now.";
 
+    l.dbLaunch();
+    view.printShelter(shelter);
+
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::addToLinkedList(){
 
 }

@@ -12,7 +12,7 @@ class View
     void mainMenu(int&);
     void staffMenu(int&);
     void clientMenu(int&);
-    void readInfo(int&, string&, string&, string&, int&, string&, string&, string&, string&, string&);
+    //void readInfo(QString&, QString&, QString&, QString&, QString&, QString&, QString&, QString&, QString&, QString&);
     void printShelter(Shelter&);
 
   private:

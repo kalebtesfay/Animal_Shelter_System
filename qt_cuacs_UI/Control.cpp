@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include <string>
+#include <QString>
 #include <QCoreApplication>
 #include <QtSql>
 #include <QSqlDatabase>
@@ -18,8 +18,8 @@ Control::Control(){}
 void Control::launch(){
     Animal *newAnimal;
     int choice, choiceTwo;
-    int id, age;
-    string name, type, sex, height, colour, breed, neutered, condition;
+    QString id, age;
+    QString name, type, sex, height, colour, breed, neutered, condition;
 
     while(1){
         choice = -1;
@@ -35,7 +35,7 @@ void Control::launch(){
                 dbLaunch();
                 view.printShelter(shelter);
             }else if(choiceTwo == 2){
-                view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
+                //view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
                 newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
                 shelter.add(newAnimal);
             }

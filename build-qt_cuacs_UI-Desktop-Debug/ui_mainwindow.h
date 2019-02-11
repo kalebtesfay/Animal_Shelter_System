@@ -22,7 +22,6 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -38,28 +37,23 @@ public:
     QPushButton *pushButton_3;
     QLineEdit *lineEdit_3;
     QLineEdit *lineEdit;
-    QTimeEdit *timeEdit;
     QWidget *page_2;
     QPushButton *pushButton_7;
     QLabel *label;
     QLineEdit *lineEdit_2;
-    QTimeEdit *timeEdit_2;
     QWidget *page_3;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLabel *label_2;
-    QTimeEdit *timeEdit_3;
     QLineEdit *lineEdit_4;
     QWidget *page_4;
     QTableView *tableView;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QLineEdit *lineEdit_5;
-    QTimeEdit *timeEdit_4;
     QLabel *label_3;
     QWidget *page_5;
     QLineEdit *lineEdit_6;
-    QTimeEdit *timeEdit_5;
     QTableView *tableView_2;
     QLineEdit *lineEdit_16;
     QLabel *label_4;
@@ -83,6 +77,7 @@ public:
     QLineEdit *lineEdit_25;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
+    QPushButton *pushButton_10;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -121,9 +116,6 @@ public:
         QFont font2;
         font2.setPointSize(15);
         lineEdit->setFont(font2);
-        timeEdit = new QTimeEdit(page);
-        timeEdit->setObjectName(QStringLiteral("timeEdit"));
-        timeEdit->setGeometry(QRect(780, 0, 121, 26));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
@@ -141,9 +133,6 @@ public:
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(0, 0, 131, 31));
         lineEdit_2->setFont(font2);
-        timeEdit_2 = new QTimeEdit(page_2);
-        timeEdit_2->setObjectName(QStringLiteral("timeEdit_2"));
-        timeEdit_2->setGeometry(QRect(780, 0, 121, 26));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
@@ -158,9 +147,6 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(290, 130, 311, 61));
         label_2->setFont(font3);
-        timeEdit_3 = new QTimeEdit(page_3);
-        timeEdit_3->setObjectName(QStringLiteral("timeEdit_3"));
-        timeEdit_3->setGeometry(QRect(780, 0, 121, 26));
         lineEdit_4 = new QLineEdit(page_3);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
         lineEdit_4->setGeometry(QRect(0, 0, 131, 31));
@@ -183,9 +169,6 @@ public:
         lineEdit_5->setObjectName(QStringLiteral("lineEdit_5"));
         lineEdit_5->setGeometry(QRect(0, 0, 131, 31));
         lineEdit_5->setFont(font2);
-        timeEdit_4 = new QTimeEdit(page_4);
-        timeEdit_4->setObjectName(QStringLiteral("timeEdit_4"));
-        timeEdit_4->setGeometry(QRect(780, 0, 121, 26));
         label_3 = new QLabel(page_4);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(310, 30, 311, 61));
@@ -197,9 +180,6 @@ public:
         lineEdit_6->setObjectName(QStringLiteral("lineEdit_6"));
         lineEdit_6->setGeometry(QRect(0, 0, 131, 31));
         lineEdit_6->setFont(font2);
-        timeEdit_5 = new QTimeEdit(page_5);
-        timeEdit_5->setObjectName(QStringLiteral("timeEdit_5"));
-        timeEdit_5->setGeometry(QRect(780, 0, 121, 26));
         tableView_2 = new QTableView(page_5);
         tableView_2->setObjectName(QStringLiteral("tableView_2"));
         tableView_2->setGeometry(QRect(380, 40, 451, 331));
@@ -270,6 +250,9 @@ public:
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setGeometry(QRect(530, 420, 141, 51));
         pushButton_9->setFont(font);
+        pushButton_10 = new QPushButton(page_5);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+        pushButton_10->setGeometry(QRect(60, 380, 83, 25));
         stackedWidget->addWidget(page_5);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -321,7 +304,8 @@ public:
         label_12->setText(QApplication::translate("MainWindow", "Neutered", Q_NULLPTR));
         label_13->setText(QApplication::translate("MainWindow", "Condition", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("MainWindow", "Save", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        pushButton_9->setText(QApplication::translate("MainWindow", "Homepage", Q_NULLPTR));
+        pushButton_10->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
     } // retranslateUi
 
 };
