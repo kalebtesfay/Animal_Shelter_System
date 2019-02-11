@@ -20,11 +20,12 @@ login::login()
 
 void login::dbClose(){
     db.close();
+    db.removeDatabase(QSqlDatabase::defaultConnection);
 }
 
 bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database");
+    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
 
     if(!db.open()){
         qDebug()<<("FAILED TO OPEN");

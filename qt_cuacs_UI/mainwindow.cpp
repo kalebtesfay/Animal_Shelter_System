@@ -103,17 +103,15 @@ void MainWindow::on_pushButton_8_clicked()
     QString name, type, sex;
     QString age;
     QString height, colour, breed, neutered, condition;
-    //ui->label_4->setText(QString::number(id));
-    id = ui->label_4->text();
-    name = ui->label_5->text();
-    type = ui->label_6->text();
-    sex = ui->label_7->text();
-//    ui->label_8->setText(QString::number(age));
-    age = ui->label_8->text();
-    height = ui->label_9->text();
-    colour = ui->label_10->text();
-    breed = ui->label_11->text();
-    neutered = ui->label_12->text();
+    id        = ui->label_4->text();
+    name      = ui->label_5->text();
+    type      = ui->label_6->text();
+    sex       = ui->label_7->text();
+    age       = ui->label_8->text();
+    height    = ui->label_9->text();
+    colour    = ui->label_10->text();
+    breed     = ui->label_11->text();
+    neutered  = ui->label_12->text();
     condition = ui->label_13->text();
 
     if(!l.dbOpen()){
@@ -122,16 +120,24 @@ void MainWindow::on_pushButton_8_clicked()
     }
     l.dbOpen();
     QSqlQuery q;
-//    q.prepare("insert into ANIMAL (id, name, type, sex, age, height, colour, breed, neutered, condition) values('" +id+ "','"+
-//              name+ "','" +type+ "','" +sex+"','" +age+ "','" +height+ "','" +colour+ "','" +breed+ "','" +
-//              neutered+ "','" +condition+ "')");
-    q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition) values(:id, :name, :type, "
-              ":sex, :age, :height, :colour, :breed, :neutered, :condition)");
+    q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition) values('"+id+"','"+name+"','"+
+              type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"')");
     if(q.exec()){
         QMessageBox::critical(this, tr("Save"), tr("Saved"));
         l.dbClose();
     }else{
         QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
     }
+
+    QSqlQueryModel *model = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from ANIMAL");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_2->setModel(model);
+    l.dbClose();
+    qDebug() << (model->rowCount());
+
 
 }
