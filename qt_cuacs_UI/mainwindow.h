@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QPrinter>
+#include <QPrintDialog>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +22,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QString currFile = "";
+    QPushButton *m_button;
+
+private slots:
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 };
 
 #endif // MAINWINDOW_H
