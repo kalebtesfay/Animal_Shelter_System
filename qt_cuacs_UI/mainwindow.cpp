@@ -103,16 +103,16 @@ void MainWindow::on_pushButton_8_clicked()
     QString name, type, sex;
     QString age;
     QString height, colour, breed, neutered, condition;
-    id        = ui->label_4->text();
-    name      = ui->label_5->text();
-    type      = ui->label_6->text();
-    sex       = ui->label_7->text();
-    age       = ui->label_8->text();
-    height    = ui->label_9->text();
-    colour    = ui->label_10->text();
-    breed     = ui->label_11->text();
-    neutered  = ui->label_12->text();
-    condition = ui->label_13->text();
+    id        = ui->lineEdit_25->text();
+    name      = ui->lineEdit_24->text();
+    type      = ui->lineEdit_23->text();
+    sex       = ui->lineEdit_22->text();
+    age       = ui->lineEdit_21->text();
+    height    = ui->lineEdit_20->text();
+    colour    = ui->lineEdit_19->text();
+    breed     = ui->lineEdit_18->text();
+    neutered  = ui->lineEdit_17->text();
+    condition = ui->lineEdit_16->text();
 
     if(!l.dbOpen()){
         qDebug()<<"FAILED TO OPEN DATABASE";
