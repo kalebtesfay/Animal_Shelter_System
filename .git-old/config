@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = git@github.com:JapinderSandhu/Animal_Shelter_System.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "D1"]
+	remote = origin
+	merge = refs/heads/D1

@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../qt_cuacs_UI -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../qt_cuacs_UI -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = qt_cuacs_UI1.0.0
 DISTDIR = /home/student/COMP3004/Animal_Shelter_System/build-qt_cuacs_UI-Desktop-Debug/.tmp/qt_cuacs_UI1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -55,13 +55,15 @@ SOURCES       = ../qt_cuacs_UI/main.cpp \
 		../qt_cuacs_UI/Animal.cpp \
 		../qt_cuacs_UI/Control.cpp \
 		../qt_cuacs_UI/Shelter.cpp \
-		../qt_cuacs_UI/View.cpp moc_mainwindow.cpp
+		../qt_cuacs_UI/View.cpp \
+		../qt_cuacs_UI/login.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		Animal.o \
 		Control.o \
 		Shelter.o \
 		View.o \
+		login.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -133,6 +135,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		../qt_cuacs_UI/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -157,12 +160,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../qt_cuacs_UI/AnimalList.h \
 		../qt_cuacs_UI/Control.h \
 		../qt_cuacs_UI/Shelter.h \
-		../qt_cuacs_UI/View.h ../qt_cuacs_UI/main.cpp \
+		../qt_cuacs_UI/View.h \
+		../qt_cuacs_UI/login.h ../qt_cuacs_UI/main.cpp \
 		../qt_cuacs_UI/mainwindow.cpp \
 		../qt_cuacs_UI/Animal.cpp \
 		../qt_cuacs_UI/Control.cpp \
 		../qt_cuacs_UI/Shelter.cpp \
-		../qt_cuacs_UI/View.cpp
+		../qt_cuacs_UI/View.cpp \
+		../qt_cuacs_UI/login.cpp
 QMAKE_TARGET  = qt_cuacs_UI
 DESTDIR       = 
 TARGET        = qt_cuacs_UI
@@ -244,6 +249,7 @@ Makefile: ../qt_cuacs_UI/qt_cuacs_UI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
@@ -264,6 +270,7 @@ Makefile: ../qt_cuacs_UI/qt_cuacs_UI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../qt_cuacs_UI/qt_cuacs_UI.pro \
+		/usr/lib/x86_64-linux-gnu/libQt5PrintSupport.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Sql.prl \
@@ -339,6 +346,7 @@ Makefile: ../qt_cuacs_UI/qt_cuacs_UI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
@@ -359,6 +367,7 @@ Makefile: ../qt_cuacs_UI/qt_cuacs_UI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/l
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 ../qt_cuacs_UI/qt_cuacs_UI.pro:
+/usr/lib/x86_64-linux-gnu/libQt5PrintSupport.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Sql.prl:
@@ -378,8 +387,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../qt_cuacs_UI/mainwindow.h ../qt_cuacs_UI/Animal.h ../qt_cuacs_UI/AnimalList.h ../qt_cuacs_UI/Control.h ../qt_cuacs_UI/Shelter.h ../qt_cuacs_UI/View.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../qt_cuacs_UI/main.cpp ../qt_cuacs_UI/mainwindow.cpp ../qt_cuacs_UI/Animal.cpp ../qt_cuacs_UI/Control.cpp ../qt_cuacs_UI/Shelter.cpp ../qt_cuacs_UI/View.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../qt_cuacs_UI/mainwindow.h ../qt_cuacs_UI/Animal.h ../qt_cuacs_UI/AnimalList.h ../qt_cuacs_UI/Control.h ../qt_cuacs_UI/Shelter.h ../qt_cuacs_UI/View.h ../qt_cuacs_UI/login.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../qt_cuacs_UI/main.cpp ../qt_cuacs_UI/mainwindow.cpp ../qt_cuacs_UI/Animal.cpp ../qt_cuacs_UI/Control.cpp ../qt_cuacs_UI/Shelter.cpp ../qt_cuacs_UI/View.cpp ../qt_cuacs_UI/login.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../qt_cuacs_UI/mainwindow.ui $(DISTDIR)/
 
 
@@ -418,7 +427,7 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../qt_cuacs_UI/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../qt_cuacs_UI/mainwindow.h -o moc_mainwindow.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../qt_cuacs_UI/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -439,11 +448,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-main.o: ../qt_cuacs_UI/main.cpp ../qt_cuacs_UI/mainwindow.h
+main.o: ../qt_cuacs_UI/main.cpp ../qt_cuacs_UI/mainwindow.h \
+		../qt_cuacs_UI/Control.h \
+		../qt_cuacs_UI/View.h \
+		../qt_cuacs_UI/Shelter.h \
+		../qt_cuacs_UI/AnimalList.h \
+		../qt_cuacs_UI/Animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../qt_cuacs_UI/main.cpp
 
 mainwindow.o: ../qt_cuacs_UI/mainwindow.cpp ../qt_cuacs_UI/mainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../qt_cuacs_UI/login.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../qt_cuacs_UI/mainwindow.cpp
 
 Animal.o: ../qt_cuacs_UI/Animal.cpp ../qt_cuacs_UI/Animal.h
@@ -466,6 +481,9 @@ View.o: ../qt_cuacs_UI/View.cpp ../qt_cuacs_UI/View.h \
 		../qt_cuacs_UI/AnimalList.h \
 		../qt_cuacs_UI/Animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View.o ../qt_cuacs_UI/View.cpp
+
+login.o: ../qt_cuacs_UI/login.cpp ../qt_cuacs_UI/login.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o ../qt_cuacs_UI/login.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
