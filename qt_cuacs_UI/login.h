@@ -20,6 +20,7 @@ public:
     QSqlDatabase db;
     void dbClose();
     bool dbOpen();
+    void dbLaunch();
 };
 
 #endif // LOGIN_H

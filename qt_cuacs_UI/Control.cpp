@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include <string>
+#include <QString>
 #include <QCoreApplication>
 #include <QtSql>
 #include <QSqlDatabase>
@@ -15,43 +15,9 @@ using namespace std;
 
 Control::Control(){}
 
-void Control::launch(){
-    Animal *newAnimal;
-    int choice, choiceTwo;
-    int id, age;
-    string name, type, sex, height, colour, breed, neutered, condition;
-
-    while(1){
-        choice = -1;
-        view.mainMenu(choice);
-        if(choice == 0){
-            break;
-        }
-        else if(choice == 1){
-            choiceTwo = -1;
-            cout<<"Welcome Staff!"<< endl;
-            view.staffMenu(choiceTwo);
-            if(choiceTwo == 1){
-                dbLaunch();
-                view.printShelter(shelter);
-            }else if(choiceTwo == 2){
-                view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
-                newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
-                shelter.add(newAnimal);
-            }
-        }else if(choice == 2){
-            cout<<"Welcome Client!"<<endl;
-        }
-    }
-    cout<<" "<<endl;
-    cout<<"DATABASE"<<endl;
-    dbLaunch();
-    view.printShelter(shelter);
-}
-
 void Control::dbLaunch(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database");
+    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
 
     if(db.open()){
         qDebug() << "DB CONNECTED";
@@ -59,44 +25,44 @@ void Control::dbLaunch(){
         qDebug() << "DB NOT CONNECTED" << db.lastError();
     }
 
-    QSqlQuery query("CREATE TABLE ANIMAL(id INTEGER PRIMARY KEY, name TEXT NOT NULL,type TEXT NOT NULL, sex TEXT NOT NULL, age INT, height TEXT NOT NULL, colour TEXT NOT NULL, breed TEXT NOT NULL, neutered TEXT NOT NULL, condition TEXT NOT NULL)");
+    QSqlQuery query("CREATE TABLE ANIMAL(id TEXT PRIMARY KEY, name TEXT, type TEXT, sex TEXT, age TEXT, height TEXT, colour TEXT, breed TEXT, neutered TEXT, condition TEXT)");
     QSqlQuery insertToAnimal;
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
-                     "values(1, 'Rex', 'Dog', 'Male', 2, '50cm', 'Black', 'Pitbull', 'No', 'Healthy')");
+                     "values('1', 'Rex', 'Dog', 'Male', '2', '50cm', 'Black', 'Pitbull', 'No', 'Healthy')");
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
-                     "values(2, 'Daisy', 'Dog', 'Female', 1, '30cm', 'Orange', 'Boxer', 'Yes', 'Healthy')");
+                     "values('2', 'Daisy', 'Dog', 'Female', '1', '30cm', 'Orange', 'Boxer', 'Yes', 'Healthy')");
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
-                     "values(3, 'Coco', 'Cat', 'Female', 6, '20cm', 'Brown', 'Persian', 'Yes', 'Not Healthy')");
+                     "values('3', 'Coco', 'Cat', 'Female', '6', '20cm', 'Brown', 'Persian', 'Yes', 'Not Healthy')");
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
-                     "values(4, 'Jack', 'Cat', 'Male', 5, '10cm', 'White', 'Ragdoll', 'Yes', 'Healthy')");
+                     "values('4', 'Jack', 'Cat', 'Male', '5', '10cm', 'White', 'Ragdoll', 'Yes', 'Healthy')");
     insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition)"
-                     "values(5, 'Gus', 'Hamster', 'Male', 1, '6cm', 'Brown', 'Chinese', 'Yes', 'Healthy')");
+                     "values('5', 'Gus', 'Hamster', 'Male', '1', '6cm', 'Brown', 'Chinese', 'Yes', 'Healthy')");
 
-    QSqlQuery query2("CREATE TABLE STAFF(id INTEGER PRIMARY KEY, name TEXT NOT NULL)");
+    QSqlQuery query2("CREATE TABLE STAFF(id TEXT PRIMARY KEY, name TEXT)");
     QSqlQuery insertToStaff;
     insertToStaff.exec("insert into STAFF(id, name)"
-                     "values(1, 'Kaleb Tesfay')");
+                     "values('1', 'Kaleb Tesfay')");
     insertToStaff.exec("insert into STAFF(id, name)"
-                     "values(2, 'Adam Farah')");
+                     "values('2', 'Adam Farah')");
     insertToStaff.exec("insert into STAFF(id, name)"
-                     "values(3, 'Japi Sandhu')");
+                     "values('3', 'Japi Sandhu')");
     insertToStaff.exec("insert into STAFF(id, name)"
-                     "values(4, 'Lauryn Esparza')");
+                     "values('4', 'Lauryn Esparza')");
     insertToStaff.exec("insert into STAFF(id, name)"
-                     "values(5, 'Jaiden Kelly')");
+                     "values('5', 'Jaiden Kelly')");
 
-    QSqlQuery query3("CREATE TABLE CLIENT(id INTEGER PRIMARY KEY, name TEXT NOT NULL, address TEXT NOT NULL)");
+    QSqlQuery query3("CREATE TABLE CLIENT(id TEXT PRIMARY KEY, name TEXT, address TEXT)");
     QSqlQuery insertToClient;
     insertToClient.exec("insert into CLIENT(id, name, address)"
-                      "values(1, 'Wilfred James', '3670 Glory Road')");
+                      "values('1', 'Wilfred James', '3670 Glory Road')");
     insertToClient.exec("insert into CLIENT(id, name, address)"
-                      "values(2, 'Mona Lane', '2257 Berry Street')");
+                      "values('2', 'Mona Lane', '2257 Berry Street')");
     insertToClient.exec("insert into CLIENT(id, name, address)"
-                      "values(3, 'Steve Blake', '3441 Cemetery Street')");
+                      "values('3', 'Steve Blake', '3441 Cemetery Street')");
     insertToClient.exec("insert into CLIENT(id, name, address)"
-                      "values(4, 'Josh Rich', '2795 Green Hill Road')");
+                      "values('4', 'Josh Rich', '2795 Green Hill Road')");
     insertToClient.exec("insert into CLIENT(id, name, address)"
-                      "values(5, 'Marlee Sparks', '4162 Adams Drive')");
+                      "values('5', 'Marlee Sparks', '4162 Adams Drive')");
 
     QSqlQuery q;
     q.exec("SELECT * FROM ANIMAL");

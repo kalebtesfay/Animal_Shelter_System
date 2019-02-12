@@ -21,12 +21,10 @@ class Control
 {
   public:
     Control();
-    void launch();
     void dbLaunch();
 
   private:
-    View view;
-    Shelter shelter;
+
 };
 
 #endif

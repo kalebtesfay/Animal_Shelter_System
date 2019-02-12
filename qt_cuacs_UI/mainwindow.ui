@@ -99,16 +99,6 @@
        <string>4our People</string>
       </property>
      </widget>
-     <widget class="QTimeEdit" name="timeEdit">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>0</y>
-        <width>121</width>
-        <height>26</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QPushButton" name="pushButton_7">
@@ -165,16 +155,6 @@
        <string>4our People</string>
       </property>
      </widget>
-     <widget class="QTimeEdit" name="timeEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>0</y>
-        <width>121</width>
-        <height>26</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QPushButton" name="pushButton">
@@ -224,16 +204,6 @@
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QTimeEdit" name="timeEdit_3">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>0</y>
-        <width>121</width>
-        <height>26</height>
-       </rect>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_4">
@@ -320,16 +290,6 @@
        <string>4our People</string>
       </property>
      </widget>
-     <widget class="QTimeEdit" name="timeEdit_4">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>0</y>
-        <width>121</width>
-        <height>26</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
@@ -366,16 +326,6 @@
       </property>
       <property name="text">
        <string>4our People</string>
-      </property>
-     </widget>
-     <widget class="QTimeEdit" name="timeEdit_5">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>0</y>
-        <width>121</width>
-        <height>26</height>
-       </rect>
       </property>
      </widget>
      <widget class="QTableView" name="tableView_2">
@@ -644,6 +594,19 @@
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="text">
+       <string>Homepage</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>380</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
       </property>
       <property name="text">
        <string>Back</string>

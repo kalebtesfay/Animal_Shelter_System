@@ -1,42 +1,38 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-#include <string>
+#include <QPrintDialog>
+#include <QString>
+#include <QDebug>
 
 
 class Animal
 {
 public:
-    Animal(int, string, string, string, int, string, string, string, string, string);
+    Animal(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString);
     ~Animal();
-    int getId();
-    string getName();
-    string getType();
-    string getSex();
-    int getAge();
-    string getHeight();
-    string getColour();
-    string getBreed();
-    string getNeutered();
-    string getCondition();
+    QString getId();
+    QString getName();
+    QString getType();
+    QString getSex();
+    QString getAge();
+    QString getHeight();
+    QString getColour();
+    QString getBreed();
+    QString getNeutered();
+    QString getCondition();
     void print();
 
-
-
 private:
-    int id;
-    string name;
-    string type;
-    string sex;
-    int age;
-    string height;
-    string colour;
-    string breed;
-    string neutered;
-    string condition;
-
-
-
-
+    QString id;
+    QString name;
+    QString type;
+    QString sex;
+    QString age;
+    QString height;
+    QString colour;
+    QString breed;
+    QString neutered;
+    QString condition;
 
 };
 
