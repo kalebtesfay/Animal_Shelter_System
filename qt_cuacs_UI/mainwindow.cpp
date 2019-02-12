@@ -118,7 +118,6 @@ void MainWindow::on_pushButton_8_clicked()
         return;
     }
     Animal *newAnimal;
-    //view.readInfo(id, name, type, sex, age, height, colour, breed, neutered, condition);
     newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
     shelter.add(newAnimal);
 
@@ -144,7 +143,6 @@ void MainWindow::on_pushButton_8_clicked()
     qDebug() << "There is:" << (model->rowCount()) << "Animals in the database now.";
 
     l.dbLaunch();
-    view.printShelter(shelter);
 
 }
 
@@ -156,8 +154,4 @@ void MainWindow::on_pushButton_10_clicked()
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::addToLinkedList(){
-
 }
