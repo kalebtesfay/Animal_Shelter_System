@@ -2,19 +2,19 @@
 # 4our People
 
 @authors
-Kaleb Tesfay    | 101048170
-Adam Farah      | 100966918
-Japinder Sandhu | 101021899
+<br/>Kaleb Tesfay    | 101048170
+<br/>Adam Farah      | 100966918
+<br/>Japinder Sandhu | 101021899
 
 Professor. Christine Laurendeau
 
 ************************
-A message from author's:
+<center>A message from author's:</center>
 	Coded with :heart:,	  
 ************************
 
 Purpose of Deliverable:<br/>
-	- The purpose of this Deliverable is to implement the following features
+	- The purpose of this Deliverable is to implement the following features:
     <br/>- Staff<br/>
       <br/>- View Animals
         - Allows the Staff to view all the animals in the Database.
