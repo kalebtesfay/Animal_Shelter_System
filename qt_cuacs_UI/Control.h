@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 #include <QCoreApplication>
-#include <QtSql>
+#include <QSql>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>

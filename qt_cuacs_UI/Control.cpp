@@ -3,7 +3,7 @@
 #include <sstream>
 #include <QString>
 #include <QCoreApplication>
-#include <QtSql>
+#include <QSql>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>

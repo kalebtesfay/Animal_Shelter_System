@@ -11,7 +11,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
-#include <QMainWindow>
+//#include <QMainWindow>
 
 class login
 {
