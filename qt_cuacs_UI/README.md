@@ -15,7 +15,7 @@ A message from author's:<br/>
 
 Purpose of Deliverable:<br/>
 	<p>- The purpose of this Deliverable is to implement the following features:</p>
-    <p>- Staff<br/></p>
+    <p><p>- Staff<br/></p></p>
       - View Animals<br/>
         - Allows the Staff to view all the animals in the Database.<br/>
       - Add Animal<br/>
