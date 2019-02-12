@@ -13,10 +13,10 @@ A message from author's:
 	Coded with :heart:,	  
 ************************
 
-Purpose of Deliverable:
+Purpose of Deliverable:<br/>
 	- The purpose of this Deliverable is to implement the following features
-    - Staff
-      - View Animals
+    <br/>- Staff<br/>
+      <br/>- View Animals
         - Allows the Staff to view all the animals in the Database.
       - Add Animal
         - Allows the Staff to add animals to the Database.
