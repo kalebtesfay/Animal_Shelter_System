@@ -41,17 +41,16 @@ QT_MOC_LITERAL(6, 106, 23), // "on_pushButton_5_clicked"
 QT_MOC_LITERAL(7, 130, 23), // "on_pushButton_6_clicked"
 QT_MOC_LITERAL(8, 154, 23), // "on_pushButton_7_clicked"
 QT_MOC_LITERAL(9, 178, 23), // "on_pushButton_8_clicked"
-QT_MOC_LITERAL(10, 202, 24), // "on_pushButton_10_clicked"
-QT_MOC_LITERAL(11, 227, 23) // "on_pushButton_9_clicked"
+QT_MOC_LITERAL(10, 202, 23), // "on_pushButton_9_clicked"
+QT_MOC_LITERAL(11, 226, 24) // "on_pushButton_10_clicked"
 
     },
     "MainWindow\0on_pushButton_clicked\0\0"
     "on_pushButton_2_clicked\0on_pushButton_3_clicked\0"
     "on_pushButton_4_clicked\0on_pushButton_5_clicked\0"
     "on_pushButton_6_clicked\0on_pushButton_7_clicked\0"
-    "on_pushButton_8_clicked\0"
-    "on_pushButton_10_clicked\0"
-    "on_pushButton_9_clicked"
+    "on_pushButton_8_clicked\0on_pushButton_9_clicked\0"
+    "on_pushButton_10_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -109,8 +108,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->on_pushButton_6_clicked(); break;
         case 6: _t->on_pushButton_7_clicked(); break;
         case 7: _t->on_pushButton_8_clicked(); break;
-        case 8: _t->on_pushButton_10_clicked(); break;
-        case 9: _t->on_pushButton_9_clicked(); break;
+        case 8: _t->on_pushButton_9_clicked(); break;
+        case 9: _t->on_pushButton_10_clicked(); break;
         default: ;
         }
     }

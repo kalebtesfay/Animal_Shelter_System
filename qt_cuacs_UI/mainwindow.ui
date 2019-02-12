@@ -63,13 +63,13 @@
        <string>Staff</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>140</y>
+        <y>160</y>
         <width>221</width>
-        <height>61</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -81,13 +81,13 @@
        <string>cuACS</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>131</width>
-        <height>31</height>
+        <width>121</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -137,13 +137,13 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>131</width>
-        <height>31</height>
+        <width>121</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -206,13 +206,13 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>131</width>
-        <height>31</height>
+        <width>121</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -272,24 +272,6 @@
        <string>Homepage</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>4our People</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
@@ -308,15 +290,13 @@
        <string/>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="page_5">
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>131</width>
-        <height>31</height>
+        <width>121</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -328,6 +308,8 @@
        <string>4our People</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
      <widget class="QTableView" name="tableView_2">
       <property name="geometry">
        <rect>
@@ -610,6 +592,24 @@
       </property>
       <property name="text">
        <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>4our People</string>
       </property>
      </widget>
     </widget>
