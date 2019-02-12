@@ -11,6 +11,8 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
+#include "AnimalList.h"
+#include "Shelter.h"
 //#include <QMainWindow>
 
 class login
@@ -21,6 +23,8 @@ public:
     void dbClose();
     bool dbOpen();
     void dbLaunch();
+private:
+    Shelter s;
 };
 
 #endif // LOGIN_H
