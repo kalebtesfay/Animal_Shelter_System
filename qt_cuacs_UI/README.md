@@ -14,7 +14,7 @@ A message from author's:<br/>
 ************************
 
 Purpose of Deliverable:<br/>
-	&nbsp;&nbsp;- The purpose of this Deliverable is to implement the following features:
+	&nbsp;&nbsp;- The purpose of this Deliverable is to implement the following features:<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;- Staff<br/>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View Animals<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Allows the Staff to view all the animals in the Database.<br/>
@@ -22,61 +22,61 @@ Purpose of Deliverable:<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Allows the Staff to add animals to the Database.<br/>
 
 List of Source/Header/Data File:<br/>
-	- This folder contains 22 files (not counting the README) and 1 Folder<br/>
-		- Task: Programming Implementations<br/>
-      - 1 Folder<br/>
-        - database<br/>
-          - database.db<br/>
-            - Database file for the project.<br/>
-			- 1 .pro file.<br/>
-        - qt_cuacs_UI.pro<br/>
-          - QT implemented file that is in charge of setting up startup options.<br/>
-      - 1 .pro.user file.<br/>
-        - qt_cuacs_UI.pro.user<br/>
-          - QT implemented file.<br/>
-      - 1 .ui file.<br/>
-        - mainwindow.ui<br/>
-          - In charge of Client-side/Front-end.<br/>
-      - 1 .ui.autosave file.<br/>
-        - mainwindow.ui.autosave<br/>
-          - QT implemented file which is a back-up.<br/>
-			- 7 .cpp files.<br/>
-				- Animal.cpp<br/>
-					- Getter and Setter Methods for Animal objects.<br/>
-        - Control.cpp<br/>
-					- Implemented this class to create the Database file.<br/>
-        - login.cpp<br/>
-					- Connects the Database to the application.<br/>
-        - Shelter.cpp<br/>
-					-  Bridges the program so it can store added animals.<br/>
-				- View.cpp<br/>
-					- Prints the stored animals for debugging reasons.<br/>
-        - main.cpp<br/>
-  				- main() class for the program.<br/>
-  			- mainwindow.cpp<br/>
-  				- In charge of Server-side/Back-end calling so buttons can operate with other classes.<br/>
-			- 6 .h files.<br/>
-        - Animal.h<br/>
-          - Header file for Animal class.<br/>
-        - AnimalList.h<br/>
-          - Template class for storing Animals in a Linked List.<br/>
-        - Control.h<br/>
-          - Header file for Control class.<br/>
-        - login.h<br/>
-          - Header file for login class.<br/>
-        - Shelter.h<br/>
-          - Header file for Shelter class.<br/>
-        - View.h<br/>
-          - Header file for View class.<br/>
-        - mainwindow.h<br/>
-          - Header file for for mainwindow class.<br/>
-			- 1 makefile<br/>
-				- Makefile<br/>
-					- Typing make in cmd line...<br/>
-						- This compiles all the programs at once.<br/>
-							- Compiles all the programs and creates their appropriate object files.<br/>
-							- Combines all object files to one.<br/>
-								- Creates qt_cuacs_UI object file.<br/>
+	&nbsp;&nbsp;- This folder contains 22 files (not counting the README) and 1 Folder<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;- Task: Programming Implementations<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 Folder<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- database<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- database.db<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Database file for the project.<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 .pro file.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- qt_cuacs_UI.pro<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- QT implemented file that is in charge of setting up startup options.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 .pro.user file.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- qt_cuacs_UI.pro.user<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- QT implemented file.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 .ui file.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mainwindow.ui<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In charge of Client-side/Front-end.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 .ui.autosave file.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mainwindow.ui.autosave<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- QT implemented file which is a back-up.<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 7 .cpp files.<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Animal.cpp<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Getter and Setter Methods for Animal objects.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Control.cpp<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Implemented this class to create the Database file.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- login.cpp<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Connects the Database to the application.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Shelter.cpp<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-  Bridges the program so it can store added animals.<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View.cpp<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Prints the stored animals for debugging reasons.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- main.cpp<br/>
+  				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- main() class for the program.<br/>
+  			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mainwindow.cpp<br/>
+  				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- In charge of Server-side/Back-end calling so buttons can operate with other classes.<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 6 .h files.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Animal.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for Animal class.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- AnimalList.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Template class for storing Animals in a Linked List.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Control.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for Control class.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- login.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for login class.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Shelter.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for Shelter class.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for View class.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- mainwindow.h<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Header file for for mainwindow class.<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 1 makefile<br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Makefile<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Typing make in cmd line...<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- This compiles all the programs at once.<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Compiles all the programs and creates their appropriate object files.<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Combines all object files to one.<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Creates qt_cuacs_UI object file.<br/>
 
 Compilation Cmd:<br/>
 	- To compile, you'll need to access the respected directory all the files are located in via Terminal.<br/>
