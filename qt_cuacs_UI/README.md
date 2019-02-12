@@ -83,7 +83,7 @@ Compilation Cmd:<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;- Make sure the folder is in the Downloads Section of your local Linux Operating System.<br/>
   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Once you are in the respected directory, you'll need to do the following.<br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- untar the file<br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- tar -xvf filename.tar<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- tar -xvf cuACS.tar<br/>
   			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Run make<br/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- make<br/>
   		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Once you ran make, it'll create an updated version of all the object files.<br/>
