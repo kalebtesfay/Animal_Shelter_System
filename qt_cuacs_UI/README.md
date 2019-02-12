@@ -94,25 +94,25 @@ Compilation Cmd:<br/>
 
 
 Lanching and Operating Instructions:<br/>
-	- Once the code is ran...<br/>
-		- A UI representation of our application will pop up.<br/>
-      - There will be two options the user will be able to do.<br/>
-        - Click Client<br/>
-          - Directs the user to the Client Page which only has a Back button.<br/>
-            - For the purpose of this Deliverable, the Client Page will do nothing.<br/>
-        - Click Staff<br/>
-          - Directs the user to a Page that has a View Animals and Add Animal button.<br/>
-            - Click View Animals<br/>
-              - Directs user to a page that showcases everything that is in the database.<br/>
-                - Click Back<br/>
-                  - Directs user back to Staff page.<br/>
-                - Click Homepage<br/>
-                  - Directs user back to Homepage.<br/>
-            - Click Add Animal<br/>
-              - Directs user a page where the user can add animals to the database.<br/>
-                - Click Save<br/>
-                  - Adds the animal inputted to the database.<br/>
-                - Click Back<br/>
-                  - Directs user back to Staff page.<br/>
-                - Click Homepage<br/>
-                  - Directs user back to Homepage.<br/>
+	&nbsp;&nbsp;- Once the code is ran...<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;- A UI representation of our application will pop up.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- There will be two options the user will be able to do.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Client<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs the user to the Client Page which only has a Back button.<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- For the purpose of this Deliverable, the Client Page will do nothing.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Staff<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs the user to a Page that has a View Animals and Add Animal button.<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click View Animals<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user to a page that showcases everything that is in the database.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Back<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user back to Staff page.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Homepage<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user back to Homepage.<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Add Animal<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user a page where the user can add animals to the database.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Save<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Adds the animal inputted to the database.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Back<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user back to Staff page.<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Click Homepage<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Directs user back to Homepage.<br/>
