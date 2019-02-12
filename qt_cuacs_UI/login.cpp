@@ -63,6 +63,14 @@ void login::dbLaunch(){
         QString breed = qu.value(7).toString();
         QString neutered = qu.value(8).toString();
         QString condition= qu.value(9).toString();
+        /*
+         * Dynamically Allocates the Database first
+         *          Entries into Memory
+         *            (Linked List)
+         */
+        Animal *newAnimal;
+        newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+        s.add(newAnimal);
 
         qDebug().noquote() << "id:        " << id;
         qDebug().noquote() << "name:      " << name;
