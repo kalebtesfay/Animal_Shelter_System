@@ -31,7 +31,7 @@ bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
     if(!db.open()){
-        qDebug() << ("FAILED TO CONNECT");
+        qDebug() << ("FAILS TO CONNECT");
         return false;
     }else{
         qDebug() << ("DATABASE CONNECTED");
