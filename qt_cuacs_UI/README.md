@@ -14,12 +14,12 @@ A message from author's:<br/>
 ************************
 
 Purpose of Deliverable:<br/>
-	<p>- The purpose of this Deliverable is to implement the following features:</p>
-    <p><p>- Staff<br/></p></p>
-      - View Animals<br/>
-        - Allows the Staff to view all the animals in the Database.<br/>
-      - Add Animal<br/>
-        - Allows the Staff to add animals to the Database.<br/>
+	&nbsp;&nbsp;- The purpose of this Deliverable is to implement the following features:
+    &nbsp;&nbsp;&nbsp;&nbsp;- Staff<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View Animals<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Allows the Staff to view all the animals in the Database.<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Add Animal<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Allows the Staff to add animals to the Database.<br/>
 
 List of Source/Header/Data File:<br/>
 	- This folder contains 22 files (not counting the README) and 1 Folder<br/>
