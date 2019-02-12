@@ -38,6 +38,10 @@ void Animal::print(){
     //cout <<""<<endl;
 
 }
+
+/*
+ * getters for all attributes.
+ */
 QString Animal::getId(){
     return id;
 }

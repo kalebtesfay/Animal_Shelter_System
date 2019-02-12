@@ -49,7 +49,10 @@ AnimalList<T>::~AnimalList(){
 
     }
 }
-
+/*
+ * Add function for linked list
+ * Adds to the back
+ */
 template<class T>
 void AnimalList<T>::add(T a){
   Node<T>*currNode;

@@ -5,6 +5,7 @@
 #include <QCoreApplication>
 #include <QtSql>
 #include <QSqlDatabase>
+#include <QSql>
 #include <QString>
 #include <QSqlDriver>
 #include <QSqlError>
@@ -32,7 +33,7 @@ bool login::dbOpen(){
     //QString prefix = "/home/.../.../qt_cuacs_UI/database";
 //    QString db_path = QDir::currentPath();
 //    qDebug() << db_path;
-//    db_path = db_path + QString("/database");
+//    db_path = db_path + QString("/database/database.db");
 //    db.setDatabaseName(db_path);
 
     if(!db.open()){
