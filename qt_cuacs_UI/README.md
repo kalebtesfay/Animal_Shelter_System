@@ -79,18 +79,18 @@ List of Source/Header/Data File:<br/>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Creates qt_cuacs_UI object file.<br/>
 
 Compilation Cmd:<br/>
-	- To compile, you'll need to access the respected directory all the files are located in via Terminal.<br/>
-    - Make sure the folder is in the Downloads Section of your local Linux Operating System.<br/>
-  		- Once you are in the respected directory, you'll need to do the following.<br/>
-        - untar the file<br/>
-          - tar -xvf filename.tar<br/>
-  			- Run make<br/>
-          - make<br/>
-  		  - Once you ran make, it'll create an updated version of all the object files.<br/>
-  			- It'll create a big object file called qt_cuacs_UI, which is all the program's object files
+	&nbsp;&nbsp;- To compile, you'll need to access the respected directory all the files are located in via Terminal.<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;- Make sure the folder is in the Downloads Section of your local Linux Operating System.<br/>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Once you are in the respected directory, you'll need to do the following.<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- untar the file<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- tar -xvf filename.tar<br/>
+  			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Run make<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- make<br/>
+  		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Once you ran make, it'll create an updated version of all the object files.<br/>
+  			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- It'll create a big object file called qt_cuacs_UI, which is all the program's object files
   			into one.<br/>
-          - Run...<br/>
-            - ./qt_cuacs_UI<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Run...<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ./qt_cuacs_UI<br/>
 
 
 Lanching and Operating Instructions:<br/>
