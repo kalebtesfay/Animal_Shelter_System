@@ -3,7 +3,7 @@
 #include <sstream>
 #include <QString>
 #include <QCoreApplication>
-#include <QtSql>
+#include <QSql>
 #include <QSqlDatabase>
 #include <QSqlDriver>
 #include <QSqlError>
@@ -15,6 +15,10 @@ using namespace std;
 
 Control::Control(){}
 
+/*
+ * Class used to first
+ * generate the database.
+ */
 void Control::dbLaunch(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");

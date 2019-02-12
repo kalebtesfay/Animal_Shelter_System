@@ -5,10 +5,14 @@
 #include <QCoreApplication>
 #include <QtSql>
 #include <QSqlDatabase>
+#include <QSql>
+#include <QString>
 #include <QSqlDriver>
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QFile>
+#include <QDir>
 #include <QMainWindow>
 #include "login.h"
 
@@ -26,12 +30,11 @@ void login::dbClose(){
 bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
-
     if(!db.open()){
-        qDebug()<<("FAILED TO OPEN");
+        qDebug() << ("FAILS TO CONNECT");
         return false;
     }else{
-        qDebug()<<("DATABASE CONNECTED");
+        qDebug() << ("DATABASE CONNECTED");
         return true;
     }
 
@@ -40,7 +43,6 @@ bool login::dbOpen(){
 void login::dbLaunch(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
-
     if(db.open()){
         qDebug() << "DB CONNECTED";
     }else{

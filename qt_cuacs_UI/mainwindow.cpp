@@ -16,7 +16,10 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/*
+ * View Animals Button for
+ *        Staff
+ */
 void MainWindow::on_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
@@ -33,7 +36,10 @@ void MainWindow::on_pushButton_clicked()
     c.dbClose();
     qDebug() << (model->rowCount());
 }
-
+/*
+ * Add Animals Button for
+ *        Staff
+ */
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
@@ -57,43 +63,54 @@ void MainWindow::on_pushButton_2_clicked()
     ui->tableView_2->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
-
 }
-
+/*
+ * Staff Page
+ */
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
     ui->label_2->setText("Welcome Staff!");
     ui->label_2->setStyleSheet("color: rgb(128,0,0)");
 }
-
+/*
+ * Client Page
+ */
 void MainWindow::on_pushButton_4_clicked()
 {
     ui->label->setText("Welcome Client!");
     ui->label->setStyleSheet("color: rgb(128,0,0)");
     ui->stackedWidget->setCurrentIndex(1);
-
 }
-
+/*
+ * Back Button for
+ *  View Animals
+ */
 void MainWindow::on_pushButton_5_clicked()
 {
-    //Back
     ui->stackedWidget->setCurrentIndex(2);
-
 }
-
+/*
+ * Homepage Button for
+ *    View Animals
+ */
 void MainWindow::on_pushButton_6_clicked()
 {
-    //Next
     ui->stackedWidget->setCurrentIndex(0);
 }
-
+/*
+ * Back Button for
+ *     Client
+ */
 void MainWindow::on_pushButton_7_clicked()
 {
-    //Homepage
    ui->stackedWidget->setCurrentIndex(0);
 }
-
+/*
+ * Save Button in Staff (Add Animal)
+ * Stores an Animal in Memory and
+ *          Database.
+ */
 void MainWindow::on_pushButton_8_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
@@ -117,21 +134,33 @@ void MainWindow::on_pushButton_8_clicked()
         qDebug()<<"FAILED TO OPEN DATABASE";
         return;
     }
+    /*
+     * Create an Animal Object for User Input
+     *     and stores it in Memory
+     *         (Linked List).
+     */
     Animal *newAnimal;
     newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
     shelter.add(newAnimal);
-
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
     l.dbOpen();
     QSqlQuery q;
     q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition) values('"+id+"','"+name+"','"+
               type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"')");
     if(q.exec()){
+        //Message for User if Animal is added.
         QMessageBox::critical(this, tr("Save"), tr("Inserted!"));
         l.dbClose();
     }else{
         QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
     }
-
+    /*
+     * Print Updated
+     *   Database.
+     */
     QSqlQueryModel *model = new QSqlQueryModel();
     l.dbOpen();
     QSqlQuery *que = new QSqlQuery(l.db);
@@ -145,12 +174,18 @@ void MainWindow::on_pushButton_8_clicked()
     l.dbLaunch();
 
 }
-
+/*
+ * Back Button for
+ *  Add Animals
+ */
 void MainWindow::on_pushButton_10_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
-
+/*
+ * Homepage Button for
+ *    Add Animals
+ */
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);

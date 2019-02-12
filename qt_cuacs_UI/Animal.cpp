@@ -35,9 +35,13 @@ void Animal::print(){
     qDebug().noquote() << "breed:      " << breed;
     qDebug().noquote() << "neutered:   " << neutered;
     qDebug().noquote() << "condition:  " << condition;
-    //cout <<""<<endl;
+    qDebug().noquote() << "            ";
 
 }
+
+/*
+ * getters for all attributes.
+ */
 QString Animal::getId(){
     return id;
 }

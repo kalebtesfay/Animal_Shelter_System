@@ -1,6 +1,5 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
-#include <QPrintDialog>
 #include <QString>
 #include <QDebug>
 
