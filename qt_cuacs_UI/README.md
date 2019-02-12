@@ -9,13 +9,13 @@
 Professor. Christine Laurendeau
 
 ************************
-A message from author's:
+A message from author's:<br/>
 	Coded with :heart:,	  
 ************************
 
 Purpose of Deliverable:<br/>
-	- The purpose of this Deliverable is to implement the following features:
-    - Staff<br/>
+	<p>- The purpose of this Deliverable is to implement the following features:</p>
+    <p>- Staff<br/></p>
       - View Animals<br/>
         - Allows the Staff to view all the animals in the Database.<br/>
       - Add Animal<br/>
