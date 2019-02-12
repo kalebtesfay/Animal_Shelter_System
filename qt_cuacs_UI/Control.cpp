@@ -16,7 +16,8 @@ using namespace std;
 Control::Control(){}
 
 /*
- * Class used to first generate the database.
+ * Class used to first
+ * generate the database.
  */
 void Control::dbLaunch(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");

@@ -84,23 +84,23 @@ void MainWindow::on_pushButton_4_clicked()
 }
 /*
  * Back Button for
- *     class
+ *  View Animals
  */
 void MainWindow::on_pushButton_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 /*
- * Next Button for
- *     class
+ * Homepage Button for
+ *    View Animals
  */
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 /*
- * Homepage Button for
- *       class
+ * Back Button for
+ *     Client
  */
 void MainWindow::on_pushButton_7_clicked()
 {
@@ -158,7 +158,8 @@ void MainWindow::on_pushButton_8_clicked()
         QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
     }
     /*
-     * Print Updated Database.
+     * Print Updated
+     *   Database.
      */
     QSqlQueryModel *model = new QSqlQueryModel();
     l.dbOpen();
@@ -173,12 +174,18 @@ void MainWindow::on_pushButton_8_clicked()
     l.dbLaunch();
 
 }
-
+/*
+ * Back Button for
+ *  Add Animals
+ */
 void MainWindow::on_pushButton_10_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
-
+/*
+ * Homepage Button for
+ *    Add Animals
+ */
 void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
