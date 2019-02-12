@@ -30,17 +30,11 @@ void login::dbClose(){
 bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
-    //QString prefix = "/home/.../.../qt_cuacs_UI/database";
-//    QString db_path = QDir::currentPath();
-//    qDebug() << db_path;
-//    db_path = db_path + QString("/database/database.db");
-//    db.setDatabaseName(db_path);
-
     if(!db.open()){
-        qDebug()<<("FAILED TO OPEN");
+        qDebug() << ("FAILED TO CONNECT");
         return false;
     }else{
-        qDebug()<<("DATABASE CONNECTED");
+        qDebug() << ("DATABASE CONNECTED");
         return true;
     }
 
@@ -49,11 +43,6 @@ bool login::dbOpen(){
 void login::dbLaunch(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
-    //db.setDatabaseName("/home/.../.../Animal_Shelter_System/qt_cuacs_UI/database/database.db");
-//    QString db_path = QDir::currentPath();
-//    db_path = db_path + QString("/database/database.db");
-//    db.setDatabaseName(db_path);
-
     if(db.open()){
         qDebug() << "DB CONNECTED";
     }else{
