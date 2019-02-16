@@ -21,7 +21,7 @@ Control::Control(){}
  */
 void Control::dbLaunch(){
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("/home/student/COMP3004/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
+    db.setDatabaseName("/home/student/COMP3004/D2/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
 
     if(db.open()){
         qDebug() << "DB CONNECTED";
