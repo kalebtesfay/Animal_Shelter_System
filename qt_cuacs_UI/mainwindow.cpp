@@ -119,6 +119,7 @@ void MainWindow::on_pushButton_8_clicked()
     QString name, type, sex;
     QString age;
     QString height, colour, breed, neutered, condition;
+    QString diet, train;
     id        = ui->lineEdit_25->text();
     name      = ui->lineEdit_24->text();
     type      = ui->lineEdit_23->text();
@@ -129,6 +130,9 @@ void MainWindow::on_pushButton_8_clicked()
     breed     = ui->lineEdit_18->text();
     neutered  = ui->lineEdit_17->text();
     condition = ui->lineEdit_16->text();
+    diet      = ui->lineEdit_26->text();
+    train     = ui->lineEdit_27->text();
+
 
     if(!l.dbOpen()){
         qDebug()<<"FAILED TO OPEN DATABASE";
@@ -140,7 +144,7 @@ void MainWindow::on_pushButton_8_clicked()
      *         (Linked List).
      */
     Animal *newAnimal;
-    newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+    newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train);
     shelter.add(newAnimal);
     /*
      * Store the User Input in the
@@ -148,8 +152,8 @@ void MainWindow::on_pushButton_8_clicked()
      */
     l.dbOpen();
     QSqlQuery q;
-    q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition) values('"+id+"','"+name+"','"+
-              type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"')");
+    q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train) values('"+id+"','"+name+"','"+
+              type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"','"+diet+"','"+train+"')");
     if(q.exec()){
         //Message for User if Animal is added.
         QMessageBox::critical(this, tr("Save"), tr("Inserted!"));

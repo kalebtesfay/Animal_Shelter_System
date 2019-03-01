@@ -8,7 +8,7 @@ using namespace std;
 
 Animal::Animal(QString id, QString name, QString type, QString sex,
                QString age, QString height, QString colour, QString breed,
-               QString neutered, QString condition)
+               QString neutered, QString condition, QString diet, QString train)
 {
     this->id = id;
     this->name = name;
@@ -20,6 +20,8 @@ Animal::Animal(QString id, QString name, QString type, QString sex,
     this->breed = breed;
     this->neutered = neutered;
     this->condition = condition;
+    this->diet = diet;
+    this->train = train;
 
 }
 Animal::~Animal(){}
@@ -35,6 +37,8 @@ void Animal::print(){
     qDebug().noquote() << "breed:      " << breed;
     qDebug().noquote() << "neutered:   " << neutered;
     qDebug().noquote() << "condition:  " << condition;
+    qDebug().noquote() << "diet:       " << breed;
+    qDebug().noquote() << "trained:    " << breed;
     qDebug().noquote() << "            ";
 
 }
@@ -80,4 +84,12 @@ QString Animal::getNeutered(){
 
 QString Animal::getCondition(){
     return condition;
+}
+
+QString Animal::getDiet(){
+    return diet;
+}
+
+QString Animal::getTrain(){
+    return train;
 }

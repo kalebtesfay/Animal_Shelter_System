@@ -7,7 +7,7 @@
 class Animal
 {
 public:
-    Animal(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString);
+    Animal(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString);
     ~Animal();
     QString getId();
     QString getName();
@@ -19,6 +19,8 @@ public:
     QString getBreed();
     QString getNeutered();
     QString getCondition();
+    QString getDiet();
+    QString getTrain();
     void print();
 
 private:
@@ -32,6 +34,8 @@ private:
     QString breed;
     QString neutered;
     QString condition;
+    QString diet;
+    QString train;
 
 };
 

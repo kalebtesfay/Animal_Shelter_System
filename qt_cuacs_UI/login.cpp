@@ -62,14 +62,16 @@ void login::dbLaunch(){
         QString colour = qu.value(6).toString();
         QString breed = qu.value(7).toString();
         QString neutered = qu.value(8).toString();
-        QString condition= qu.value(9).toString();
+        QString condition = qu.value(9).toString();
+        QString diet = qu.value(10).toString();
+        QString train = qu.value(11).toString();
         /*
          * Dynamically Allocates the Database first
          *          Entries into Memory
          *            (Linked List)
          */
         Animal *newAnimal;
-        newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition);
+        newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train);
         s.add(newAnimal);
 
         qDebug().noquote() << "id:        " << id;
@@ -82,6 +84,8 @@ void login::dbLaunch(){
         qDebug().noquote() << "breed:     " << breed;
         qDebug().noquote() << "neutered:  " << neutered;
         qDebug().noquote() << "condition: " << condition;
+        qDebug().noquote() << "diet:      " << diet;
+        qDebug().noquote() << "trained:   " << train;
         qDebug().noquote() << "";
     }
 }
