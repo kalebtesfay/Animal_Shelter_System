@@ -194,3 +194,13 @@ void MainWindow::on_pushButton_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
+/*
+ * Back Button for
+ *  staff login
+ *
+ */
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
