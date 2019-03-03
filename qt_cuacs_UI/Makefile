@@ -38,9 +38,9 @@ DISTNAME      = qt_cuacs_UI1.0.0
 DISTDIR = /home/student/COMP3004/D2/Animal_Shelter_System/qt_cuacs_UI/.tmp/qt_cuacs_UI1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread
+LIBS          = $(SUBLIBS) -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread 
 AR            = ar cqs
-RANLIB        =
+RANLIB        = 
 SED           = sed
 STRIP         = strip
 
@@ -168,14 +168,14 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		Shelter.cpp \
 		View.cpp
 QMAKE_TARGET  = qt_cuacs_UI
-DESTDIR       =
+DESTDIR       = 
 TARGET        = qt_cuacs_UI
 
 
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h $(OBJECTS)
+$(TARGET): ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: qt_cuacs_UI.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -389,13 +389,13 @@ distdir: FORCE
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
-clean: compiler_clean
+clean: compiler_clean 
 	-$(DEL_FILE) $(OBJECTS)
 	-$(DEL_FILE) *~ core *.core
 
 
-distclean: clean
-	-$(DEL_FILE) $(TARGET)
+distclean: clean 
+	-$(DEL_FILE) $(TARGET) 
 	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
@@ -446,7 +446,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean
+compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -495,7 +495,7 @@ View.o: View.cpp View.h \
 		Animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View.o View.cpp
 
-moc_mainwindow.o: moc_mainwindow.cpp
+moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 ####### Install
@@ -505,3 +505,4 @@ install:  FORCE
 uninstall:  FORCE
 
 FORCE:
+

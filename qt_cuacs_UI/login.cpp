@@ -53,39 +53,50 @@ void login::dbLaunch(){
     qu.exec("SELECT * FROM ANIMAL");
 
     while(qu.next()){
-        QString id = qu.value(0).toString();
-        QString name = qu.value(1).toString();
-        QString type = qu.value(2).toString();
-        QString sex = qu.value(3).toString();
-        QString age = qu.value(4).toString();
-        QString height = qu.value(5).toString();
-        QString colour = qu.value(6).toString();
-        QString breed = qu.value(7).toString();
-        QString neutered = qu.value(8).toString();
-        QString condition = qu.value(9).toString();
-        QString diet = qu.value(10).toString();
-        QString train = qu.value(11).toString();
+        QString type = q.value(0).toString();
+        QString breed = q.value(1).toString();
+        QString name = q.value(2).toString();
+        QString sex = q.value(3).toString();
+        QString age = q.value(4).toString();
+        QString social = q.value(5).toString();
+        QString condition = q.value(6).toString();
+        QString diet = q.value(7).toString();
+        QString train = q.value(8).toString();
+        QString nocturnal = q.value(9).toString();
+        QString emotion = q.value(10).toString();
+        QString petWorth = q.value(11).toString();
+        QString parental = q.value(12).toString();
+        QString allergies = q.value(13).toString();
+        QString stability = q.value(14).toString();
+        QString res = q.value(15).toString();
+
+
+
         /*
          * Dynamically Allocates the Database first
          *          Entries into Memory
          *            (Linked List)
          */
         Animal *newAnimal;
-        newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train);
+        newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res);
         s.add(newAnimal);
 
-        qDebug().noquote() << "id:        " << id;
-        qDebug().noquote() << "name:      " << name;
         qDebug().noquote() << "type:      " << type;
+        qDebug().noquote() << "breed:     " << breed;
+        qDebug().noquote() << "name:      " << name;
         qDebug().noquote() << "sex:       " << sex;
         qDebug().noquote() << "age:       " << age;
-        qDebug().noquote() << "height:    " << height;
-        qDebug().noquote() << "colour:    " << colour;
-        qDebug().noquote() << "breed:     " << breed;
-        qDebug().noquote() << "neutered:  " << neutered;
+        qDebug().noquote() << "social:    " << social;
         qDebug().noquote() << "condition: " << condition;
         qDebug().noquote() << "diet:      " << diet;
         qDebug().noquote() << "trained:   " << train;
+        qDebug().noquote() << "nocturnal: " << nocturnal;
+        qDebug().noquote() << "emotion:   " << emotion;
+        qDebug().noquote() << "petWorth:  " << petWorth;
+        qDebug().noquote() << "parental:  " << parental;
+        qDebug().noquote() << "allergies: " << allergies;
+        qDebug().noquote() << "stability: " << stability;
+        qDebug().noquote() << "housing:   " << res;
         qDebug().noquote() << "";
     }
 }
