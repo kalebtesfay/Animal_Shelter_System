@@ -115,23 +115,26 @@ void MainWindow::on_pushButton_8_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
     login l;
-    QString id;
-    QString name, type, sex;
-    QString age;
-    QString height, colour, breed, neutered, condition;
-    QString diet, train;
-    id        = ui->lineEdit_25->text();
-    name      = ui->lineEdit_24->text();
-    type      = ui->lineEdit_23->text();
-    sex       = ui->lineEdit_22->text();
-    age       = ui->lineEdit_21->text();
-    height    = ui->lineEdit_20->text();
-    colour    = ui->lineEdit_19->text();
-    breed     = ui->lineEdit_18->text();
-    neutered  = ui->lineEdit_17->text();
-    condition = ui->lineEdit_16->text();
-    diet      = ui->lineEdit_26->text();
-    train     = ui->lineEdit_27->text();
+    QString type, breed, name, sex, age, social, condition, diet, train;
+    QString nocturnal, emotion, petWorth, parental, allergies, stability, res;
+
+    type         = ui->lineEdit_25->text();
+    breed        = ui->lineEdit_24->text();
+    name         = ui->lineEdit_23->text();
+    sex          = ui->lineEdit_22->text();
+    age          = ui->lineEdit_21->text();
+    social       = ui->lineEdit_20->text();
+    condition    = ui->lineEdit_19->text();
+    diet         = ui->lineEdit_18->text();
+    train        = ui->lineEdit_17->text();
+    nocturnal    = ui->lineEdit_16->text();
+    emotion      = ui->lineEdit_26->text();
+    petWorth     = ui->lineEdit_27->text();
+    parental     = ui->lineEdit_28->text();
+    allergies    = ui->lineEdit_29->text();
+    stability    = ui->lineEdit_30->text();
+    res          = ui->lineEdit_31->text();
+
 
 
     if(!l.dbOpen()){
@@ -144,7 +147,7 @@ void MainWindow::on_pushButton_8_clicked()
      *         (Linked List).
      */
     Animal *newAnimal;
-    newAnimal = new Animal(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train);
+    newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res);
     shelter.add(newAnimal);
     /*
      * Store the User Input in the
@@ -152,8 +155,9 @@ void MainWindow::on_pushButton_8_clicked()
      */
     l.dbOpen();
     QSqlQuery q;
-    q.prepare("INSERT INTO ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train) values('"+id+"','"+name+"','"+
-              type+"','"+sex+"','"+age+"','"+height+"','"+colour+"','"+breed+"','"+neutered+"','"+condition+"','"+diet+"','"+train+"')");
+    q.prepare("INSERT INTO ANIMAL(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res) values('"+type+"','"+breed+"','"+
+              name+"','"+sex+"','"+age+"','"+social+"','"+condition+"','"+diet+"','"+train+"','"+nocturnal+"','"+emotion+"','"+petWorth+"', '"+parental+"', '"+allergies+"','"+stability+"','"+res+"')");
+
     if(q.exec()){
         //Message for User if Animal is added.
         QMessageBox::critical(this, tr("Save"), tr("Inserted!"));

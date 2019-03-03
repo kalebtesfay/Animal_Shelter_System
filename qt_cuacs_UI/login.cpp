@@ -53,22 +53,22 @@ void login::dbLaunch(){
     qu.exec("SELECT * FROM ANIMAL");
 
     while(qu.next()){
-        QString type = q.value(0).toString();
-        QString breed = q.value(1).toString();
-        QString name = q.value(2).toString();
-        QString sex = q.value(3).toString();
-        QString age = q.value(4).toString();
-        QString social = q.value(5).toString();
-        QString condition = q.value(6).toString();
-        QString diet = q.value(7).toString();
-        QString train = q.value(8).toString();
-        QString nocturnal = q.value(9).toString();
-        QString emotion = q.value(10).toString();
-        QString petWorth = q.value(11).toString();
-        QString parental = q.value(12).toString();
-        QString allergies = q.value(13).toString();
-        QString stability = q.value(14).toString();
-        QString res = q.value(15).toString();
+        QString type = qu.value(0).toString();
+        QString breed = qu.value(1).toString();
+        QString name = qu.value(2).toString();
+        QString sex = qu.value(3).toString();
+        QString age = qu.value(4).toString();
+        QString social = qu.value(5).toString();
+        QString condition = qu.value(6).toString();
+        QString diet = qu.value(7).toString();
+        QString train = qu.value(8).toString();
+        QString nocturnal = qu.value(9).toString();
+        QString emotion = qu.value(10).toString();
+        QString petWorth = qu.value(11).toString();
+        QString parental = qu.value(12).toString();
+        QString allergies = qu.value(13).toString();
+        QString stability = qu.value(14).toString();
+        QString res = qu.value(15).toString();
 
 
 
