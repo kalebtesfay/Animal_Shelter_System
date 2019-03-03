@@ -7,35 +7,46 @@
 class Animal
 {
 public:
-    Animal(QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString, QString);
+    Animal(QString, QString, QString, QString,
+           QString, QString, QString, QString,
+           QString, QString, QString, QString,
+           QString, QString, QString, QString);
     ~Animal();
-    QString getId();
-    QString getName();
     QString getType();
+    QString getBreed();
+    QString getName();
     QString getSex();
     QString getAge();
-    QString getHeight();
-    QString getColour();
-    QString getBreed();
-    QString getNeutered();
+    QString getSocial();
     QString getCondition();
     QString getDiet();
     QString getTrain();
+    QString getNocturnal();
+    QString getEmotion();
+    QString getPetWorth();
+    QString getParental();
+    QString getAllergies();
+    QString getStability();
+    QString getResidence();
     void print();
 
-private:
-    QString id;
-    QString name;
+private: 
     QString type;
+    QString breed;
+    QString name;
     QString sex;
     QString age;
-    QString height;
-    QString colour;
-    QString breed;
-    QString neutered;
+    QString social;
     QString condition;
     QString diet;
     QString train;
+    QString nocturnal;
+    QString emotion;
+    QString petWorth;
+    QString parental;
+    QString allergies;
+    QString stability;
+    QString res;
 
 };
 

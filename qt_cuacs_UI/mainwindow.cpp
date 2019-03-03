@@ -204,3 +204,59 @@ void MainWindow::on_pushButton_11_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+/*
+ * View Clients
+ *  for Staff
+ */
+void MainWindow::on_pushButton_12_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+    ui->label_23->setText("Database");
+    ui->label_23->setStyleSheet("color: rgb(128,0,0)");
+    login c;
+    QSqlQueryModel *model = new QSqlQueryModel();
+    c.dbOpen();
+    QSqlQuery *q = new QSqlQuery(c.db);
+    q->prepare("SELECT * from CLIENT");
+    q->exec();
+    model->setQuery(*q);
+    ui->tableView_3->setModel(model);
+    c.dbClose();
+    qDebug() << (model->rowCount());
+}
+/*
+ * View Animals
+ *  for Clients
+ */
+void MainWindow::on_pushButton_13_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+    ui->label_25->setText("Database");
+    ui->label_25->setStyleSheet("color: rgb(128,0,0)");
+    login c;
+    QSqlQueryModel *model = new QSqlQueryModel();
+    c.dbOpen();
+    QSqlQuery *q = new QSqlQuery(c.db);
+    q->prepare("SELECT * from ANIMAL");
+    q->exec();
+    model->setQuery(*q);
+    ui->tableView_4->setModel(model);
+    c.dbClose();
+    qDebug() << (model->rowCount());
+}
+/*
+ * Back Button for
+ * Client View Animals
+ */
+void MainWindow::on_pushButton_14_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+/*
+ * Homepage Button
+ * for Client View Animals
+ */
+void MainWindow::on_pushButton_15_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}

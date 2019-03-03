@@ -6,39 +6,50 @@ using namespace std;
 #include "Animal.h"
 
 
-Animal::Animal(QString id, QString name, QString type, QString sex,
-               QString age, QString height, QString colour, QString breed,
-               QString neutered, QString condition, QString diet, QString train)
+Animal::Animal(QString type, QString breed, QString name, QString sex,
+               QString age, QString social, QString condition, QString diet,
+               QString train, QString nocturnal, QString emotion, QString petWorth,
+               QString parental, QString allergies, QString stability, QString res)
 {
-    this->id = id;
-    this->name = name;
-    this->type = type;
-    this->sex = sex;
-    this->age = age;
-    this->height = height;
-    this->colour = colour;
-    this->breed = breed;
-    this->neutered = neutered;
+    this->type      = type;
+    this->breed     = breed;
+    this->name      = name;
+    this->sex       = sex;
+    this->age       = age;
+    this->social    = social;
     this->condition = condition;
-    this->diet = diet;
-    this->train = train;
+    this->diet      = diet;
+    this->train     = train;
+    this->nocturnal = nocturnal;
+    this->emotion   = emotion;
+    this->petWorth  = petWorth;
+    this->parental  = parental;
+    this->allergies = allergies;
+    this->stability = stability;
+    this->res       = res;
 
 }
+
 Animal::~Animal(){}
 
 void Animal::print(){
-    qDebug().noquote() << "id:         " << id;
-    qDebug().noquote() << "name:       " << name;
+
     qDebug().noquote() << "type:       " << type;
+    qDebug().noquote() << "breed:      " << breed;
+    qDebug().noquote() << "name:       " << name;
     qDebug().noquote() << "sex:        " << sex;
     qDebug().noquote() << "age:        " << age;
-    qDebug().noquote() << "height:     " << height;
-    qDebug().noquote() << "colour:     " << colour;
-    qDebug().noquote() << "breed:      " << breed;
-    qDebug().noquote() << "neutered:   " << neutered;
+    qDebug().noquote() << "social:     " << social;
     qDebug().noquote() << "condition:  " << condition;
-    qDebug().noquote() << "diet:       " << breed;
-    qDebug().noquote() << "trained:    " << breed;
+    qDebug().noquote() << "diet:       " << diet;
+    qDebug().noquote() << "trained:    " << train;
+    qDebug().noquote() << "nocturnal:  " << nocturnal;
+    qDebug().noquote() << "emotion:    " << emotion;
+    qDebug().noquote() << "petWorth:   " << petWorth;
+    qDebug().noquote() << "parental:   " << parental;
+    qDebug().noquote() << "allergies:  " << allergies;
+    qDebug().noquote() << "stability:  " << stability;
+    qDebug().noquote() << "housing:    " << res;
     qDebug().noquote() << "            ";
 
 }
@@ -46,40 +57,25 @@ void Animal::print(){
 /*
  * getters for all attributes.
  */
-QString Animal::getId(){
-    return id;
-}
-
-QString Animal::getName(){
-    return name;
-}
 
 QString Animal::getType(){
     return type;
-}
-
-QString Animal::getSex(){
-    return sex;
-}
-
-QString Animal::getAge(){
-    return age;
-}
-
-QString Animal::getHeight(){
-    return height;
-}
-
-QString Animal::getColour(){
-  return colour;
 }
 
 QString Animal::getBreed(){
     return breed;
 }
 
-QString Animal::getNeutered(){
-    return neutered;
+QString Animal::getName(){
+    return name;
+}
+
+QString Animal::getSex(){
+    return sex;
+}
+
+QString Animal::getSocial(){
+    return social;
 }
 
 QString Animal::getCondition(){
@@ -90,6 +86,30 @@ QString Animal::getDiet(){
     return diet;
 }
 
-QString Animal::getTrain(){
-    return train;
+QString Animal::getNocturnal(){
+    return nocturnal;
+}
+
+QString Animal::getEmotion(){
+    return emotion;
+}
+
+QString Animal::getPetWorth(){
+    return petWorth;
+}
+
+QString Animal::getParental(){
+    return parental;
+}
+
+QString Animal::getAllergies(){
+    return allergies;
+}
+
+QString Animal::getStability(){
+    return stability;
+}
+
+QString Animal::getResidence(){
+    return res;
 }

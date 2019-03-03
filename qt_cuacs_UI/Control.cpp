@@ -29,18 +29,10 @@ void Control::dbLaunch(){
         qDebug() << "DB NOT CONNECTED" << db.lastError();
     }
 
-    QSqlQuery query("CREATE TABLE ANIMAL(id TEXT PRIMARY KEY, name TEXT, type TEXT, sex TEXT, age TEXT, height TEXT, colour TEXT, breed TEXT, neutered TEXT, condition TEXT, diet TEXT, train TEXT)");
+    QSqlQuery query("CREATE TABLE ANIMAL(type TEXT, breed TEXT, name TEXT, sex TEXT, age TEXT, social TEXT, condition TEXT, diet TEXT, train TEXT, nocturnal TEXT, emotion TEXT, petWorth TEXT, parental TEXT, allergies TEXT, stability TEXT, res TEXT)");
     QSqlQuery insertToAnimal;
-    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train)"
-                     "values('1', 'Rex', 'Dog', 'Male', '2', '50cm', 'Black', 'Pitbull', 'No', 'Healthy', 'Yes', 'Yes')");
-    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train)"
-                     "values('2', 'Daisy', 'Dog', 'Female', '1', '30cm', 'Orange', 'Boxer', 'Yes', 'Healthy', 'No', 'No')");
-    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train)"
-                     "values('3', 'Coco', 'Cat', 'Female', '6', '20cm', 'Brown', 'Persian', 'Yes', 'Not Healthy', 'Yes', 'Yes')");
-    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train)"
-                     "values('4', 'Jack', 'Cat', 'Male', '5', '10cm', 'White', 'Ragdoll', 'Yes', 'Healthy', 'No', 'Yes')");
-    insertToAnimal.exec("insert into ANIMAL(id, name, type, sex, age, height, colour, breed, neutered, condition, diet, train)"
-                     "values('5', 'Gus', 'Hamster', 'Male', '1', '6cm', 'Brown', 'Chinese', 'Yes', 'Healthy', 'Yes', 'Yes')");
+    insertToAnimal.exec("insert into ANIMAL(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res)"
+                     "values('Dog', 'Pitbull', 'Rex', 'Male', '2', 'Extremely Social', 'Healthy', 'None', 'Yes', 'No', 'Energetic', '$$', 'No', 'None', '5', 'Anywhere')");
 
     QSqlQuery query2("CREATE TABLE STAFF(id TEXT PRIMARY KEY, name TEXT)");
     QSqlQuery insertToStaff;
@@ -72,31 +64,39 @@ void Control::dbLaunch(){
     q.exec("SELECT * FROM ANIMAL");
 
     while(q.next()){
-        QString id = q.value(0).toString();
-        QString name = q.value(1).toString();
-        QString type = q.value(2).toString();
+        QString type = q.value(0).toString();
+        QString breed = q.value(1).toString();
+        QString name = q.value(2).toString();
         QString sex = q.value(3).toString();
         QString age = q.value(4).toString();
-        QString height = q.value(5).toString();
-        QString colour = q.value(6).toString();
-        QString breed = q.value(7).toString();
-        QString neutered = q.value(8).toString();
-        QString condition= q.value(9).toString();
-        QString diet = q.value(10).toString();
-        QString train = q.value(11).toString();
+        QString social = q.value(5).toString();
+        QString condition = q.value(6).toString();
+        QString diet = q.value(7).toString();
+        QString train = q.value(8).toString();
+        QString nocturnal = q.value(9).toString();
+        QString emotion = q.value(10).toString();
+        QString petWorth = q.value(11).toString();
+        QString parental = q.value(12).toString();
+        QString allergies = q.value(13).toString();
+        QString stability = q.value(14).toString();
+        QString res = q.value(15).toString();
 
-        qDebug().noquote() << "id:        " << id;
-        qDebug().noquote() << "name:      " << name;
         qDebug().noquote() << "type:      " << type;
+        qDebug().noquote() << "breed:     " << breed;
+        qDebug().noquote() << "name:      " << name;
         qDebug().noquote() << "sex:       " << sex;
         qDebug().noquote() << "age:       " << age;
-        qDebug().noquote() << "height:    " << height;
-        qDebug().noquote() << "colour:    " << colour;
-        qDebug().noquote() << "breed:     " << breed;
-        qDebug().noquote() << "neutered:  " << neutered;
+        qDebug().noquote() << "social:    " << social;
         qDebug().noquote() << "condition: " << condition;
         qDebug().noquote() << "diet:      " << diet;
-        qDebug().noquote() << "train:     " << train;
+        qDebug().noquote() << "trained:   " << train;
+        qDebug().noquote() << "nocturnal: " << nocturnal;
+        qDebug().noquote() << "emotion:   " << emotion;
+        qDebug().noquote() << "petWorth:  " << petWorth;
+        qDebug().noquote() << "parental:  " << parental;
+        qDebug().noquote() << "allergies: " << allergies;
+        qDebug().noquote() << "stability: " << stability;
+        qDebug().noquote() << "housing:   " << res;
         qDebug().noquote() << "";
     }
 
