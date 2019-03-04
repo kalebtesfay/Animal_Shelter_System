@@ -19,7 +19,7 @@ void Client::print(){
   qDebug().noquote() << "id:         " << id;
   qDebug().noquote() << "name:       " << name;
   qDebug().noquote() << "address:    " << address;
-  qDebug().noquote() << "            " <<;
+  qDebug().noquote() << "            ";
 }
 
 QString Client::getID(){
