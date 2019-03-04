@@ -270,3 +270,19 @@ void MainWindow::on_pushButton_15_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+/*
+ * Back Button for
+ * Staff View Client
+*/
+void MainWindow::on_pushButton_16_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+/*
+ * Homepage Button for
+ * Staff View Client
+*/
+void MainWindow::on_pushButton_17_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
