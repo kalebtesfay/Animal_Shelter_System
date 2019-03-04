@@ -286,3 +286,104 @@ void MainWindow::on_pushButton_17_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+/*
+ * Add Client Button
+ *    for Staff
+*/
+void MainWindow::on_pushButton_18_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+    ui->label_32->setText("id");
+    ui->label_33->setText("Name");
+    ui->label_34->setText("Address");
+
+    login c;
+    QSqlQueryModel *model = new QSqlQueryModel();
+    c.dbOpen();
+    QSqlQuery *q = new QSqlQuery(c.db);
+    q->prepare("SELECT * from CLIENT");
+    q->exec();
+    model->setQuery(*q);
+    ui->tableView_5->setModel(model);
+    c.dbClose();
+    qDebug() << (model->rowCount());
+}
+/*
+ * Safe Button for
+ * Add Client
+ * in Staff
+*/
+void MainWindow::on_pushButton_20_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+    login l;
+    QString id, name, address;
+
+    id          = ui->lineEdit_32->text();
+    name        = ui->lineEdit_33->text();
+    address     = ui->lineEdit_34->text();
+
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Create an Client Object for User Input
+     *     and stores it in Memory
+     *         (Linked List).
+     */
+    Client *newClient;
+    newClient = new Client(id, name, address);
+    shelter.addClient(newClient);
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery q;
+    q.prepare("INSERT INTO CLIENT(id, name, address) values('"+id+"','"+name+"','"+address+"')");
+
+    if(q.exec()){
+        //Message for User if Client is added.
+        QMessageBox::critical(this, tr("Save"), tr("Inserted!"));
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
+    }
+    /*
+     * Print Updated
+     *   Database.
+     */
+    QSqlQueryModel *model = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from CLIENT");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_5->setModel(model);
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+
+    l.dbLaunch();
+
+}
+/*
+ * Back Button for
+ * Add Client
+ * in Staff
+*/
+void MainWindow::on_pushButton_21_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+/*
+ * Homepage Button for
+ * Add Client
+ * in Staff
+*/
+void MainWindow::on_pushButton_19_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}

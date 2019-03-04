@@ -10,7 +10,7 @@ void Shelter::add(Animal *a){
   animalList.add(a);
 }
 
-void Shelter::add(Client *c){
+void Shelter::addClient(Client *c){
   clientList.add(c);
 }
 

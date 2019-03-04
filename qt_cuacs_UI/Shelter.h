@@ -9,7 +9,7 @@ class Shelter
   public:
     Shelter();
     void add(Animal*);
-    void add(Client*);
+    void addClient(Client*);
     void print();
 
 

@@ -30,6 +30,7 @@ void login::dbClose(){
 bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("/home/student/COMP3004/D2/Animal_Shelter_System/qt_cuacs_UI/database/database.db");
+    //db.setDatabaseName();
     if(!db.open()){
         qDebug() << ("FAILS TO CONNECT");
         return false;
@@ -99,4 +100,28 @@ void login::dbLaunch(){
         qDebug().noquote() << "housing:   " << res;
         qDebug().noquote() << "";
     }
+
+    QSqlQuery que;
+    que.exec("SELECT * FROM CLIENT");
+
+    while(que.next()){
+        QString id = que.value(0).toString();
+        QString name = que.value(1).toString();
+        QString address = que.value(2).toString();
+
+        /*
+         * Dynamically Allocates the Database first
+         *          Entries into Memory
+         *            (Linked List)
+         */
+        Client *newClient;
+        newClient = new Client(id, name, address);
+        s.addClient(newClient);
+
+        qDebug().noquote() << "id:        " << id;
+        qDebug().noquote() << "name:      " << name;
+        qDebug().noquote() << "address:   " << address;
+        qDebug().noquote() << "";
+    }
 }
+
