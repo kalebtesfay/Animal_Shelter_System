@@ -119,7 +119,7 @@ void MainWindow::on_pushButton_7_clicked()
  */
 void MainWindow::on_pushButton_8_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(5);
+    ui->stackedWidget->setCurrentIndex(4);
     login l;
     QString type, breed, name, sex, age, social, condition, diet, train;
     QString nocturnal, emotion, petWorth, parental, allergies, stability, res;
@@ -315,7 +315,7 @@ void MainWindow::on_pushButton_18_clicked()
 */
 void MainWindow::on_pushButton_20_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(7);
     login l;
     QString id, name, address;
 
