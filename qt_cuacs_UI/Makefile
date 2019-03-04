@@ -56,7 +56,8 @@ SOURCES       = Animal.cpp \
 		main.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
-		View.cpp moc_mainwindow.cpp
+		View.cpp \
+		Client.cpp moc_mainwindow.cpp
 OBJECTS       = Animal.o \
 		Control.o \
 		login.o \
@@ -64,6 +65,7 @@ OBJECTS       = Animal.o \
 		mainwindow.o \
 		Shelter.o \
 		View.o \
+		Client.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -160,13 +162,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		login.h \
 		mainwindow.h \
 		Shelter.h \
-		View.h Animal.cpp \
+		View.h \
+		Client.h Animal.cpp \
 		Control.cpp \
 		login.cpp \
 		main.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
-		View.cpp
+		View.cpp \
+		Client.cpp
 QMAKE_TARGET  = qt_cuacs_UI
 DESTDIR       = 
 TARGET        = qt_cuacs_UI
@@ -384,8 +388,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h $(DISTDIR)/
-	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h Client.h $(DISTDIR)/
+	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp Client.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -494,6 +498,9 @@ View.o: View.cpp View.h \
 		AnimalList.h \
 		Animal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View.o View.cpp
+
+Client.o: Client.cpp Client.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Client.o Client.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
