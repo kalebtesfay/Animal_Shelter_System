@@ -247,7 +247,7 @@ void MainWindow::on_pushButton_13_clicked()
     QSqlQueryModel *model = new QSqlQueryModel();
     c.dbOpen();
     QSqlQuery *q = new QSqlQuery(c.db);
-    q->prepare("SELECT * from ANIMAL");
+    q->prepare("SELECT * from ANIMALS");
     q->exec();
     model->setQuery(*q);
     ui->tableView_4->setModel(model);
