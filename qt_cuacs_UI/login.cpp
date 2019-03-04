@@ -78,7 +78,7 @@ void login::dbLaunch(){
          *            (Linked List)
          */
         Animal *newAnimal;
-        newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res);
+        newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
         s.add(newAnimal);
 
         qDebug().noquote() << "type:      " << type;

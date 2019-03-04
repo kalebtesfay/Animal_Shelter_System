@@ -43,16 +43,22 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
-    ui->label_4->setText("Id");
-    ui->label_5->setText("Name");
-    ui->label_6->setText("Type");
+    ui->label_4->setText("Type");
+    ui->label_5->setText("Breed");
+    ui->label_6->setText("Name");
     ui->label_7->setText("Sex");
     ui->label_8->setText("Age");
-    ui->label_9->setText("Height");
-    ui->label_10->setText("Colour");
-    ui->label_11->setText("Breed");
-    ui->label_12->setText("Neutered");
-    ui->label_13->setText("Condition");
+    ui->label_9->setText("Social");
+    ui->label_10->setText("Health");
+    ui->label_11->setText("Diet");
+    ui->label_12->setText("Trained");
+    ui->label_13->setText("Nocturnal");
+    ui->label_20->setText("Emotion");
+    ui->label_21->setText("Pet's Worth");
+    ui->label_26->setText("Has Kids");
+    ui->label_27->setText("Allergies");
+    ui->label_28->setText("Stability");
+    ui->label_29->setText("Housing");
     login c;
     QSqlQueryModel *model = new QSqlQueryModel();
     c.dbOpen();
@@ -147,7 +153,7 @@ void MainWindow::on_pushButton_8_clicked()
      *         (Linked List).
      */
     Animal *newAnimal;
-    newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res);
+    newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
     shelter.add(newAnimal);
     /*
      * Store the User Input in the
@@ -155,7 +161,7 @@ void MainWindow::on_pushButton_8_clicked()
      */
     l.dbOpen();
     QSqlQuery q;
-    q.prepare("INSERT INTO ANIMAL(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, nocturnal, res) values('"+type+"','"+breed+"','"+
+    q.prepare("INSERT INTO ANIMAL(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res) values('"+type+"','"+breed+"','"+
               name+"','"+sex+"','"+age+"','"+social+"','"+condition+"','"+diet+"','"+train+"','"+nocturnal+"','"+emotion+"','"+petWorth+"', '"+parental+"', '"+allergies+"','"+stability+"','"+res+"')");
 
     if(q.exec()){
