@@ -3,6 +3,7 @@
 #include <QString>
 #include <QDebug>
 
+
 class Client
 {
 public:
@@ -17,6 +18,7 @@ private:
   QString id;
   QString name;
   QString address;
+
 };
 
 #endif // CLIENT_H

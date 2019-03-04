@@ -9,6 +9,7 @@
 using namespace std;
 
 #include "Animal.h"
+#include "Client.h"
 
 template<class T>
 class AnimalList

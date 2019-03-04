@@ -428,6 +428,7 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: Shelter.h \
 		AnimalList.h \
 		Animal.h \
+		Client.h \
 		login.h \
 		View.h \
 		mainwindow.h \
@@ -461,12 +462,14 @@ Control.o: Control.cpp Control.h \
 		View.h \
 		Shelter.h \
 		AnimalList.h \
-		Animal.h
+		Animal.h \
+		Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Control.o Control.cpp
 
 login.o: login.cpp login.h \
 		AnimalList.h \
 		Animal.h \
+		Client.h \
 		Shelter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o login.cpp
 
@@ -474,6 +477,7 @@ main.o: main.cpp mainwindow.h \
 		Shelter.h \
 		AnimalList.h \
 		Animal.h \
+		Client.h \
 		login.h \
 		View.h \
 		Control.h
@@ -483,6 +487,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		Shelter.h \
 		AnimalList.h \
 		Animal.h \
+		Client.h \
 		login.h \
 		View.h \
 		ui_mainwindow.h
@@ -490,13 +495,15 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 
 Shelter.o: Shelter.cpp Shelter.h \
 		AnimalList.h \
-		Animal.h
+		Animal.h \
+		Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Shelter.o Shelter.cpp
 
 View.o: View.cpp View.h \
 		Shelter.h \
 		AnimalList.h \
-		Animal.h
+		Animal.h \
+		Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o View.o View.cpp
 
 Client.o: Client.cpp Client.h

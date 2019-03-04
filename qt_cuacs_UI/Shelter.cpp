@@ -10,6 +10,10 @@ void Shelter::add(Animal *a){
   animalList.add(a);
 }
 
+void Shelter::add(Client *c){
+  clientList.add(c);
+}
+
 void Shelter::print(){
   animalList.print();
 }

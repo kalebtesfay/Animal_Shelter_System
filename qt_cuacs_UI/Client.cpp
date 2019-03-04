@@ -22,7 +22,7 @@ void Client::print(){
   qDebug().noquote() << "            ";
 }
 
-QString Client::getID(){
+QString Client::getId(){
   return id;
 }
 
