@@ -5,7 +5,7 @@ using namespace std;
 
 #include "Client.h"
 
-Client::Client()
+Client::Client(QString id, QString name, QString address)
 {
   this->id = id;
   this->name = name;
@@ -19,7 +19,7 @@ void Client::print(){
   qDebug().noquote() << "id:         " << id;
   qDebug().noquote() << "name:       " << name;
   qDebug().noquote() << "address:    " << address;
-  qDebug().noquote() << "            " << ;
+  qDebug().noquote() << "            " <<;
 }
 
 QString Client::getID(){

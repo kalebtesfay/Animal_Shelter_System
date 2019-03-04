@@ -6,8 +6,8 @@
 class Client
 {
 public:
-  Client(QString, QString, Qstring);
-  -Client();
+  Client(QString, QString, QString);
+  ~Client();
   QString getId();
   QString getName();
   QString getAddress();
