@@ -395,6 +395,7 @@ void MainWindow::on_pushButton_19_clicked()
 */
 void MainWindow::on_pushButton_22_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(4);
     login l;
     QSqlQueryModel *m = new QSqlQueryModel();
     l.dbOpen();
@@ -414,6 +415,7 @@ void MainWindow::on_pushButton_22_clicked()
 */
 void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
+    ui->stackedWidget->setCurrentIndex(4);
     QString name = ui->comboBox->currentText();
     login l;
 
@@ -461,6 +463,7 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 */
 void MainWindow::on_tableView_2_activated(const QModelIndex &index)
 {
+    ui->stackedWidget->setCurrentIndex(4);
     QString val = ui->tableView_2->model()->data(index).toString();
     login l;
 
@@ -510,6 +513,7 @@ void MainWindow::on_tableView_2_activated(const QModelIndex &index)
 */
 void MainWindow::on_listView_2_activated(const QModelIndex &index)
 {
+    ui->stackedWidget->setCurrentIndex(4);
     QString val = ui->listView_2->model()->data(index).toString();
     login l;
 
@@ -557,6 +561,7 @@ void MainWindow::on_listView_2_activated(const QModelIndex &index)
 */
 void MainWindow::on_pushButton_23_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(7);
     login l;
     QSqlQueryModel *m = new QSqlQueryModel();
     l.dbOpen();
@@ -575,6 +580,7 @@ void MainWindow::on_pushButton_23_clicked()
 */
 void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)
 {
+    ui->stackedWidget->setCurrentIndex(7);
     QString id = ui->comboBox_2->currentText();
     login l;
 
@@ -610,6 +616,7 @@ void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)
 */
 void MainWindow::on_tableView_5_activated(const QModelIndex &index)
 {
+    ui->stackedWidget->setCurrentIndex(7);
     QString val = ui->tableView_5->model()->data(index).toString();
     login l;
 
@@ -645,6 +652,7 @@ void MainWindow::on_tableView_5_activated(const QModelIndex &index)
 */
 void MainWindow::on_listView_3_activated(const QModelIndex &index)
 {
+    ui->stackedWidget->setCurrentIndex(7);
     QString val = ui->listView_3->model()->data(index).toString();
     login l;
 
@@ -671,5 +679,39 @@ void MainWindow::on_listView_3_activated(const QModelIndex &index)
     }else{
         QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
     }
+
+}
+/*
+ * Clear Button for
+ * Add Animals
+*/
+void MainWindow::on_pushButton_24_clicked()
+{
+    ui->lineEdit_25->setText("");
+    ui->lineEdit_24->setText("");
+    ui->lineEdit_23->setText("");
+    ui->lineEdit_22->setText("");
+    ui->lineEdit_21->setText("");
+    ui->lineEdit_20->setText("");
+    ui->lineEdit_19->setText("");
+    ui->lineEdit_18->setText("");
+    ui->lineEdit_17->setText("");
+    ui->lineEdit_16->setText("");
+    ui->lineEdit_26->setText("");
+    ui->lineEdit_27->setText("");
+    ui->lineEdit_28->setText("");
+    ui->lineEdit_29->setText("");
+    ui->lineEdit_30->setText("");
+    ui->lineEdit_31->setText("");
+}
+/*
+ * Clear Button for
+ * Add Clients
+*/
+void MainWindow::on_pushButton_25_clicked()
+{
+    ui->lineEdit_32->setText("");
+    ui->lineEdit_33->setText("");
+    ui->lineEdit_34->setText("");
 
 }

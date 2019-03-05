@@ -63,6 +63,8 @@ private slots:
     void on_comboBox_2_currentIndexChanged(const QString &arg1);
     void on_tableView_5_activated(const QModelIndex &index);
     void on_listView_3_activated(const QModelIndex &index);
+    void on_pushButton_24_clicked();
+    void on_pushButton_25_clicked();
 };
 
 #endif // MAINWINDOW_H
