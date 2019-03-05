@@ -70,6 +70,21 @@ void MainWindow::on_pushButton_2_clicked()
     c.dbClose();
     qDebug() << (model->rowCount());
 
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_2->setModel(m);
+    ui->comboBox->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_24_clicked();
+
+
 }
 /*
  * Staff Page
@@ -320,9 +335,23 @@ void MainWindow::on_pushButton_18_clicked()
     ui->tableView_5->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_3->setModel(m);
+    ui->comboBox_2->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_25_clicked();
 }
 /*
- * Safe Button for
+ * Save Button for
  * Add Client
  * in Staff
 */
@@ -412,10 +441,12 @@ void MainWindow::on_pushButton_19_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
 /*
  * Load Button for
  * Add Animal in Staff
 */
+/*
 void MainWindow::on_pushButton_22_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
@@ -432,6 +463,7 @@ void MainWindow::on_pushButton_22_clicked()
     qDebug() <<(m->rowCount());
 
 }
+*/
 /*
  * Combo Click
  * in Add Animal
@@ -582,6 +614,7 @@ void MainWindow::on_listView_2_activated(const QModelIndex &index)
  * Load Button for
  * Add Client in Staff
 */
+/*
 void MainWindow::on_pushButton_23_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
@@ -597,6 +630,7 @@ void MainWindow::on_pushButton_23_clicked()
     l.dbClose();
     qDebug() <<(m->rowCount());
 }
+*/
 /*
  * Combo Click
  * in Add CLient

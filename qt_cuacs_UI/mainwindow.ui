@@ -827,19 +827,6 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>380</y>
-        <width>83</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Load</string>
-      </property>
-     </widget>
      <widget class="QComboBox" name="comboBox">
       <property name="geometry">
        <rect>
@@ -853,8 +840,8 @@
      <widget class="QPushButton" name="pushButton_24">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>380</y>
+        <x>250</x>
+        <y>390</y>
         <width>83</width>
         <height>25</height>
        </rect>
@@ -1212,24 +1199,11 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>410</y>
-        <width>83</width>
-        <height>25</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Load</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_25">
       <property name="geometry">
        <rect>
         <x>270</x>
-        <y>440</y>
+        <y>410</y>
         <width>83</width>
         <height>25</height>
        </rect>
