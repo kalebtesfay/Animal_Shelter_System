@@ -9,11 +9,13 @@ class Shelter
   public:
     Shelter();
     void add(Animal*);
+    void addClient(Client*);
     void print();
 
 
   private:
     AnimalList<Animal*> animalList;
+    AnimalList<Client*> clientList;
 
 };
 

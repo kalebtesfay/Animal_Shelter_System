@@ -13,6 +13,7 @@ INCLUDEPATH += .
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += QT_CUACS_UI_ROOT_DIR=\\\"$$_PRO_FILE_PWD_\\\"
 
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -20,7 +21,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # Input
-HEADERS += Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h
+HEADERS += Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h \
+    Client.h
 FORMS += mainwindow.ui
 SOURCES += Animal.cpp \
            Control.cpp \
@@ -28,4 +30,5 @@ SOURCES += Animal.cpp \
            main.cpp \
            mainwindow.cpp \
            Shelter.cpp \
-           View.cpp
+           View.cpp \
+    Client.cpp

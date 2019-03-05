@@ -11,6 +11,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QDir>
 #include "AnimalList.h"
 #include "Shelter.h"
 //#include <QMainWindow>
