@@ -214,6 +214,7 @@ void MainWindow::on_pushButton_8_clicked()
     qDebug() <<(m->rowCount());
 
     l.dbLaunch();
+    on_pushButton_24_clicked();
 
 }
 /*
@@ -421,6 +422,7 @@ void MainWindow::on_pushButton_20_clicked()
     qDebug() <<(m->rowCount());
 
     l.dbLaunch();
+    on_pushButton_25_clicked();
 
 }
 /*
