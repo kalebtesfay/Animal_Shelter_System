@@ -69,6 +69,7 @@ void MainWindow::on_pushButton_2_clicked()
     ui->tableView_2->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
+
 }
 /*
  * Staff Page
@@ -365,6 +366,7 @@ void MainWindow::on_pushButton_20_clicked()
     ui->tableView_5->setModel(model);
     l.dbClose();
     qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+    ui->stackedWidget->setCurrentIndex(7);
 
     l.dbLaunch();
 
@@ -386,4 +388,157 @@ void MainWindow::on_pushButton_21_clicked()
 void MainWindow::on_pushButton_19_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+/*
+ * Load Button for
+ * Add Animal in Staff
+*/
+void MainWindow::on_pushButton_22_clicked()
+{
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_2->setModel(m);
+    ui->comboBox->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+}
+
+void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+    QString name = ui->comboBox->currentText();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM ANIMAL where name ='"+name+"'");
+
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_25->setText(qry.value(0).toString());
+            ui->lineEdit_24->setText(qry.value(1).toString());
+            ui->lineEdit_23->setText(qry.value(2).toString());
+            ui->lineEdit_22->setText(qry.value(3).toString());
+            ui->lineEdit_21->setText(qry.value(4).toString());
+            ui->lineEdit_20->setText(qry.value(5).toString());
+            ui->lineEdit_19->setText(qry.value(6).toString());
+            ui->lineEdit_18->setText(qry.value(7).toString());
+            ui->lineEdit_17->setText(qry.value(8).toString());
+            ui->lineEdit_16->setText(qry.value(9).toString());
+            ui->lineEdit_26->setText(qry.value(10).toString());
+            ui->lineEdit_27->setText(qry.value(11).toString());
+            ui->lineEdit_28->setText(qry.value(12).toString());
+            ui->lineEdit_29->setText(qry.value(13).toString());
+            ui->lineEdit_30->setText(qry.value(14).toString());
+            ui->lineEdit_31->setText(qry.value(15).toString());
+
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+}
+
+void MainWindow::on_tableView_2_activated(const QModelIndex &index)
+{
+    QString val = ui->tableView_2->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM ANIMAL where name ='"+val+"'");
+
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_25->setText(qry.value(0).toString());
+            ui->lineEdit_24->setText(qry.value(1).toString());
+            ui->lineEdit_23->setText(qry.value(2).toString());
+            ui->lineEdit_22->setText(qry.value(3).toString());
+            ui->lineEdit_21->setText(qry.value(4).toString());
+            ui->lineEdit_20->setText(qry.value(5).toString());
+            ui->lineEdit_19->setText(qry.value(6).toString());
+            ui->lineEdit_18->setText(qry.value(7).toString());
+            ui->lineEdit_17->setText(qry.value(8).toString());
+            ui->lineEdit_16->setText(qry.value(9).toString());
+            ui->lineEdit_26->setText(qry.value(10).toString());
+            ui->lineEdit_27->setText(qry.value(11).toString());
+            ui->lineEdit_28->setText(qry.value(12).toString());
+            ui->lineEdit_29->setText(qry.value(13).toString());
+            ui->lineEdit_30->setText(qry.value(14).toString());
+            ui->lineEdit_31->setText(qry.value(15).toString());
+
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+
+}
+
+void MainWindow::on_listView_2_activated(const QModelIndex &index)
+{
+    QString val = ui->listView_2->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+    qry.prepare("SELECT * FROM ANIMAL where type ='"+val+"' or breed='"+val+"' or name='"+
+                val+"' or sex='"+val+"' or age='"+val+"' or social='"+val+"' or condition='"+val+"' or diet='"+val+"' or train='"+val+"' or nocturnal='"+val+"' or emotion='"+val+"' or petWorth='"+val+"' or parental='"+val+"' or allergies='"+val+"' or stability='"+val+"' or res='"+val+"'");
+
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_25->setText(qry.value(0).toString());
+            ui->lineEdit_24->setText(qry.value(1).toString());
+            ui->lineEdit_23->setText(qry.value(2).toString());
+            ui->lineEdit_22->setText(qry.value(3).toString());
+            ui->lineEdit_21->setText(qry.value(4).toString());
+            ui->lineEdit_20->setText(qry.value(5).toString());
+            ui->lineEdit_19->setText(qry.value(6).toString());
+            ui->lineEdit_18->setText(qry.value(7).toString());
+            ui->lineEdit_17->setText(qry.value(8).toString());
+            ui->lineEdit_16->setText(qry.value(9).toString());
+            ui->lineEdit_26->setText(qry.value(10).toString());
+            ui->lineEdit_27->setText(qry.value(11).toString());
+            ui->lineEdit_28->setText(qry.value(12).toString());
+            ui->lineEdit_29->setText(qry.value(13).toString());
+            ui->lineEdit_30->setText(qry.value(14).toString());
+            ui->lineEdit_31->setText(qry.value(15).toString());
+
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
 }

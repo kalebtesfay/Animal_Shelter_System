@@ -55,6 +55,10 @@ private slots:
     void on_pushButton_21_clicked();
     void on_pushButton_19_clicked();
     void on_pushButton_20_clicked();
+    void on_pushButton_22_clicked();
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+    void on_tableView_2_activated(const QModelIndex &index);
+    void on_listView_2_activated(const QModelIndex &index);
 };
 
 #endif // MAINWINDOW_H
