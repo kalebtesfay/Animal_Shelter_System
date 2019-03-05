@@ -186,6 +186,18 @@ void MainWindow::on_pushButton_8_clicked()
     l.dbClose();
     qDebug() << "There is:" << (model->rowCount()) << "Animals in the database now.";
 
+    //login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_2->setModel(m);
+    ui->comboBox->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
     l.dbLaunch();
 
 }
@@ -366,7 +378,18 @@ void MainWindow::on_pushButton_20_clicked()
     ui->tableView_5->setModel(model);
     l.dbClose();
     qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
-    ui->stackedWidget->setCurrentIndex(7);
+
+    //login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_3->setModel(m);
+    ui->comboBox_2->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
 
     l.dbLaunch();
 
