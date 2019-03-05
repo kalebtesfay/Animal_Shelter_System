@@ -3,9 +3,10 @@ cuACS (D2)
 Team: 4our People
 
 @authors
-Kaleb Tesfay | 101048170
-Adam Farah | 100966918
+Kaleb Tesfay    | 101048170
+Adam Farah      | 100966918
 Japinder Sandhu | 101021899
+Samson Teklay   | 100972872
 
 Professor. Christine Laurendeau
 
