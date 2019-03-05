@@ -714,4 +714,5 @@ void MainWindow::on_pushButton_25_clicked()
     ui->lineEdit_33->setText("");
     ui->lineEdit_34->setText("");
 
+
 }
