@@ -3,7 +3,7 @@
 #include <QString>
 #include <QDebug>
 
-
+//Animal class
 class Animal
 {
 public:
