@@ -19,7 +19,7 @@
 
 login::login()
 {
-
+    //constructor
 }
 
 void login::dbClose(){
@@ -30,6 +30,7 @@ void login::dbClose(){
 bool login::dbOpen(){
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(QT_CUACS_UI_ROOT_DIR"/database/database.db");
+    //checked connection for database
     if(!db.open()){
         qDebug() << ("FAILS TO CONNECT");
         return false;
@@ -73,9 +74,14 @@ void login::dbLaunch(){
 
 
         /*
+         *
+         *
+         *
          * Dynamically Allocates the Database first
          *          Entries into Memory
          *            (Linked List)
+         *
+         *
          */
         Animal *newAnimal;
         newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
@@ -109,9 +115,12 @@ void login::dbLaunch(){
         QString address = que.value(2).toString();
 
         /*
+         *
+         *
          * Dynamically Allocates the Database first
          *          Entries into Memory
          *            (Linked List)
+         *
          */
         Client *newClient;
         newClient = new Client(id, name, address);
