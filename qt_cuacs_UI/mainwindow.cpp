@@ -535,8 +535,12 @@ void MainWindow::on_tableView_2_activated(const QModelIndex &index)
      */
     l.dbOpen();
     QSqlQuery qry;
+    //(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res)
     qry.prepare("SELECT * FROM ANIMAL where type ='"+val+"' or breed='"+val+"' or name='"+
-                val+"' or sex='"+val+"' or age='"+val+"' or social='"+val+"' or condition='"+val+"' or diet='"+val+"' or train='"+val+"' or nocturnal='"+val+"' or emotion='"+val+"' or petWorth='"+val+"' or parental='"+val+"' or allergies='"+val+"' or stability='"+val+"' or res='"+val+"'");
+                val+"' or sex='"+val+"' or age='"+val+"' or social='"+val+"' or condition='"+
+                val+"' or diet='"+val+"' or train='"+val+"' or nocturnal='"+val+"' or emotion='"+
+                val+"' or petWorth='"+val+"' or parental='"+val+"' or allergies='"+val+"' or stability='"+
+                val+"' or res='"+val+"'");
 
     if(qry.exec()){
         while(qry.next()){
@@ -773,5 +777,164 @@ void MainWindow::on_pushButton_25_clicked()
     ui->lineEdit_33->setText("");
     ui->lineEdit_34->setText("");
 
+
+}
+/*
+ * Update Button for
+ * Add Animals
+*/
+void MainWindow::on_pushButton_22_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+    login l;
+    QString type, breed, name, sex, age, social, condition, diet, train;
+    QString nocturnal, emotion, petWorth, parental, allergies, stability, res;
+
+    type         = ui->lineEdit_25->text();
+    breed        = ui->lineEdit_24->text();
+    name         = ui->lineEdit_23->text();
+    sex          = ui->lineEdit_22->text();
+    age          = ui->lineEdit_21->text();
+    social       = ui->lineEdit_20->text();
+    condition    = ui->lineEdit_19->text();
+    diet         = ui->lineEdit_18->text();
+    train        = ui->lineEdit_17->text();
+    nocturnal    = ui->lineEdit_16->text();
+    emotion      = ui->lineEdit_26->text();
+    petWorth     = ui->lineEdit_27->text();
+    parental     = ui->lineEdit_28->text();
+    allergies    = ui->lineEdit_29->text();
+    stability    = ui->lineEdit_30->text();
+    res          = ui->lineEdit_31->text();
+
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Create an Animal Object for User Input
+     *     and stores it in Memory
+     *         (Linked List).
+     */
+    Animal *newAnimal;
+    newAnimal = new Animal(type, breed, name, sex, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
+    shelter.add(newAnimal);
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery q;
+    q.prepare("update ANIMAL set type='"+type+"', breed='"+breed+"',name='"+name+"',sex='"+sex+"',age='"+age+"',social='"+social+"',condition='"+condition+"',diet='"+diet+"',train='"+train+"',nocturnal='"+nocturnal+"',emotion='"+emotion+"', petWorth='"+petWorth+"',parental='"+parental+"', allergies='"+allergies+"', stability='"+stability+"',res='"+res+"' where name='"+name+"'");
+
+    if(q.exec()){
+        //Message for User if Animal is added.
+        QMessageBox::critical(this, tr("Edit"), tr("Updated!"));
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
+    }
+    /*
+     * Print Updated
+     *   Database.
+     */
+    QSqlQueryModel *model = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from ANIMAL");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_2->setModel(model);
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Animals in the database now.";
+
+    //login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_2->setModel(m);
+    ui->comboBox->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    l.dbLaunch();
+    on_pushButton_24_clicked();
+
+}
+/*
+ * Update Button for
+ * Add Client
+*/
+void MainWindow::on_pushButton_23_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+    login l;
+    QString id, name, address;
+
+    id          = ui->lineEdit_32->text();
+    name        = ui->lineEdit_33->text();
+    address     = ui->lineEdit_34->text();
+
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Create an Client Object for User Input
+     *     and stores it in Memory
+     *         (Linked List).
+     */
+    Client *newClient;
+    newClient = new Client(id, name, address);
+    shelter.addClient(newClient);
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery q;
+    q.prepare("update CLIENT set id='"+id+"', name='"+name+"', address='"+address+"' where id='"+id+"'");
+    if(q.exec()){
+        //Message for User if Client is added.
+        QMessageBox::critical(this, tr("Edit"), tr("Updated!"));
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
+    }
+    /*
+     * Print Updated
+     *   Database.
+     */
+    QSqlQueryModel *model = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from CLIENT");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_5->setModel(model);
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+
+    //login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_3->setModel(m);
+    ui->comboBox_2->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    l.dbLaunch();
+    on_pushButton_25_clicked();
 
 }
