@@ -35,6 +35,20 @@ void MainWindow::on_pushButton_clicked()
     ui->tableView->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_4->setModel(m);
+    ui->comboBox_3->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_24_clicked();
 }
 /*
  * Add Animals Button for
@@ -262,6 +276,20 @@ void MainWindow::on_pushButton_12_clicked()
     ui->tableView_3->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_8->setModel(m);
+    ui->comboBox_7->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_25_clicked();
 }
 /*
  * View Animals
@@ -282,6 +310,22 @@ void MainWindow::on_pushButton_13_clicked()
     ui->tableView_4->setModel(model);
     c.dbClose();
     qDebug() << (model->rowCount());
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT name from ANIMAL");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_9->setModel(m);
+    ui->comboBox_8->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_25_clicked();
+
+
 }
 /*
  * Back Button for
@@ -936,5 +980,199 @@ void MainWindow::on_pushButton_23_clicked()
 
     l.dbLaunch();
     on_pushButton_25_clicked();
+
+}
+/*
+ * View Animals Staff
+ * List Click
+*/
+void MainWindow::on_listView_4_activated(const QModelIndex &index)
+{
+    QString val = ui->listView_4->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+
+    qry.prepare("SELECT * FROM ANIMAL where name ='"+val+"'");
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_61->setText(qry.value(0).toString());
+            ui->lineEdit_60->setText(qry.value(1).toString());
+            ui->lineEdit_53->setText(qry.value(2).toString());
+            ui->lineEdit_52->setText(qry.value(3).toString());
+            ui->lineEdit_48->setText(qry.value(4).toString());
+            ui->lineEdit_47->setText(qry.value(5).toString());
+            ui->lineEdit_62->setText(qry.value(6).toString());
+            ui->lineEdit_51->setText(qry.value(7).toString());
+            ui->lineEdit_54->setText(qry.value(8).toString());
+            ui->lineEdit_57->setText(qry.value(9).toString());
+            ui->lineEdit_58->setText(qry.value(10).toString());
+            ui->lineEdit_49->setText(qry.value(11).toString());
+            ui->lineEdit_56->setText(qry.value(12).toString());
+            ui->lineEdit_55->setText(qry.value(13).toString());
+            ui->lineEdit_50->setText(qry.value(14).toString());
+            ui->lineEdit_59->setText(qry.value(15).toString());
+
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+
+}
+/*
+ * Clear Button for
+ * View Animals in
+ *     Staff
+*/
+void MainWindow::on_pushButton_26_clicked()
+{
+    ui->lineEdit_61->setText("");
+    ui->lineEdit_60->setText("");
+    ui->lineEdit_53->setText("");
+    ui->lineEdit_52->setText("");
+    ui->lineEdit_48->setText("");
+    ui->lineEdit_47->setText("");
+    ui->lineEdit_62->setText("");
+    ui->lineEdit_51->setText("");
+    ui->lineEdit_54->setText("");
+    ui->lineEdit_57->setText("");
+    ui->lineEdit_58->setText("");
+    ui->lineEdit_49->setText("");
+    ui->lineEdit_56->setText("");
+    ui->lineEdit_55->setText("");
+    ui->lineEdit_50->setText("");
+    ui->lineEdit_59->setText("");
+
+}
+/*
+ * List Click for
+ * View Animals in
+ *     Client
+*/
+void MainWindow::on_listView_9_activated(const QModelIndex &index)
+{
+    QString val = ui->listView_9->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+
+    qry.prepare("SELECT * FROM ANIMAL where name ='"+val+"'");
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_139->setText(qry.value(0).toString());
+            ui->lineEdit_129->setText(qry.value(1).toString());
+            ui->lineEdit_138->setText(qry.value(2).toString());
+            ui->lineEdit_133->setText(qry.value(3).toString());
+            ui->lineEdit_132->setText(qry.value(4).toString());
+            ui->lineEdit_140->setText(qry.value(5).toString());
+            ui->lineEdit_135->setText(qry.value(6).toString());
+            ui->lineEdit_128->setText(qry.value(7).toString());
+            ui->lineEdit_131->setText(qry.value(8).toString());
+            ui->lineEdit_137->setText(qry.value(9).toString());
+            ui->lineEdit_125->setText(qry.value(10).toString());
+            ui->lineEdit_126->setText(qry.value(11).toString());
+            ui->lineEdit_136->setText(qry.value(12).toString());
+            ui->lineEdit_134->setText(qry.value(13).toString());
+            ui->lineEdit_127->setText(qry.value(14).toString());
+            ui->lineEdit_130->setText(qry.value(15).toString());
+
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+
+}
+/*
+ * Clear Button for
+ * View Animals in
+ *     Client
+*/
+void MainWindow::on_pushButton_54_clicked()
+{
+    ui->lineEdit_139->setText("");
+    ui->lineEdit_129->setText("");
+    ui->lineEdit_138->setText("");
+    ui->lineEdit_133->setText("");
+    ui->lineEdit_132->setText("");
+    ui->lineEdit_140->setText("");
+    ui->lineEdit_135->setText("");
+    ui->lineEdit_128->setText("");
+    ui->lineEdit_131->setText("");
+    ui->lineEdit_137->setText("");
+    ui->lineEdit_125->setText("");
+    ui->lineEdit_126->setText("");
+    ui->lineEdit_136->setText("");
+    ui->lineEdit_134->setText("");
+    ui->lineEdit_127->setText("");
+    ui->lineEdit_130->setText("");
+
+}
+/*
+ * List Click in
+ * View Clients for
+ *     Staff
+*/
+void MainWindow::on_listView_8_activated(const QModelIndex &index)
+{
+    QString val = ui->listView_8->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+
+    qry.prepare("SELECT * FROM CLIENT where id ='"+val+"'");
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_113->setText(qry.value(0).toString());
+            ui->lineEdit_114->setText(qry.value(1).toString());
+            ui->lineEdit_121->setText(qry.value(2).toString());
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+
+}
+/*
+ * Clear Button for
+ * View Clients for
+ *     Staff
+*/
+void MainWindow::on_pushButton_53_clicked()
+{
+    ui->lineEdit_113->setText("");
+    ui->lineEdit_114->setText("");
+    ui->lineEdit_121->setText("");
 
 }
