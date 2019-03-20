@@ -107,6 +107,18 @@ void login::dbLaunch(){
         QString id = que.value(0).toString();
         QString name = que.value(1).toString();
         QString address = que.value(2).toString();
+        QString age = que.value(3).toString();;
+        QString social = que.value(4).toString();;
+        QString condition = que.value(5).toString();;
+        QString diet = que.value(6).toString();
+        QString train = que.value(7).toString();
+        QString nocturnal = que.value(8).toString();
+        QString emotion = que.value(9).toString();
+        QString petWorth = que.value(10).toString();
+        QString parental = que.value(11).toString();
+        QString allergies = que.value(12).toString();
+        QString stability = que.value(13).toString();
+        QString res = que.value(14).toString();
 
         /*
          * Dynamically Allocates the Database first
@@ -114,12 +126,24 @@ void login::dbLaunch(){
          *            (Linked List)
          */
         Client *newClient;
-        newClient = new Client(id, name, address);
+        newClient = new Client(id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
         s.addClient(newClient);
 
         qDebug().noquote() << "id:        " << id;
         qDebug().noquote() << "name:      " << name;
         qDebug().noquote() << "address:   " << address;
+        qDebug().noquote() << "age:        " << age;
+        qDebug().noquote() << "social:     " << social;
+        qDebug().noquote() << "condition:  " << condition;
+        qDebug().noquote() << "diet:       " << diet;
+        qDebug().noquote() << "train:      " << train;
+        qDebug().noquote() << "nocturnal:  " << nocturnal;
+        qDebug().noquote() << "emotion:    " << emotion;
+        qDebug().noquote() << "petWorth:   " << petWorth;
+        qDebug().noquote() << "parental:   " << parental;
+        qDebug().noquote() << "allergies:  " << allergies;
+        qDebug().noquote() << "stability:  " << stability;
+        qDebug().noquote() << "res:        " << res;
         qDebug().noquote() << "";
     }
 }

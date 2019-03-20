@@ -73,6 +73,7 @@ void MainWindow::on_pushButton_2_clicked()
     ui->label_27->setText("Allergies");
     ui->label_28->setText("Stability");
     ui->label_29->setText("Housing");
+
     login c;
     QSqlQueryModel *model = new QSqlQueryModel();
     c.dbOpen();
@@ -369,6 +370,18 @@ void MainWindow::on_pushButton_18_clicked()
     ui->label_32->setText("id");
     ui->label_33->setText("Name");
     ui->label_34->setText("Address");
+    ui->label_44->setText("Age");
+    ui->label_46->setText("Social");
+    ui->label_36->setText("Condition");
+    ui->label_45->setText("Diet");
+    ui->label_39->setText("Train");
+    ui->label_35->setText("Nocturnal");
+    ui->label_37->setText("Emotion");
+    ui->label_40->setText("Pet Worth");
+    ui->label_43->setText("Has Kids");
+    ui->label_42->setText("Allergies");
+    ui->label_41->setText("Stability");
+    ui->label_38->setText("Housing");
 
     login c;
     QSqlQueryModel *model = new QSqlQueryModel();
@@ -404,13 +417,23 @@ void MainWindow::on_pushButton_20_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
     login l;
-    QString id, name, address;
+    QString id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res;
 
     id          = ui->lineEdit_32->text();
     name        = ui->lineEdit_33->text();
     address     = ui->lineEdit_34->text();
-
-
+    age         = ui->lineEdit_36->text();
+    social      = ui->lineEdit_35->text();
+    condition   = ui->lineEdit_46->text();
+    diet        = ui->lineEdit_39->text();
+    train       = ui->lineEdit_40->text();
+    nocturnal   = ui->lineEdit_43->text();
+    emotion     = ui->lineEdit_44->text();
+    petWorth    = ui->lineEdit_37->text();
+    parental    = ui->lineEdit_42->text();
+    allergies   = ui->lineEdit_41->text();
+    stability   = ui->lineEdit_38->text();
+    res         = ui->lineEdit_45->text();
 
     if(!l.dbOpen()){
         qDebug()<<"FAILED TO OPEN DATABASE";
@@ -422,7 +445,7 @@ void MainWindow::on_pushButton_20_clicked()
      *         (Linked List).
      */
     Client *newClient;
-    newClient = new Client(id, name, address);
+    newClient = new Client(id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
     shelter.addClient(newClient);
     /*
      * Store the User Input in the
@@ -430,7 +453,7 @@ void MainWindow::on_pushButton_20_clicked()
      */
     l.dbOpen();
     QSqlQuery q;
-    q.prepare("INSERT INTO CLIENT(id, name, address) values('"+id+"','"+name+"','"+address+"')");
+    q.prepare("INSERT INTO CLIENT(id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res) values('"+id+"','"+name+"','"+address+"','"+age+"','"+social+"','"+condition+"','"+diet+"','"+train+"','"+nocturnal+"','"+emotion+"','"+petWorth+"','"+parental+"','"+allergies+"','"+stability+"','"+res+"')");
 
     if(q.exec()){
         //Message for User if Client is added.
@@ -709,6 +732,18 @@ void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)
             ui->lineEdit_32->setText(qry.value(0).toString());
             ui->lineEdit_33->setText(qry.value(1).toString());
             ui->lineEdit_34->setText(qry.value(2).toString());
+            ui->lineEdit_36->setText(qry.value(3).toString());
+            ui->lineEdit_35->setText(qry.value(4).toString());
+            ui->lineEdit_46->setText(qry.value(5).toString());
+            ui->lineEdit_39->setText(qry.value(6).toString());
+            ui->lineEdit_40->setText(qry.value(7).toString());
+            ui->lineEdit_43->setText(qry.value(8).toString());
+            ui->lineEdit_44->setText(qry.value(9).toString());
+            ui->lineEdit_37->setText(qry.value(10).toString());
+            ui->lineEdit_42->setText(qry.value(11).toString());
+            ui->lineEdit_41->setText(qry.value(12).toString());
+            ui->lineEdit_38->setText(qry.value(13).toString());
+            ui->lineEdit_45->setText(qry.value(14).toString());
 
         }
         l.dbClose();
@@ -738,13 +773,25 @@ void MainWindow::on_tableView_5_activated(const QModelIndex &index)
      */
     l.dbOpen();
     QSqlQuery qry;
-    qry.prepare("SELECT * FROM CLIENT where id ='"+val+"' or name='"+val+"' or address='"+val+"'");
+    qry.prepare("SELECT * FROM CLIENT where id ='"+val+"' or name='"+val+"' or address='"+val+"' or age='"+val+"' or social='"+val+"' or condition='"+val+"' or diet='"+val+"' or train='"+val+"' or nocturnal='"+val+"' or emotion='"+val+"' or petWorth='"+val+"' or parental='"+val+"' or allergies='"+val+"' or stability='"+val+"' or res='"+val+"'");
 
     if(qry.exec()){
         while(qry.next()){
             ui->lineEdit_32->setText(qry.value(0).toString());
             ui->lineEdit_33->setText(qry.value(1).toString());
             ui->lineEdit_34->setText(qry.value(2).toString());
+            ui->lineEdit_36->setText(qry.value(3).toString());
+            ui->lineEdit_35->setText(qry.value(4).toString());
+            ui->lineEdit_46->setText(qry.value(5).toString());
+            ui->lineEdit_39->setText(qry.value(6).toString());
+            ui->lineEdit_40->setText(qry.value(7).toString());
+            ui->lineEdit_43->setText(qry.value(8).toString());
+            ui->lineEdit_44->setText(qry.value(9).toString());
+            ui->lineEdit_37->setText(qry.value(10).toString());
+            ui->lineEdit_42->setText(qry.value(11).toString());
+            ui->lineEdit_41->setText(qry.value(12).toString());
+            ui->lineEdit_38->setText(qry.value(13).toString());
+            ui->lineEdit_45->setText(qry.value(14).toString());
 
         }
         l.dbClose();
@@ -781,6 +828,18 @@ void MainWindow::on_listView_3_activated(const QModelIndex &index)
             ui->lineEdit_32->setText(qry.value(0).toString());
             ui->lineEdit_33->setText(qry.value(1).toString());
             ui->lineEdit_34->setText(qry.value(2).toString());
+            ui->lineEdit_36->setText(qry.value(3).toString());
+            ui->lineEdit_35->setText(qry.value(4).toString());
+            ui->lineEdit_46->setText(qry.value(5).toString());
+            ui->lineEdit_39->setText(qry.value(6).toString());
+            ui->lineEdit_40->setText(qry.value(7).toString());
+            ui->lineEdit_43->setText(qry.value(8).toString());
+            ui->lineEdit_44->setText(qry.value(9).toString());
+            ui->lineEdit_37->setText(qry.value(10).toString());
+            ui->lineEdit_42->setText(qry.value(11).toString());
+            ui->lineEdit_41->setText(qry.value(12).toString());
+            ui->lineEdit_38->setText(qry.value(13).toString());
+            ui->lineEdit_45->setText(qry.value(14).toString());
         }
         l.dbClose();
     }else{
@@ -820,6 +879,18 @@ void MainWindow::on_pushButton_25_clicked()
     ui->lineEdit_32->setText("");
     ui->lineEdit_33->setText("");
     ui->lineEdit_34->setText("");
+    ui->lineEdit_36->setText("");
+    ui->lineEdit_35->setText("");
+    ui->lineEdit_46->setText("");
+    ui->lineEdit_39->setText("");
+    ui->lineEdit_40->setText("");
+    ui->lineEdit_43->setText("");
+    ui->lineEdit_44->setText("");
+    ui->lineEdit_37->setText("");
+    ui->lineEdit_42->setText("");
+    ui->lineEdit_41->setText("");
+    ui->lineEdit_38->setText("");
+    ui->lineEdit_45->setText("");
 
 
 }
@@ -918,13 +989,23 @@ void MainWindow::on_pushButton_23_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
     login l;
-    QString id, name, address;
+    QString id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res;
 
     id          = ui->lineEdit_32->text();
     name        = ui->lineEdit_33->text();
     address     = ui->lineEdit_34->text();
-
-
+    age         = ui->lineEdit_36->text();
+    social      = ui->lineEdit_35->text();
+    condition   = ui->lineEdit_46->text();
+    diet        = ui->lineEdit_39->text();
+    train       = ui->lineEdit_40->text();
+    nocturnal   = ui->lineEdit_43->text();
+    emotion     = ui->lineEdit_44->text();
+    petWorth    = ui->lineEdit_37->text();
+    parental    = ui->lineEdit_42->text();
+    allergies   = ui->lineEdit_41->text();
+    stability   = ui->lineEdit_38->text();
+    res         = ui->lineEdit_45->text();
 
     if(!l.dbOpen()){
         qDebug()<<"FAILED TO OPEN DATABASE";
@@ -936,7 +1017,7 @@ void MainWindow::on_pushButton_23_clicked()
      *         (Linked List).
      */
     Client *newClient;
-    newClient = new Client(id, name, address);
+    newClient = new Client(id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
     shelter.addClient(newClient);
     /*
      * Store the User Input in the
@@ -944,7 +1025,7 @@ void MainWindow::on_pushButton_23_clicked()
      */
     l.dbOpen();
     QSqlQuery q;
-    q.prepare("update CLIENT set id='"+id+"', name='"+name+"', address='"+address+"' where id='"+id+"'");
+    q.prepare("update CLIENT set id='"+id+"', name='"+name+"', address='"+address+"', age='"+age+"', social='"+social+"', condition='"+condition+"', diet='"+diet+"', train='"+train+"', nocturnal='"+nocturnal+"', emotion='"+emotion+"', petWorth='"+petWorth+"', parental='"+parental+"', allergies='"+allergies+"', stability='"+stability+"', res='"+res+"' where id='"+id+"'");
     if(q.exec()){
         //Message for User if Client is added.
         QMessageBox::critical(this, tr("Edit"), tr("Updated!"));
@@ -1157,6 +1238,18 @@ void MainWindow::on_listView_8_activated(const QModelIndex &index)
             ui->lineEdit_113->setText(qry.value(0).toString());
             ui->lineEdit_114->setText(qry.value(1).toString());
             ui->lineEdit_121->setText(qry.value(2).toString());
+            ui->lineEdit_111->setText(qry.value(3).toString());
+            ui->lineEdit_123->setText(qry.value(4).toString());
+            ui->lineEdit_112->setText(qry.value(5).toString());
+            ui->lineEdit_117->setText(qry.value(6).toString());
+            ui->lineEdit_116->setText(qry.value(7).toString());
+            ui->lineEdit_115->setText(qry.value(8).toString());
+            ui->lineEdit_124->setText(qry.value(9).toString());
+            ui->lineEdit_110->setText(qry.value(10).toString());
+            ui->lineEdit_119->setText(qry.value(11).toString());
+            ui->lineEdit_122->setText(qry.value(12).toString());
+            ui->lineEdit_120->setText(qry.value(13).toString());
+            ui->lineEdit_118->setText(qry.value(14).toString());
         }
         l.dbClose();
     }else{
@@ -1174,5 +1267,17 @@ void MainWindow::on_pushButton_53_clicked()
     ui->lineEdit_113->setText("");
     ui->lineEdit_114->setText("");
     ui->lineEdit_121->setText("");
+    ui->lineEdit_111->setText("");
+    ui->lineEdit_123->setText("");
+    ui->lineEdit_112->setText("");
+    ui->lineEdit_117->setText("");
+    ui->lineEdit_116->setText("");
+    ui->lineEdit_115->setText("");
+    ui->lineEdit_124->setText("");
+    ui->lineEdit_110->setText("");
+    ui->lineEdit_119->setText("");
+    ui->lineEdit_122->setText("");
+    ui->lineEdit_120->setText("");
+    ui->lineEdit_118->setText("");
 
 }
