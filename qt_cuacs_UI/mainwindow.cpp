@@ -115,9 +115,9 @@ void MainWindow::on_pushButton_3_clicked()
  */
 void MainWindow::on_pushButton_4_clicked()
 {
+    ui->stackedWidget->setCurrentIndex(1);
     ui->label->setText("Welcome Client!");
     ui->label->setStyleSheet("color: rgb(128,0,0)");
-    ui->stackedWidget->setCurrentIndex(1);
 }
 /*
  * Back Button for
@@ -125,6 +125,7 @@ void MainWindow::on_pushButton_4_clicked()
  */
 void MainWindow::on_pushButton_5_clicked()
 {
+    on_pushButton_26_clicked();
     ui->stackedWidget->setCurrentIndex(2);
 }
 /*
@@ -133,6 +134,7 @@ void MainWindow::on_pushButton_5_clicked()
  */
 void MainWindow::on_pushButton_6_clicked()
 {
+    on_pushButton_26_clicked();
     ui->stackedWidget->setCurrentIndex(0);
 }
 /*
@@ -334,6 +336,7 @@ void MainWindow::on_pushButton_13_clicked()
  */
 void MainWindow::on_pushButton_14_clicked()
 {
+    on_pushButton_54_clicked();
     ui->stackedWidget->setCurrentIndex(1);
 }
 /*
@@ -342,6 +345,7 @@ void MainWindow::on_pushButton_14_clicked()
  */
 void MainWindow::on_pushButton_15_clicked()
 {
+    on_pushButton_54_clicked();
     ui->stackedWidget->setCurrentIndex(0);
 }
 /*
@@ -350,6 +354,7 @@ void MainWindow::on_pushButton_15_clicked()
 */
 void MainWindow::on_pushButton_16_clicked()
 {
+    on_pushButton_53_clicked();
     ui->stackedWidget->setCurrentIndex(2);
 }
 /*
@@ -358,6 +363,7 @@ void MainWindow::on_pushButton_16_clicked()
 */
 void MainWindow::on_pushButton_17_clicked()
 {
+    on_pushButton_53_clicked();
     ui->stackedWidget->setCurrentIndex(0);
 }
 /*
@@ -372,7 +378,7 @@ void MainWindow::on_pushButton_18_clicked()
     ui->label_34->setText("Address");
     ui->label_44->setText("Age");
     ui->label_46->setText("Social");
-    ui->label_36->setText("Condition");
+    ui->label_36->setText("Health");
     ui->label_45->setText("Diet");
     ui->label_39->setText("Train");
     ui->label_35->setText("Nocturnal");
@@ -1280,4 +1286,216 @@ void MainWindow::on_pushButton_53_clicked()
     ui->lineEdit_120->setText("");
     ui->lineEdit_118->setText("");
 
+}
+
+void MainWindow::on_pushButton_55_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_10->setModel(m);
+    //ui->comboBox_7->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    on_pushButton_53_clicked();
+}
+
+/*
+ * List Click for
+ * Edit Client in
+ * Client
+*/
+void MainWindow::on_listView_10_activated(const QModelIndex &index)
+{
+    ui->stackedWidget->setCurrentIndex(8);
+    QString val = ui->listView_10->model()->data(index).toString();
+    login l;
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+
+    l.dbOpen();
+    QSqlQuery qry;
+
+    qry.prepare("SELECT * FROM CLIENT where id ='"+val+"'");
+    ui->stackedWidget->setCurrentIndex(9);
+
+    if(qry.exec()){
+        while(qry.next()){
+            ui->lineEdit_229->setText(qry.value(0).toString());
+            ui->lineEdit_230->setText(qry.value(1).toString());
+            ui->lineEdit_233->setText(qry.value(2).toString());
+            ui->lineEdit_227->setText(qry.value(3).toString());
+            ui->lineEdit_231->setText(qry.value(4).toString());
+            ui->lineEdit_220->setText(qry.value(5).toString());
+            ui->lineEdit_226->setText(qry.value(6).toString());
+            ui->lineEdit_221->setText(qry.value(7).toString());
+            ui->lineEdit_222->setText(qry.value(8).toString());
+            ui->lineEdit_232->setText(qry.value(9).toString());
+            ui->lineEdit_224->setText(qry.value(10).toString());
+            ui->lineEdit_219->setText(qry.value(11).toString());
+            ui->lineEdit_228->setText(qry.value(12).toString());
+            ui->lineEdit_225->setText(qry.value(13).toString());
+            ui->lineEdit_223->setText(qry.value(14).toString());
+        }
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+    QSqlQueryModel *model = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from CLIENT where id ='"+val+"'");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_16->setModel(model);
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+
+    //ui->stackedWidget->setCurrentIndex(9);
+
+}
+/*
+ * Update Button for
+ * Edit Client in
+ * List Click for
+ * Client
+*/
+void MainWindow::on_pushButton_87_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+    login l;
+    QString id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res;
+
+    id          = ui->lineEdit_229->text();
+    name        = ui->lineEdit_230->text();
+    address     = ui->lineEdit_233->text();
+    age         = ui->lineEdit_227->text();
+    social      = ui->lineEdit_231->text();
+    condition   = ui->lineEdit_220->text();
+    diet        = ui->lineEdit_226->text();
+    train       = ui->lineEdit_221->text();
+    nocturnal   = ui->lineEdit_222->text();
+    emotion     = ui->lineEdit_232->text();
+    petWorth    = ui->lineEdit_224->text();
+    parental    = ui->lineEdit_219->text();
+    allergies   = ui->lineEdit_228->text();
+    stability   = ui->lineEdit_225->text();
+    res         = ui->lineEdit_223->text();
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Create an Client Object for User Input
+     *     and stores it in Memory
+     *         (Linked List).
+     */
+    Client *newClient;
+    newClient = new Client(id, name, address, age, social, condition, diet, train, nocturnal, emotion, petWorth, parental, allergies, stability, res);
+    shelter.addClient(newClient);
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery q;
+    q.prepare("update CLIENT set id='"+id+"', name='"+name+"', address='"+address+"', age='"+age+"', social='"+social+"', condition='"+condition+"', diet='"+diet+"', train='"+train+"', nocturnal='"+nocturnal+"', emotion='"+emotion+"', petWorth='"+petWorth+"', parental='"+parental+"', allergies='"+allergies+"', stability='"+stability+"', res='"+res+"' where id='"+id+"'");
+    if(q.exec()){
+        //Message for User if Client is added.
+        QMessageBox::critical(this, tr("Edit"), tr("Updated!"));
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), q.lastError().text());
+    }
+    /*
+     * Print Updated
+     *   Database.
+     */
+    //ui->stackedWidget->setCurrentIndex(8);
+
+    QSqlQueryModel *model = new QSqlQueryModel();
+    //QString val = ui->listView_10->model()->data(index).toString();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    que->prepare("SELECT * from CLIENT where id='"+id+"'");
+    que->exec();
+    model->setQuery(*que);
+    ui->tableView_16->setModel(model);
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+
+    /*
+    //login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    qry->exec();
+    m->setQuery(*qry);
+    ui->listView_3->setModel(m);
+    //ui->comboBox_2->setModel(m);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+
+    l.dbLaunch();
+    */
+
+    //on_pushButton_25_clicked();
+    //on_pushButton_55_clicked();
+
+}
+/*
+ * Back Button for
+ * Edit Client in
+ * List Click for
+ * Client
+*/
+void MainWindow::on_pushButton_85_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+/*
+ * Homepage Button for
+ * Edit Client in
+ * List Click
+ * Client
+*/
+void MainWindow::on_pushButton_86_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+/*
+ * Back Button for
+ * Edit Client in
+ * Client
+*/
+void MainWindow::on_pushButton_88_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+/*
+ * Homepage Button for
+ * Edit Client in
+ * Client
+*/
+void MainWindow::on_pushButton_89_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
