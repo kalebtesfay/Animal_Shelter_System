@@ -16,18 +16,12 @@ Coded with ❤️
 Purpose of Deliverable:
   - The purpose of this Deliverable is to implement the following features:
     - Staff
-      - View Animals
-        - Allows the Staff to view all the animals in the Database.
-      - Add Animal
-        - Allows the Staff to add animals profile required by the ACM to the Database.
-      - Add Client
-        - Allows the Staff to add Clients with basic contact information.
+      - Edit any Animals Profile.
     - Client
-      - View Animals
-        - Allows the Clients to view all the animals in the Database.
+      - Edit Clients Own Detailed information.
 
 List of Source/Header/Data File:
-  - This folder contains 23 files (not counting the README) and 1 Folder
+  - This folder contains 25 files (not counting the README) and 1 Folder
     - Task: Programming Implementations
       - 1 Folder
         - database
@@ -93,12 +87,8 @@ Compilation Cmd:
 	   - The folder name is called qt_cuacs_UI
 	    - cd into qt_cuacs_UI
              - cd qt_cuacs_UI
-        - Run make
-          - make
-        - Once you ran make, it'll create an updated version of all the object files.
-        - It'll create a big object file called qt_cuacs_UI, which is all the program's object files into one.
-          - Run...
-            - ./qt_cuacs_UI
+        - Run the script
+          - sh cuacs
         - To clean
             - make clean
 
@@ -109,6 +99,9 @@ Lanching and Operating Instructions:
         - Click Client
           - Click View Animals
            - Displays all the Animals in the database.
+	  - Click Edit Client
+           - Displayes the IDs of all Clients, select 1.
+	    - Detailed information will be showed and user can edit it.
           - Click Back
             - Redirects you to the previous page.
         - Click Staff
