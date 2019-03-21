@@ -5,11 +5,10 @@
 #include <sstream>
 #include <iomanip>
 #include <iostream>
-//Linked list template class
+
 using namespace std;
 
 #include "Animal.h"
-
 #include "Client.h"
 
 template<class T>
