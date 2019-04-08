@@ -57,7 +57,8 @@ SOURCES       = Animal.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
 		View.cpp \
-		Client.cpp moc_mainwindow.cpp
+		Client.cpp \
+		ACM.cpp moc_mainwindow.cpp
 OBJECTS       = Animal.o \
 		Control.o \
 		login.o \
@@ -66,6 +67,7 @@ OBJECTS       = Animal.o \
 		Shelter.o \
 		View.o \
 		Client.o \
+		ACM.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -163,14 +165,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		mainwindow.h \
 		Shelter.h \
 		View.h \
-		Client.h Animal.cpp \
+		Client.h \
+		ACM.h Animal.cpp \
 		Control.cpp \
 		login.cpp \
 		main.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
 		View.cpp \
-		Client.cpp
+		Client.cpp \
+		ACM.cpp
 QMAKE_TARGET  = qt_cuacs_UI
 DESTDIR       = 
 TARGET        = qt_cuacs_UI
@@ -388,8 +392,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h Client.h $(DISTDIR)/
-	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp Client.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h Client.h ACM.h $(DISTDIR)/
+	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp Client.cpp ACM.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -431,6 +435,7 @@ moc_mainwindow.cpp: Shelter.h \
 		Client.h \
 		login.h \
 		View.h \
+		ACM.h \
 		mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
@@ -480,6 +485,7 @@ main.o: main.cpp mainwindow.h \
 		Client.h \
 		login.h \
 		View.h \
+		ACM.h \
 		Control.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
@@ -490,6 +496,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		Client.h \
 		login.h \
 		View.h \
+		ACM.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
@@ -508,6 +515,9 @@ View.o: View.cpp View.h \
 
 Client.o: Client.cpp Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Client.o Client.cpp
+
+ACM.o: ACM.cpp ACM.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ACM.o ACM.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

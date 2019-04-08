@@ -22,7 +22,8 @@ DEFINES += QT_CUACS_UI_ROOT_DIR=\\\"$$_PRO_FILE_PWD_\\\"
 
 # Input
 HEADERS += Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h \
-    Client.h
+    Client.h \
+    ACM.h
 FORMS += mainwindow.ui
 SOURCES += Animal.cpp \
            Control.cpp \
@@ -31,4 +32,5 @@ SOURCES += Animal.cpp \
            mainwindow.cpp \
            Shelter.cpp \
            View.cpp \
-    Client.cpp
+    Client.cpp \
+    ACM.cpp

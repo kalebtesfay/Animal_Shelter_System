@@ -11,6 +11,7 @@
 #include "login.h"
 #include "AnimalList.h"
 #include "View.h"
+#include "ACM.h"
 
 
 namespace Ui {
