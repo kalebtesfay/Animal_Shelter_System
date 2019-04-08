@@ -1549,8 +1549,8 @@ void MainWindow::on_pushButton_30_clicked()
     ui->comboBox_4->setModel(m);
     ui->comboBox_5->setModel(m2);
     l.dbClose();
-    qDebug() <<(m->rowCount());
-    qDebug() <<(m2->rowCount());
+    qDebug() <<"There are:"<<(m->rowCount()) <<"Unique Animals in the database.";
+    qDebug() <<"There are:"<<(m2->rowCount())<<"Unique Ages of Animals in the database.";
 }
 
 /*
