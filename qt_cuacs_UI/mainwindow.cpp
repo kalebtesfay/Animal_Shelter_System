@@ -1547,29 +1547,29 @@ void MainWindow::on_pushButton_29_clicked()
 }
 
 /*
- * Launch Button for
+ * Start Button for
  * ACM in Staff
 */
 void MainWindow::on_pushButton_30_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(11);
-    login l;
-    QSqlQueryModel *m = new QSqlQueryModel();
-    QSqlQueryModel *m2 = new QSqlQueryModel();
-    l.dbOpen();
-    QSqlQuery* qry = new QSqlQuery(l.db);
-    QSqlQuery* qry2 = new QSqlQuery(l.db);
-    qry->prepare("SELECT distinct type from ANIMAL");
-    qry2->prepare("SELECT distinct age from ANIMAL");
-    qry->exec();
-    qry2->exec();
-    m->setQuery(*qry);
-    m2->setQuery(*qry2);
-    ui->comboBox_4->setModel(m);
-    ui->comboBox_5->setModel(m2);
-    l.dbClose();
-    qDebug() <<"There are:"<<(m->rowCount()) <<"Unique Animals in the database.";
-    qDebug() <<"There are:"<<(m2->rowCount())<<"Unique Ages of Animals in the database.";
+    ui->stackedWidget->setCurrentIndex(13);
+//    login l;
+//    QSqlQueryModel *m = new QSqlQueryModel();
+//    QSqlQueryModel *m2 = new QSqlQueryModel();
+//    l.dbOpen();
+//    QSqlQuery* qry = new QSqlQuery(l.db);
+//    QSqlQuery* qry2 = new QSqlQuery(l.db);
+//    qry->prepare("SELECT distinct type from ANIMAL");
+//    qry2->prepare("SELECT distinct age from ANIMAL");
+//    qry->exec();
+//    qry2->exec();
+//    m->setQuery(*qry);
+//    m2->setQuery(*qry2);
+//    ui->comboBox_4->setModel(m);
+//    ui->comboBox_5->setModel(m2);
+//    l.dbClose();
+//    qDebug() <<"There are:"<<(m->rowCount()) <<"Unique Animals in the database.";
+//    qDebug() <<"There are:"<<(m2->rowCount())<<"Unique Ages of Animals in the database.";
 }
 
 /*
@@ -1581,48 +1581,53 @@ void MainWindow::on_pushButton_32_clicked()
     ui->stackedWidget->setCurrentIndex(10);
 }
 
-/*
- * Homepage Button for
- * ACM in Staff
-*/
+///*
+// * Homepage Button for
+// * ACM in Staff
+//*/
 void MainWindow::on_pushButton_31_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
-/*
- * Next Button for
- * Filter Stage
- * in Staff for ACM
-*/
-void MainWindow::on_pushButton_33_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(12);
-}
-/*
- * Back Button for
- * Scenerio Questions
- * in Staff for ACM
-*/
-void MainWindow::on_pushButton_34_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(11);
-}
-/*
- * Submit Button for ACM
- * in Staff to match
- * Client with Pet
-*/
-void MainWindow::on_pushButton_35_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(13);
-}
-/*
- * Back Button for
- * Matching Client in
- * Staff
-*/
+///*
+// * Next Button for
+// * Filter Stage
+// * in Staff for ACM
+//*/
+//void MainWindow::on_pushButton_33_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(12);
+//}
+///*
+// * Back Button for
+// * Scenerio Questions
+// * in Staff for ACM
+//*/
+//void MainWindow::on_pushButton_34_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(11);
+//}
+///*
+// * Submit Button for ACM
+// * in Staff to match
+// * Client with Pet
+//*/
+//void MainWindow::on_pushButton_35_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(13);
+//}
+///*
+// * Back Button for
+// * Matching Client in
+// * Staff
+//*/
+//void MainWindow::on_pushButton_36_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(12);
+//}
+
 void MainWindow::on_pushButton_36_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(12);
+    ui->stackedWidget->setCurrentIndex(10);
 }
