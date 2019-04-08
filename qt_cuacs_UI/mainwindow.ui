@@ -3363,7 +3363,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Launch</string>
+       <string>Start</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_64">
