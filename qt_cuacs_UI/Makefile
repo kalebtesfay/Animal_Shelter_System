@@ -516,7 +516,10 @@ View.o: View.cpp View.h \
 Client.o: Client.cpp Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Client.o Client.cpp
 
-ACM.o: ACM.cpp ACM.h
+ACM.o: ACM.cpp ACM.h \
+		AnimalList.h \
+		Animal.h \
+		Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ACM.o ACM.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
