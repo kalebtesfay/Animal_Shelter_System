@@ -1501,7 +1501,6 @@ void MainWindow::on_pushButton_89_clicked()
 }
 
 /*
- * Launch
  * ACM Button for
  * Staff
 */
@@ -1526,4 +1525,67 @@ void MainWindow::on_pushButton_28_clicked()
 void MainWindow::on_pushButton_29_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+/*
+ * Launch Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_30_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    QSqlQueryModel *m2 = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    QSqlQuery* qry2 = new QSqlQuery(l.db);
+    qry->prepare("SELECT distinct type from ANIMAL");
+    qry2->prepare("SELECT distinct age from ANIMAL");
+    qry->exec();
+    qry2->exec();
+    m->setQuery(*qry);
+    m2->setQuery(*qry2);
+    ui->comboBox_4->setModel(m);
+    ui->comboBox_5->setModel(m2);
+    l.dbClose();
+    qDebug() <<(m->rowCount());
+    qDebug() <<(m2->rowCount());
+}
+
+/*
+ * Back Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_32_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+/*
+ * Homepage Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_31_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+/*
+ * Next Button for
+ * Filter Stage
+ * in Staff for ACM
+*/
+void MainWindow::on_pushButton_33_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(12);
+}
+/*
+ * Back Button for
+ * Scenerio Questions
+ * in Staff for ACM
+*/
+void MainWindow::on_pushButton_34_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
 }
