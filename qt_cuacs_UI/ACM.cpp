@@ -1,3 +1,8 @@
+#include <iostream>
+#include <iomanip>
+#include <QString>
+using namespace std;
+
 #include "ACM.h"
 
 ACM::ACM(QString type, QString breed, QString name, QString sex,
