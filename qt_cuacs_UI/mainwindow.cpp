@@ -1499,3 +1499,31 @@ void MainWindow::on_pushButton_89_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
+/*
+ * Launch
+ * ACM Button for
+ * Staff
+*/
+void MainWindow::on_pushButton_27_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+/*
+ * Back Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_28_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+/*
+ * Homepage Button for
+ * Staff in ACM
+*/
+void MainWindow::on_pushButton_29_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
