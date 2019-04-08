@@ -10,6 +10,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setStyleSheet("background-color: #EAEAEA;");
 
+    for(int i = 1; i <= 5; i++){
+        ui->comboBox_6->addItem(QString::number(i));
+        ui->comboBox_17->addItem(QString::number(i));
+        ui->comboBox_18->addItem(QString::number(i));
+        ui->comboBox_19->addItem(QString::number(i));
+        ui->comboBox_20->addItem(QString::number(i));
+        ui->comboBox_25->addItem(QString::number(i));
+    }
+    QString arr[5] = {"Student", "Morning Shift", "Afternoon Shift", "Evening Shift", "Overnight Shift"};
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+        ui->comboBox_26->addItem(arr[i]);
+
+    }
+    QString arr2[5] = {"Apartment", "Town House", "House", "Condo", "Mansion"};
+    for(int j = 0; j < sizeof(arr2)/sizeof(arr2[0]); j++){
+        ui->comboBox_27->addItem(arr2[j]);
+
+    }
+
 }
 
 MainWindow::~MainWindow()
@@ -1579,6 +1598,20 @@ void MainWindow::on_pushButton_31_clicked()
 void MainWindow::on_pushButton_33_clicked()
 {
     ui->stackedWidget->setCurrentIndex(12);
+//    for(int i = 1; i <= 5; i++){
+//        ui->comboBox_6->addItem(QString::number(i));
+//        ui->comboBox_17->addItem(QString::number(i));
+//        ui->comboBox_18->addItem(QString::number(i));
+//        ui->comboBox_19->addItem(QString::number(i));
+//        ui->comboBox_20->addItem(QString::number(i));
+//        ui->comboBox_25->addItem(QString::number(i));
+//    }
+//    QString arr[5] = {"Student", "Morning Shift", "Afternoon Shift", "Evening Shift", "Overnight Shift"};
+//    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+//        ui->comboBox_26->addItem(arr[i]);
+
+//    }
+    //ui->comboBox_27->addItem();
 }
 /*
  * Back Button for

@@ -3617,9 +3617,9 @@
      <widget class="QLabel" name="label_67">
       <property name="geometry">
        <rect>
-        <x>320</x>
+        <x>230</x>
         <y>0</y>
-        <width>261</width>
+        <width>381</width>
         <height>51</height>
        </rect>
       </property>
@@ -3629,7 +3629,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Scenerio Questions</string>
+       <string>Scaled Attributes Questions </string>
       </property>
      </widget>
      <widget class="QLabel" name="label_68">
