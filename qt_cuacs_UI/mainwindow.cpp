@@ -1499,24 +1499,3 @@ void MainWindow::on_pushButton_89_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
-
-void MainWindow::on_pushButton_27_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
-void MainWindow::on_pushButton_28_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(9);
-}
-
-void MainWindow::on_pushButton_29_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
-void MainWindow::on_pushButton_30_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(10);
-}
-
