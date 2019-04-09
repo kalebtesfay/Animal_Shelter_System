@@ -74,6 +74,8 @@ int ACM::weightingSystem(){
 
         int p = weightAge + weightSocial + weightDiet + weightTrained + weightPetWorth + weightAllergy + weightHealth + weightRes + weightNocturnal + weightEmotion + weightParental + weightStability;
 
+        int n = p/12;
+
         /*
          * Dynamically Allocates the Database first
          *          Entries into Memory
@@ -136,6 +138,8 @@ int ACM::weightingSystem(){
         float weightStability = 0.125;
 
         int p = weightAge + weightSocial + weightDiet + weightTrained + weightPetWorth + weightAllergy + weightHealth + weightRes + weightNocturnal + weightEmotion + weightParental + weightStability;
+
+        int n = p/12;
 
         /*
          * Dynamically Allocates the Database first
