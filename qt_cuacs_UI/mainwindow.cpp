@@ -1668,7 +1668,7 @@ void MainWindow::on_listView_5_activated(const QModelIndex &index)
      */
     l.dbOpen();
     QSqlQuery qry;
-    QSqlQuery qry2;
+    QSqlQuery qryy;
 
     qry.prepare("SELECT * FROM CLIENT where id ='"+val+"'");
     ui->stackedWidget->setCurrentIndex(13);
