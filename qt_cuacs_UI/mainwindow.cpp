@@ -8,7 +8,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: #EAEAEA;");
+    //this->setStyleSheet("background-color: #EAEAEA;");
+    //this->setStyleSheet("* {color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));"
+      //                  "background: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 cyan, stop:1 Purple);}");
+    this->setStyleSheet("* {color: qlineargradient(stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"
+                        "background: qlineargradient(stop:0 cyan, stop:1 Purple);}");
 
     for(int i = 1; i <= 5; i++){
         ui->comboBox_6->addItem(QString::number(i));
@@ -1655,7 +1659,19 @@ void MainWindow::on_pushButton_36_clicked()
 void MainWindow::on_listView_5_activated(const QModelIndex &index)
 {
     QString val = ui->listView_5->model()->data(index).toString();
+    //Client
+    QString id, name, address, age, social, condition, diet, train;
+    QString nocturnal, emotion, petWorth, parental, allergies, stability, res;
+
+    //Animal
+    QString type, breed, name2, sex, age2, social2, condition2, diet2, train2;
+    QString nocturnal2, emotion2, petWorth2, parental2, allergies2, stability2, res2;
     login l;
+    /*ACM a = new ACM(0,0, type, breed, name2, sex, age2, social2, condition2, diet2, train2,
+                  nocturnal2, emotion2, petWorth2, parental2, allergies2, stability2, res2,
+                  id, name, address, age, social, condition, diet, train, nocturnal, emotion,
+                  petWorth, parental, allergies, stability, res);
+                  */
 
 
     if(!l.dbOpen()){
@@ -1692,7 +1708,13 @@ void MainWindow::on_listView_5_activated(const QModelIndex &index)
     modell->setQuery(*quee);
     ui->tableView_6->setModel(model);
     ui->tableView_7->setModel(modell);
+    //a.weightingSystem();
     l.dbClose();
     qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
 
+}
+
+void MainWindow::on_pushButton_37_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }

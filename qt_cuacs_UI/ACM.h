@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "AnimalList.h"
 #include "login.h"
+#include "Shelter.h"
 
 
 
@@ -20,12 +21,17 @@ public:
         QString, QString, QString);
 
     ~ACM();
-    int scoringSystem(Animal*,Client*);
+    int getWeight();
+    int getScoring();
+    int weightingSystem();
 
 protected:
     //Animal& a;
+    Shelter s;
     int weight;
     int scoring;
+    AnimalList<Animal*> animalList;
+    AnimalList<Client*> clientList;
     QString type;
     QString breed;
     QString name;
