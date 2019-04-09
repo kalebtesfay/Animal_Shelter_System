@@ -92,6 +92,7 @@ private slots:
 //    void on_pushButton_35_clicked();
 //    void on_pushButton_36_clicked();
     void on_pushButton_36_clicked();
+    void on_listView_5_activated(const QModelIndex &index);
 };
 
 #endif // MAINWINDOW_H
