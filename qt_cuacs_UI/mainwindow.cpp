@@ -1573,21 +1573,21 @@ void MainWindow::on_pushButton_30_clicked()
 
     login l;
     QSqlQueryModel *m = new QSqlQueryModel();
-    QSqlQueryModel *m2 = new QSqlQueryModel();
+    //QSqlQueryModel *m2 = new QSqlQueryModel();
     l.dbOpen();
     QSqlQuery* qry = new QSqlQuery(l.db);
-    QSqlQuery* qry2 = new QSqlQuery(l.db);
+    //QSqlQuery* qry2 = new QSqlQuery(l.db);
     qry->prepare("SELECT id from CLIENT");
-    qry2->prepare("SELECT * from ANIMAL");
+    //qry2->prepare("SELECT * from ANIMAL");
     qry->exec();
-    qry2->exec();
+    //qry2->exec();
     m->setQuery(*qry);
-    m2->setQuery(*qry2);
+    //m2->setQuery(*qry2);
     ui->listView_5->setModel(m);
-    ui->tableView_6->setModel(m2);
+    //ui->tableView_6->setModel(m2);
     l.dbClose();
     qDebug() <<"There are:"<<(m->rowCount()) <<"Clients in the database.";
-    qDebug() <<"There are:"<<(m2->rowCount()) <<"Clients and Animals in the database.";
+    //qDebug() <<"There are:"<<(m2->rowCount()) <<"Clients and Animals in the database.";
 
 }
 
@@ -1679,12 +1679,18 @@ void MainWindow::on_listView_5_activated(const QModelIndex &index)
     }
 
     QSqlQueryModel *model = new QSqlQueryModel();
+    QSqlQueryModel *modell = new QSqlQueryModel();
     l.dbOpen();
     QSqlQuery *que = new QSqlQuery(l.db);
+    QSqlQuery *quee = new QSqlQuery(l.db);
     que->prepare("SELECT * from CLIENT where id ='"+val+"'");
+    quee->prepare("SELECT * from ANIMAL where age ='"+val+"'");
     que->exec();
+    quee->exec();
     model->setQuery(*que);
+    modell->setQuery(*quee);
     ui->tableView_6->setModel(model);
+    ui->tableView_7->setModel(modell);
     l.dbClose();
     qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
 
