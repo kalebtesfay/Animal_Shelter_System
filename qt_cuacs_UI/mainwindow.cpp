@@ -1684,7 +1684,7 @@ void MainWindow::on_listView_5_activated(const QModelIndex &index)
     QSqlQuery *que = new QSqlQuery(l.db);
     QSqlQuery *quee = new QSqlQuery(l.db);
     que->prepare("SELECT * from CLIENT where id ='"+val+"'");
-    quee->prepare("SELECT * from ANIMAL where age ='"+val+"'");
+    quee->prepare("SELECT * from ANIMAL where age !='"+val+"' ORDER BY RANDOM() LIMIT 1");
     que->exec();
     quee->exec();
     model->setQuery(*que);
