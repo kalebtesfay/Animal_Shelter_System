@@ -27,6 +27,9 @@ ACM::ACM(int weight, int scoring, QString type, QString breed, QString name, QSt
 ACM::~ACM(){}
 
 int ACM::scoringSystem(Animal* a, Client* c){
+    
+    login l;
+    
 
 
 

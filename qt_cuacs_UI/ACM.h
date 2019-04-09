@@ -3,12 +3,14 @@
 #include <QString>
 #include <QDebug>
 #include "AnimalList.h"
+#include "login.h"
+
 
 
 class ACM : public Animal, public Client
 {
 public:
-    ACM(QString, QString, QString, QString,
+    ACM(int, int, QString, QString, QString, QString,
         QString, QString, QString, QString,
         QString, QString, QString, QString,
         QString, QString, QString, QString,
@@ -18,7 +20,7 @@ public:
         QString, QString, QString);
 
     ~ACM();
-    int scoringSystem();
+    int scoringSystem(Animal*,Client*);
 
 protected:
     //Animal& a;

@@ -1673,6 +1673,7 @@ void MainWindow::on_listView_5_activated(const QModelIndex &index)
     qry.prepare("SELECT * FROM CLIENT where id ='"+val+"'");
     ui->stackedWidget->setCurrentIndex(13);
     if(qry.exec()){
+        QMessageBox::critical(this, tr("Match"), tr("MATCHED!"));
         l.dbClose();
     }else{
         QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());

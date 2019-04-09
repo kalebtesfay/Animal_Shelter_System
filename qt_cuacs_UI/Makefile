@@ -519,7 +519,9 @@ Client.o: Client.cpp Client.h
 ACM.o: ACM.cpp ACM.h \
 		AnimalList.h \
 		Animal.h \
-		Client.h
+		Client.h \
+		login.h \
+		Shelter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ACM.o ACM.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
