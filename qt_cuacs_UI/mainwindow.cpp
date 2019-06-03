@@ -8,7 +8,30 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: #EAEAEA;");
+    //this->setStyleSheet("background-color: #EAEAEA;");
+    //this->setStyleSheet("* {color: qlineargradient(spread:pad, x1:0 y1:0, x2:1 y2:0, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(255, 255, 255, 255));"
+      //                  "background: qlineargradient( x1:0 y1:0, x2:1 y2:0, stop:0 cyan, stop:1 Purple);}");
+    this->setStyleSheet("* {color: qlineargradient(stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));"
+                        "background: qlineargradient(stop:0 cyan, stop:1 Purple);}");
+
+    for(int i = 1; i <= 5; i++){
+        ui->comboBox_6->addItem(QString::number(i));
+        ui->comboBox_17->addItem(QString::number(i));
+        ui->comboBox_18->addItem(QString::number(i));
+        ui->comboBox_19->addItem(QString::number(i));
+        ui->comboBox_20->addItem(QString::number(i));
+        ui->comboBox_25->addItem(QString::number(i));
+    }
+    QString arr[5] = {"Student", "Morning Shift", "Afternoon Shift", "Evening Shift", "Overnight Shift"};
+    for(int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+        ui->comboBox_26->addItem(arr[i]);
+
+    }
+    QString arr2[5] = {"Apartment", "Town House", "House", "Condo", "Mansion"};
+    for(int j = 0; j < sizeof(arr2)/sizeof(arr2[0]); j++){
+        ui->comboBox_27->addItem(arr2[j]);
+
+    }
 
 }
 
@@ -1499,3 +1522,202 @@ void MainWindow::on_pushButton_89_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+<<<<<<< HEAD
+=======
+
+/*
+ * ACM Button for
+ * Staff
+*/
+void MainWindow::on_pushButton_27_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+/*
+ * Back Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_28_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+/*
+ * Homepage Button for
+ * Staff in ACM
+*/
+void MainWindow::on_pushButton_29_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+/*
+ * Start Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_30_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
+//    login l;
+//    QSqlQueryModel *m = new QSqlQueryModel();
+//    QSqlQueryModel *m2 = new QSqlQueryModel();
+//    l.dbOpen();
+//    QSqlQuery* qry = new QSqlQuery(l.db);
+//    QSqlQuery* qry2 = new QSqlQuery(l.db);
+//    qry->prepare("SELECT distinct type from ANIMAL");
+//    qry2->prepare("SELECT distinct age from ANIMAL");
+//    qry->exec();
+//    qry2->exec();
+//    m->setQuery(*qry);
+//    m2->setQuery(*qry2);
+//    ui->comboBox_4->setModel(m);
+//    ui->comboBox_5->setModel(m2);
+//    l.dbClose();
+//    qDebug() <<"There are:"<<(m->rowCount()) <<"Unique Animals in the database.";
+//    qDebug() <<"There are:"<<(m2->rowCount())<<"Unique Ages of Animals in the database.";
+
+    login l;
+    QSqlQueryModel *m = new QSqlQueryModel();
+    //QSqlQueryModel *m2 = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery* qry = new QSqlQuery(l.db);
+    //QSqlQuery* qry2 = new QSqlQuery(l.db);
+    qry->prepare("SELECT id from CLIENT");
+    //qry2->prepare("SELECT * from ANIMAL");
+    qry->exec();
+    //qry2->exec();
+    m->setQuery(*qry);
+    //m2->setQuery(*qry2);
+    ui->listView_5->setModel(m);
+    //ui->tableView_6->setModel(m2);
+    l.dbClose();
+    qDebug() <<"There are:"<<(m->rowCount()) <<"Clients in the database.";
+    //qDebug() <<"There are:"<<(m2->rowCount()) <<"Clients and Animals in the database.";
+
+}
+
+
+/*
+ * Back Button for
+ * ACM in Staff
+*/
+void MainWindow::on_pushButton_32_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+///*
+// * Homepage Button for
+// * ACM in Staff
+//*/
+void MainWindow::on_pushButton_31_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+///*
+// * Next Button for
+// * Filter Stage
+// * in Staff for ACM
+//*/
+//void MainWindow::on_pushButton_33_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(12);
+//}
+///*
+// * Back Button for
+// * Scenerio Questions
+// * in Staff for ACM
+//*/
+//void MainWindow::on_pushButton_34_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(11);
+//}
+///*
+// * Submit Button for ACM
+// * in Staff to match
+// * Client with Pet
+//*/
+//void MainWindow::on_pushButton_35_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(13);
+//}
+///*
+// * Back Button for
+// * Matching Client in
+// * Staff
+//*/
+//void MainWindow::on_pushButton_36_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(12);
+//}
+
+void MainWindow::on_pushButton_36_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_listView_5_activated(const QModelIndex &index)
+{
+    QString val = ui->listView_5->model()->data(index).toString();
+    //Client
+    QString id, name, address, age, social, condition, diet, train;
+    QString nocturnal, emotion, petWorth, parental, allergies, stability, res;
+
+    //Animal
+    QString type, breed, name2, sex, age2, social2, condition2, diet2, train2;
+    QString nocturnal2, emotion2, petWorth2, parental2, allergies2, stability2, res2;
+    login l;
+    /*ACM a = new ACM(0,0, type, breed, name2, sex, age2, social2, condition2, diet2, train2,
+                  nocturnal2, emotion2, petWorth2, parental2, allergies2, stability2, res2,
+                  id, name, address, age, social, condition, diet, train, nocturnal, emotion,
+                  petWorth, parental, allergies, stability, res);
+                  */
+
+
+    if(!l.dbOpen()){
+        qDebug()<<"FAILED TO OPEN DATABASE";
+        return;
+    }
+    /*
+     * Store the User Input in the
+     *        Database.
+     */
+    l.dbOpen();
+    QSqlQuery qry;
+    QSqlQuery qryy;
+
+    qry.prepare("SELECT * FROM CLIENT where id ='"+val+"'");
+    ui->stackedWidget->setCurrentIndex(13);
+    if(qry.exec()){
+        QMessageBox::critical(this, tr("Match"), tr("MATCHED!"));
+        l.dbClose();
+    }else{
+        QMessageBox::critical(this, tr("ERROR"), qry.lastError().text());
+    }
+
+    QSqlQueryModel *model = new QSqlQueryModel();
+    QSqlQueryModel *modell = new QSqlQueryModel();
+    l.dbOpen();
+    QSqlQuery *que = new QSqlQuery(l.db);
+    QSqlQuery *quee = new QSqlQuery(l.db);
+    que->prepare("SELECT * from CLIENT where id ='"+val+"'");
+    quee->prepare("SELECT * from ANIMAL where age !='"+val+"' ORDER BY RANDOM() LIMIT 1");
+    que->exec();
+    quee->exec();
+    model->setQuery(*que);
+    modell->setQuery(*quee);
+    ui->tableView_6->setModel(model);
+    ui->tableView_7->setModel(modell);
+    //a.weightingSystem();
+    l.dbClose();
+    qDebug() << "There is:" << (model->rowCount()) << "Clients in the database now.";
+
+}
+
+void MainWindow::on_pushButton_37_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+>>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.5.2, 2019-03-21T04:18:50. -->
+=======
+<!-- Written by QtCreator 4.5.2, 2019-04-09T05:10:57. -->
+>>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -183,8 +187,13 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">qt_cuacs_UI</value>
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">qt_cuacs_UI2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/student/COMP3004/D3/Animal_Shelter_System/qt_cuacs_UI/qt_cuacs_UI.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/student/COMP3004/D4/Animal_Shelter_System/qt_cuacs_UI/qt_cuacs_UI.pro</value>
+>>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">qt_cuacs_UI.pro</value>

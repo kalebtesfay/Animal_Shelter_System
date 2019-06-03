@@ -11,6 +11,7 @@
 #include "login.h"
 #include "AnimalList.h"
 #include "View.h"
+#include "ACM.h"
 
 
 namespace Ui {
@@ -80,6 +81,22 @@ private slots:
     void on_pushButton_86_clicked();
     void on_pushButton_88_clicked();
     void on_pushButton_89_clicked();
+<<<<<<< HEAD
+=======
+    void on_pushButton_27_clicked();
+    void on_pushButton_28_clicked();
+    void on_pushButton_29_clicked();
+    void on_pushButton_30_clicked();
+    void on_pushButton_32_clicked();
+    void on_pushButton_31_clicked();
+//    void on_pushButton_33_clicked();
+//    void on_pushButton_34_clicked();
+//    void on_pushButton_35_clicked();
+//    void on_pushButton_36_clicked();
+    void on_pushButton_36_clicked();
+    void on_listView_5_activated(const QModelIndex &index);
+    void on_pushButton_37_clicked();
+>>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 };
 
 #endif // MAINWINDOW_H
