@@ -1522,8 +1522,6 @@ void MainWindow::on_pushButton_89_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
-<<<<<<< HEAD
-=======
 
 /*
  * ACM Button for
@@ -1720,4 +1718,3 @@ void MainWindow::on_pushButton_37_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1

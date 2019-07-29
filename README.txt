@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-cuACS (D3)
-=======
 cuACS (D4)
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
+
+COMP 3004 - Winter 2019
 
 Team: 4our People
 
@@ -19,14 +17,7 @@ Coded with ❤️
 
 Purpose of Deliverable:
   - The purpose of this Deliverable is to implement the following features:
-<<<<<<< HEAD
-    - Staff
-      - Edit any Animals Profile.
-    - Client
-      - Edit Clients Own Detailed information.
-=======
     - Full Implementation of acs algorithm for matching clients and animals
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 
 List of Source/Header/Data File:
   - This folder contains 25 files (not counting the README) and 1 Folder
@@ -61,11 +52,8 @@ List of Source/Header/Data File:
           - main() class for the program.
         - mainwindow.cpp
           - In charge of Server-side/Back-end calling so buttons can operate with other classes.
-<<<<<<< HEAD
-=======
         -ACM.cpp
           -In charge of calculating attributes in matching.
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
       - 7 .h files.
         - Animal.h
           - Header file for Animal class.
@@ -83,11 +71,8 @@ List of Source/Header/Data File:
           - Header file for View class.
         - mainwindow.h
           - Header file for for mainwindow class.
-<<<<<<< HEAD
-=======
         -ACM.h
           - Header file for animal shelter matching class
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
       - 1 makefile
         - Makefile
           - Typing make in cmd line...
@@ -107,12 +92,7 @@ Compilation Cmd:
              - cd qt_cuacs_UI
         - Run the script
           - sh cuacs
-<<<<<<< HEAD
-        - To clean
-            - make clean
-=======
 
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 
 Lanching and Operating Instructions:
   - Once the code is ran...
@@ -166,9 +146,6 @@ Lanching and Operating Instructions:
                   - Directs user back to Homepage.
               - Click Back
                - Redirects users to previous page.
-<<<<<<< HEAD
-=======
                - Click ACM
                 - Click Start
                     -From the list presented click Id of clients to get corisponding animal match
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1

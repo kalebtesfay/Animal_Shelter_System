@@ -12,11 +12,7 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-<<<<<<< HEAD
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_CUACS_UI_ROOT_DIR=\"/home/student/COMP3004/D3/Animal_Shelter_System/qt_cuacs_UI\" -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
-=======
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_CUACS_UI_ROOT_DIR=\"/home/student/Downloads/D4/Animal_Shelter_System/qt_cuacs_UI\" -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
@@ -39,11 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = qt_cuacs_UI1.0.0
-<<<<<<< HEAD
-DISTDIR = /home/student/COMP3004/D3/Animal_Shelter_System/qt_cuacs_UI/.tmp/qt_cuacs_UI1.0.0
-=======
 DISTDIR = /home/student/Downloads/D4/Animal_Shelter_System/qt_cuacs_UI/.tmp/qt_cuacs_UI1.0.0
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 LINK          = g++
 LFLAGS        = -Wl,-O1
 LIBS          = $(SUBLIBS) -lQt5PrintSupport -lQt5Widgets -lQt5Gui -lQt5Sql -lQt5Core -lGL -lpthread 
@@ -65,12 +57,8 @@ SOURCES       = Animal.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
 		View.cpp \
-<<<<<<< HEAD
-		Client.cpp moc_mainwindow.cpp
-=======
 		Client.cpp \
 		ACM.cpp moc_mainwindow.cpp
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 OBJECTS       = Animal.o \
 		Control.o \
 		login.o \
@@ -79,10 +67,7 @@ OBJECTS       = Animal.o \
 		Shelter.o \
 		View.o \
 		Client.o \
-<<<<<<< HEAD
-=======
 		ACM.o \
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -180,24 +165,16 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		mainwindow.h \
 		Shelter.h \
 		View.h \
-<<<<<<< HEAD
-		Client.h Animal.cpp \
-=======
 		Client.h \
 		ACM.h Animal.cpp \
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 		Control.cpp \
 		login.cpp \
 		main.cpp \
 		mainwindow.cpp \
 		Shelter.cpp \
 		View.cpp \
-<<<<<<< HEAD
-		Client.cpp
-=======
 		Client.cpp \
 		ACM.cpp
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 QMAKE_TARGET  = qt_cuacs_UI
 DESTDIR       = 
 TARGET        = qt_cuacs_UI
@@ -415,13 +392,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-<<<<<<< HEAD
-	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h Client.h $(DISTDIR)/
-	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp Client.cpp $(DISTDIR)/
-=======
 	$(COPY_FILE) --parents Animal.h AnimalList.h Control.h login.h mainwindow.h Shelter.h View.h Client.h ACM.h $(DISTDIR)/
 	$(COPY_FILE) --parents Animal.cpp Control.cpp login.cpp main.cpp mainwindow.cpp Shelter.cpp View.cpp Client.cpp ACM.cpp $(DISTDIR)/
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -467,11 +439,7 @@ moc_mainwindow.cpp: Shelter.h \
 		mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-<<<<<<< HEAD
-	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/COMP3004/D3/Animal_Shelter_System/qt_cuacs_UI -I/home/student/COMP3004/D3/Animal_Shelter_System/qt_cuacs_UI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
-=======
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/student/Downloads/D4/Animal_Shelter_System/qt_cuacs_UI -I/home/student/Downloads/D4/Animal_Shelter_System/qt_cuacs_UI -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -548,8 +516,6 @@ View.o: View.cpp View.h \
 Client.o: Client.cpp Client.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Client.o Client.cpp
 
-<<<<<<< HEAD
-=======
 ACM.o: ACM.cpp ACM.h \
 		AnimalList.h \
 		Animal.h \
@@ -558,7 +524,6 @@ ACM.o: ACM.cpp ACM.h \
 		Shelter.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ACM.o ACM.cpp
 
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 

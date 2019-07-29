@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-qmake && make && ./qt_cuacs_UI
-=======
 qmake && make && ./qt_cuacs_UI && make clean
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1

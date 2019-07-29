@@ -81,8 +81,6 @@ private slots:
     void on_pushButton_86_clicked();
     void on_pushButton_88_clicked();
     void on_pushButton_89_clicked();
-<<<<<<< HEAD
-=======
     void on_pushButton_27_clicked();
     void on_pushButton_28_clicked();
     void on_pushButton_29_clicked();
@@ -96,7 +94,6 @@ private slots:
     void on_pushButton_36_clicked();
     void on_listView_5_activated(const QModelIndex &index);
     void on_pushButton_37_clicked();
->>>>>>> e11af516dcdc4987bc08237d8729af06f360caa1
 };
 
 #endif // MAINWINDOW_H
